@@ -24,8 +24,45 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <header>
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+              <a id="logo" href="#/main.html">
+                <img src="./images/logo.png" alt="">
+              </a>
+            </div>
+          </div>
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Sample</a></li>
+              <li><a href="#">Sample</a></li>
+              <li><a href="#">Sample</a></li>
+            </ul>
+            -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="body" ng-view="" ng-app="formApp"></div>
+
+    <footer>
+      <div class="container" id="footer">
+        <ol class="footer-nav">
+          <li><a href="https://www.dealertrack.com/" target="">Dealertrack</a></li>
+          <li><a href="#/privacy-policy" target="">Privacy Policy</a></li>
+          <li><a href="" target="">Some Link</a></li>
+        </ol>
+      </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

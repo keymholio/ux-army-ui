@@ -12,11 +12,14 @@ angular.module('uxArmyUiApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/privacy-policy', {
+        templateUrl: 'views/privacy-policy.html',
+      })
       .when('/thank-you', {
         templateUrl: 'views/thank-you.html',
       })
-      .when('/404', {
-        templateUrl: '404.html',
+      .when('/demo-form', {
+        templateUrl: 'views/demo-form.html',
       })
       .otherwise({
         redirectTo: '/'
