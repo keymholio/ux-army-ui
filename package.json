@@ -1,7 +1,13 @@
+
+
 {
   "name": "uxarmyui",
   "version": "0.0.0",
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keymholio/ux-army-ui.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
