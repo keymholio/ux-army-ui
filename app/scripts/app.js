@@ -9,8 +9,7 @@ angular.module('uxArmyUiApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/main.html'
       })
       .when('/privacy-policy', {
         templateUrl: 'views/privacy-policy.html',
@@ -19,7 +18,7 @@ angular.module('uxArmyUiApp', [
         templateUrl: 'views/thank-you.html',
       })
       .when('/demo-form', {
-        templateUrl: 'views/demo-form.html',
+        templateUrl: 'views/demo-form.html'
       })
       .otherwise({
         redirectTo: '/'

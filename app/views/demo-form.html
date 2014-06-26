@@ -1,39 +1,46 @@
+<div ng-controller="MainCtrl">
+  <div ng-include src="headertemplate"></div>
+</div>
+
 <div class="container">
   <div class="section-df">
     <h2 align="center">User Participant Application</h2>
-
-    <div class="demo-form">
-      <form role="form" ng-controller="FormCtrl2">
+    <div class="demo-form" ng-controller="DemoFormCtrl">
+      <form role="form" action="#">
         <div class="form-group">
           <label for="demo-form-name">Name</label>
-          <input type="name" class="form-control input-lg" id="demo-form-name" maxlength="25" ng-model='formInfo.Name' required>
+          <input type="name" class="form-control input-lg" id="demo-form-name" maxlength="25" required>
         </div>
+
         <div class="form-group">
           <label for="demo-form-email">Email address</label>
-          <input type="email" class="form-control input-lg" id="demo-form-email" maxlength="40" ng-model='formInfo.Email' required>
+          <input type="email" class="form-control input-lg" id="demo-form-email" maxlength="40" required>
         </div>
+
         <div class="form-group">
           <label for="demo-form-phone">Phone</label>
-          <input type="text" class="form-control input-lg" id="demo-form-email" maxlength="12" ng-model='formInfo.Phone' required>
+          <input type="text" class="form-control input-lg" id="demo-form-phone" maxlength="12" required>
         </div>
+
         <div class="form-group">
           <label>Gender</label>
           <br />
           <label class="radio-inline">
-      			<input type="radio" id="inlineCheckbox1" value="option1" ng-model='formInfo.Female' required> Female
+      			<input type="radio" id="inlineCheckbox1" name="1" value="option1" required> Female
       		</label>
       		<label class="radio-inline">
-      			<input type="radio" id="inlineCheckbox2" value="option2"> Male
+      			<input type="radio" id="inlineCheckbox2" name="1" value="option2"> Male
       		</label>
         </div>
+
         <div class="form-group">
           <label for="demo-form-birth">Birth Year</label>
           <input type="text" class="form-control input-lg" id="demo-form-birth" >
         </div>
+
         <div class="form-group">
           <label>State</label>
           <select ngRequired="form.state" class="form-control input-lg">
-            <!--<option></option> figure out-->
             <option>AL</option>
             <option>AK</option>
             <option>AZ</option>
@@ -86,6 +93,7 @@
             <option>WY</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Job Role</label>
           <select class="form-control input-lg">
@@ -111,6 +119,7 @@
             <option>Other</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Employment</label>
           <select class="form-control input-lg">
@@ -121,6 +130,7 @@
             <option>Unemployed</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Househol Income (Annual)</label>
           <select class="form-control input-lg">
@@ -129,6 +139,7 @@
             <option>$100,000 or more</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Experience With Computers</label>
           <p>If you know what "css padding for an html div" means then choose expert. Otherwise choose intermediate.</p>
@@ -138,6 +149,7 @@
             <option>Expert</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Hours Online Per Day</label>
           <select class="form-control input-lg">
@@ -154,6 +166,7 @@
             <option>10+</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Education Level Completed</label>
           <select class="form-control input-lg">
@@ -162,6 +175,7 @@
             <option>Graduate School</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>When is a good time to participate in a test?</label>
           <select class="form-control input-lg">
@@ -170,7 +184,7 @@
             <option>Night time</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg">Sign Up</button>
       </form>
     </div>
   </div>

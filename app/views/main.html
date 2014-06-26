@@ -1,19 +1,27 @@
+<div ng-controller="MainCtrl">
+  <div ng-include src="headertemplate"></div>
+</div>
+
 <div class="container">
   <div class="section-main">
     <h1 align="center">User Experience Labs</h1>
-    <div class="main-form" ng-controller="formController">
-      <form role="form">
-        <div class="form-group">
-          <label for="main-form-name">Name</label>
-          <input type="name" class="form-control input-lg" id="main-form-name" maxlength="25" required>
-        </div>
-        <div class="form-group">
-          <label for="main-form-email">Email address</label>
-          <input type="email" class="form-control input-lg" id="main-form-email" maxlength="40" required>
-        </div>
-        <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg pull-right">Sign Up</button>
-        <br />
-      </form>
-    </div>         
+      <div class="main-form" ng-controller="FirstFormCtrl">
+        <form role="form" action="#">
+
+          <div class="form-group">
+            <label for="main-form-name">Name</label>
+            <input type="name" class="form-control input-lg" id="main-form-name" maxlength="25" required>
+          </div>
+
+          <div class="form-group">
+            <label for="main-form-email">Email address</label>
+            <input type="email" class="form-control input-lg" id="main-form-email" maxlength="45" required>
+          </div>
+
+          <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg pull-right">Sign Up</button>
+          <br />
+
+        </form>
+      </div>    
   </div>
 </div>
