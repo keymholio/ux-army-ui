@@ -10,7 +10,10 @@ html {
     min-height: 100%;
 }
 
-body { padding-top: 20px; padding-bottom: 20px; }
+body { 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+}
 .body { margin-bottom: 60px; }
 
 h1, h2, h3, h4, h5, h6,
@@ -18,7 +21,9 @@ h1, h2, h3, h4, h5, h6,
     color: #595A5C;
 }
 
-.form-group { margin-bottom: 25px; }
+.form-group { 
+    margin-bottom: 25px; 
+}
 .form-group label {
     display: inline-block;
     margin-bottom: 8px;        
@@ -29,29 +34,57 @@ h1, h2, h3, h4, h5, h6,
 
 /* ***** Header ***** */
 
-header { margin-bottom: 30px; }
+header { 
+    margin-bottom: 30px; 
+}
 
 /* Navbar */
-.navbar-default { background-color: #ffffff; border-color: #ffffff; }
-#logo img { max-width: 14em; height: auto; }
+.navbar-default { 
+    background-color: #ffffff; 
+    border-color: #ffffff; }
+#logo img { 
+    max-width: 14em; 
+    height: auto; }
 
 
 /* ***** Pages ***** */
 
 /* main.html */   
-.section-main { margin-top: 4%; }
-.section-main h1 { font-size: 3em; margin-bottom: 30px; }
-.main-form { max-width: 425px; margin: 0 auto; }
+.section-main { 
+    margin-top: 4%; 
+}
+.section-main h1 { 
+    font-size: 2.5em; 
+    margin-bottom: 30px; 
+}
+.main-form { 
+    max-width: 425px; 
+    margin: 0 auto; 
+}
     
 /* demo-form.html */
-.section-df h2 { margin-bottom: 30px; }
-.demo-form { max-width: 650px; margin: 0 auto; }
-.demo-form select { max-width: 300px; }
-#demo-form-birth { max-width: 84px; }        
+.section-df h2 { 
+    margin-bottom: 30px; 
+}
+.demo-form { 
+    max-width: 650px; 
+    margin: 0 auto; 
+}
+.demo-form select { 
+    max-width: 300px; 
+}
+#demo-form-birth { 
+    max-width: 84px; 
+}        
 
 /* thank-you.html */
-.section-ty { margin-top: 10%; text-align: center; }
-.section-ty h1 {  font-size: 4em; }
+.section-ty { 
+    margin-top: 10%; 
+    text-align: center; 
+}
+.section-ty h1 {  
+    font-size: 4em; 
+}
 
 
 /* ***** Footer ***** */
@@ -70,7 +103,9 @@ header { margin-bottom: 30px; }
     }
 
 .footer-nav {
-    ol { margin: 0px; padding: 0px; }
+    ol { 
+        margin: 0px; padding: 0px; 
+    }
 
     li {
         display: inline-block;
@@ -78,14 +113,21 @@ header { margin-bottom: 30px; }
         margin: 0 8px 0 8px;
     }
 
-    a { color: #999999; }
+    a { 
+        color: #999999; 
+    }
 
-    a:hover { text-decoration: none; color: #666666; }
+    a:hover { 
+        text-decoration: none; color: #666666; 
+    }
 }
 
 
 /* ***** Media Queries ***** */
 
-@media screen and (max-width: 767px){
-    .section-main h1, .section-ty h1 { font-size: 2em; margin-bottom: 30px; }
+@media screen and (max-width: 490px){
+    .section-main h1, .section-ty h1 { 
+        font-size: 2em; 
+        margin-bottom: 30px; 
+    }
 }

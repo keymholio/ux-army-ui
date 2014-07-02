@@ -20,6 +20,9 @@ angular.module('uxArmyUiApp', [
       .when('/demo-form', {
         templateUrl: 'views/demo-form.html'
       })
+      .when('/sign-in', {
+        templateUrl: 'views/sign-in.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

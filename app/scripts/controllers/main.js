@@ -9,3 +9,7 @@ app.controller('MainCtrl', function ($scope) {
 
   });
 
+app.controller('SigninCtrl', function($scope) {
+    $scope.message='My sign in page';
+    $scope.headertemplate='views/partials/header-signin.html';
+  });

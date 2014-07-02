@@ -1,5 +1,7 @@
 'use strict';
 
+/*global $, app */
+
 app.controller('FirstFormCtrl', function($scope, $http){
 
     $scope.postSuccess = function()
