@@ -1,10 +1,15 @@
 'use strict';
 
-angular.module('uxArmyUiApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+var app = angular.module('uxArmyUiApp');
+ 
+app.controller('MainCtrl', function ($scope) {
+
+    $scope.message='My home page';
+    $scope.headertemplate='views/partials/header-init.html';
+
+  });
+
+app.controller('SigninCtrl', function($scope) {
+    $scope.message='My sign in page';
+    $scope.headertemplate='views/partials/header-signin.html';
   });

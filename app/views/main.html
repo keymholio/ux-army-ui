@@ -1,36 +1,28 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">ux army ui</h3>
+<div ng-controller="MainCtrl">
+    <div ng-include src="headertemplate"></div>
 </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
+<div class="container">
+    <div class="section-main">
+        <h1 align="center">User Experience Labs</h1>
+    <div class="main-form" ng-controller="FirstFormCtrl">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+    <form role="form" action="#">
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+        <div class="form-group">
+            <label for="main-form-name">Name</label>
+            <input type="name" class="form-control input-lg" id="main-form-name" maxlength="25" required>
+        </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+        <div class="form-group">
+            <label for="main-form-email">Email address</label>
+            <input type="email" class="form-control input-lg" id="main-form-email" maxlength="45" required>
+        </div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
+        <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg pull-right">Sign Up</button>
+        <br />
+
+    </form>
+    </div>    
+    </div>
 </div>
