@@ -7,7 +7,7 @@ var app = angular.module('uxArmyUiApp', [
   'ngRoute'
 ]);
 
-app.config(function ($routeProvider, $httpProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html'

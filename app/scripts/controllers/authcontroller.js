@@ -8,16 +8,16 @@ app.controller('AuthCtrl', function ($scope, $location, AuthService) {
         var password = $scope.loginPassword;
 
         if (email && password) {
-            AuthService.login(email, password).then(
+          AuthService.login(email, password).then(
                 function () {
                     $location.path('/dashboard');
-                },
+                  },
                 function (error) {
                     $scope.loginError = error;
-                }
+                  }
             );
         } else {
-            $scope.error = 'email and password required';
+          $scope.error = 'email and password required';
         }
-    };
-});
+      };
+  });

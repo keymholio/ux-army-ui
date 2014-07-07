@@ -2,11 +2,13 @@
 
 /*global $, app */
 
-app.factory('AuthService', function ($http, API_SERVER) {
+app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
 
     var authenticate = function (email, password, endpoint) {
-        var deferred = $q.defer();
+        
         var url = API_SERVER + endpoint;
+        var deferred = $q.defer();
+        
         $http.post(url, 'email=' + email + '&password=' + password, {
             headers: {
                 'Content-Type': 'application/json'
@@ -18,15 +20,15 @@ app.factory('AuthService', function ($http, API_SERVER) {
                 var email = response.data.email;
 
                 if (token && email) {
-                    $window.localStorage.token = token;
-                    $window.localStorage.email = email;
-                    deferred.resolve(true);
+                  $window.localStorage.token = token;
+                  $window.localStorage.email = email;
+                  deferred.resolve(true);
                 } else {
-                    deferred.reject('Invalid data from server');
+                  deferred.reject('Invalid data from server');
                 }
               },
             function (response) {
-                deferred.reject(responce.data.error);
+                deferred.reject(response.data.error);
               }
         );
 
@@ -48,14 +50,14 @@ app.factory('AuthService', function ($http, API_SERVER) {
           }
         );
         return deferred.promise;
-    }
+      };
 
     return {
         login: function (email, password) {
             return authenticate(email, password, 'login/');
           },
         logout: function () {
-            return logout ();
+            return logout();
           }
 
       };

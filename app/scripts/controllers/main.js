@@ -10,6 +10,15 @@ app.controller('MainCtrl', function ($scope) {
   });
 
 app.controller('SigninCtrl', function($scope) {
+
     $scope.message='My sign in page';
     $scope.headertemplate='views/partials/header-signin.html';
+
+  });
+
+app.controller('PostCtrl', function($scope) {
+
+    $scope.message='My dashboard page';
+    $scope.headertemplate='views/partials/header-post.html';
+
   });
