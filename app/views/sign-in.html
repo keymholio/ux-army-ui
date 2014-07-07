@@ -3,22 +3,23 @@
 </div>
 
 <div class="container">
-    <div class="section-main">
+    <div class="section-main" ng-controller="AuthCtrl">
         <h1 align="center">Sign In</h1>
-        <div class="main-form" ng-controller="">
+        <p ng-show="loginError">{{ loginError }}</p>
+        <div class="main-form">
             <form role="form" action="#">
 
                 <div class="form-group">
                     <label for="signin-form-email">Email address</label>
-                    <input type="email" class="form-control input-lg" id="signin-form-email" maxlength="45" required>
+                    <input type="email" class="form-control input-lg" id="signin-form-email" ng-model="loginEmail" maxlength="45" required>
                 </div>
 
                 <div class="form-group">
                     <label for="signin-form-pass">Password</label>
-                    <input type="password" class="form-control input-lg" id="signin-form-pass" maxlength="25" required>
+                    <input type="password" class="form-control input-lg" id="signin-form-pass" ng-model="loginPassword" maxlength="25" required>
                 </div>
 
-                <button type="submit" ng-click="" class="btn btn-primary btn-lg pull-right">Sign Up</button>
+                <button type="submit" class="btn btn-primary btn-lg pull-right" value="submit">Sign Up</button>
                 <br />
 
             </form>
