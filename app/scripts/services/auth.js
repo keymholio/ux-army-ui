@@ -51,9 +51,6 @@ app.factory('AuthService', function ($http, API_SERVER) {
     }
 
     return {
-        register: function (email, password) {
-            return authenticate(email, password, 'register/');
-          },
         login: function (email, password) {
             return authenticate(email, password, 'login/');
           },

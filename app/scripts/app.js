@@ -8,7 +8,6 @@ var app = angular.module('uxArmyUiApp', [
 ]);
 
 app.config(function ($routeProvider, $httpProvider) {
-    $httpProvider.interceptors.push('AuthInterceptor');
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html'
@@ -25,7 +24,7 @@ app.config(function ($routeProvider, $httpProvider) {
       .when('/sign-in', {
         templateUrl: 'views/sign-in.html' // auth.html
       })
-      .when('/dashboard'{
+      .when('/dashboard', {
         templateUrl: 'views/dashboard.html' // dashboard.html
       })
       .otherwise({

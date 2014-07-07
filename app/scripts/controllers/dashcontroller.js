@@ -4,7 +4,7 @@
 
 app.controller('DashboardCtrl', function ($scope, $window, $location) {
 	if (!$window.localStorage.token) {
-		$location.path('/');
+		$location.path('/sign-in');
 		return;
 	}
 	$scope.token = $window.localStorage.token;
