@@ -1,13 +1,17 @@
 'use strict';
 
+/* global app: true */
+
 var app = angular.module('uxArmyUiApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'header-directives'
 ]);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html'
@@ -22,10 +26,12 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/demo-form.html'
       })
       .when('/sign-in', {
-        templateUrl: 'views/sign-in.html' // auth.html
+        templateUrl: 'views/sign-in.html',
+        controller: 'AuthCtrl'
       })
       .when('/dashboard', {
-        templateUrl: 'views/dashboard.html' // dashboard.html
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
       })
       .otherwise({
         redirectTo: '/'
