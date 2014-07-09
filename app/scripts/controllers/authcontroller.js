@@ -4,11 +4,11 @@
 
 app.controller('AuthCtrl', function ($scope, $location, AuthService) {
     $scope.login = function () {
-        var email = $scope.loginEmail;
+        var username = $scope.loginUsername;
         var password = $scope.loginPassword;
 
-        if (email && password) {
-          AuthService.login(email, password).then(
+        if (username && password) {
+          AuthService.login(username, password).then(
                 function () {
                     $location.path('/dashboard');
                   },
@@ -17,7 +17,7 @@ app.controller('AuthCtrl', function ($scope, $location, AuthService) {
                   }
             );
         } else {
-          $scope.error = 'email and password required';
+          $scope.error = 'Username and password required';
         }
       };
   });

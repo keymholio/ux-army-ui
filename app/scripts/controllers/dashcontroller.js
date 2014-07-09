@@ -8,12 +8,11 @@ app.controller('DashboardCtrl', function ($scope, $window, $location, AuthServic
 		return;
 	}
 	$scope.token = $window.localStorage.token;
-	$scope.email = $window.localStorage.email;
-
+	$scope.username = localStorage['user_name'];
 	$scope.logout = function () {
 	    AuthService.logout().then(
 	      function () {
-	        $location.path('/');
+	        $location.path('/sign-in');
 	      },
 	      function (error) {
 	        $scope.error = error;

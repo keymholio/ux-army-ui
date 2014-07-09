@@ -15,7 +15,7 @@ app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
     responseError: function (response) {
       if (response.status === 401 || response.status === 403) {
         $window.localStorage.removeItem('token');
-        $window.localStorage.removeItem('email');
+        $window.localStorage.removeItem('username');
         $location.path('/sign-in');
         return;
       }

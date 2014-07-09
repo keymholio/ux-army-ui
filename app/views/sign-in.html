@@ -10,15 +10,15 @@
             <form ng-submit="login()">
 
                 <div class="form-group">
-                    <input type="email" class="form-control input-lg" id="signin-form-email" ng-model="loginEmail" placeholder="Email" maxlength="45" required>
+                    <input type="text" class="form-control input-lg" ng-model="loginUsername" placeholder="Username" maxlength="45" required>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control input-lg" id="signin-form-pass" ng-model="loginPassword" placeholder="Password" maxlength="25" required>
+                    <input type="password" class="form-control input-lg" ng-model="loginPassword" placeholder="Password" maxlength="25" required>
                 </div>
 
                 <div class="centered">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" value="submit">Login</button>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
                 </div>
                 <br />
 

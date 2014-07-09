@@ -4,24 +4,23 @@
 
 app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
 
-    var authenticate = function (email, password, endpoint) {
+    var authenticate = function (username, password, endpoint) {
         
         var url = API_SERVER + endpoint;
         var deferred = $q.defer();
         
-        $http.post(url, 'email=' + email + '&password=' + password, {
+        $http.post(url, 'username=' + username + '&password=' + password, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
               }
             }).then(
             function (response) {
                 // success callback
                 var token = response.data.token;
-                var email = response.data.email;
 
-                if (token && email) {
+                if (token) {
                   $window.localStorage.token = token;
-                  $window.localStorage.email = email;
+                  localStorage['user_name'] = username;
                   deferred.resolve(true);
                 } else {
                   deferred.reject('Invalid data from server');
@@ -42,7 +41,7 @@ app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
         $http.post(url).then(
           function () {
             $window.localStorage.removeItem('token');
-            $window.localStorage.removeItem('email');
+            $window.localStorage.removeItem('username');
             deferred.resolve();
           },
           function (error) {
@@ -53,8 +52,8 @@ app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
       };
 
     return {
-        login: function (email, password) {
-            return authenticate(email, password, 'login/');
+        login: function (username, password) {
+            return authenticate(username, password, 'login/');
           },
         logout: function () {
             return logout();
