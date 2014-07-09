@@ -8,7 +8,7 @@ app.controller('DashboardCtrl', function ($scope, $window, $location, AuthServic
 		return;
 	}
 	$scope.token = $window.localStorage.token;
-	$scope.username = localStorage['user_name'];
+	$scope.username = localStorage['user.name'];
 	$scope.logout = function () {
 	    AuthService.logout().then(
 	      function () {
