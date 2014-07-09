@@ -3,21 +3,21 @@
 <div class="container">
   <div class="section-df">
     <h2 align="center">User Participant Application</h2>
-    <div class="demo-form" ng-controller="DemoFormCtrl">
+    <div class="demo-form">
       <form role="form" action="#">
         <div class="form-group">
           <label for="demo-form-name">Name</label>
-          <input type="name" class="form-control input-lg" id="demo-form-name" maxlength="25" required>
+          <input type="name" class="form-control input-lg" id="demoFormName" maxlength="25" required>
         </div>
 
         <div class="form-group">
           <label for="demo-form-email">Email address</label>
-          <input type="email" class="form-control input-lg" id="demo-form-email" maxlength="40" required>
+          <input type="email" class="form-control input-lg" id="demoFormEmail" maxlength="40" required>
         </div>
 
         <div class="form-group">
           <label for="demo-form-phone">Phone</label>
-          <input type="text" class="form-control input-lg" id="demo-form-phone" maxlength="12" required>
+          <input type="text" class="form-control input-lg" id="demoFormPhone" maxlength="12" required>
         </div>
 
         <div class="form-group">
@@ -33,153 +33,63 @@
 
         <div class="form-group">
           <label for="demo-form-birth">Birth Year</label>
-          <input type="text" class="form-control input-lg" id="demo-form-birth" >
+          <input type="text" class="form-control input-lg" id="demoFormBirthYear" >
         </div>
 
         <div class="form-group">
           <label>State</label>
-          <select ngRequired="form.state" class="form-control input-lg">
-            <option>AL</option>
-            <option>AK</option>
-            <option>AZ</option>
-            <option>AR</option>
-            <option>CA</option>
-            <option>CO</option>
-            <option>CT</option>
-            <option>DE</option>
-            <option>FL</option>
-            <option>GA</option>
-            <option>HI</option>
-            <option>ID</option>
-            <option>IL</option>
-            <option>IN</option>
-            <option>IA</option>
-            <option>KS</option>
-            <option>KY</option>
-            <option>LA</option>
-            <option>ME</option>
-            <option>MD</option>
-            <option>MA</option>
-            <option>MI</option>
-            <option>MN</option>
-            <option>MS</option>
-            <option>MO</option>
-            <option>MT</option>
-            <option>NE</option>
-            <option>NV</option>
-            <option>NH</option>
-            <option>NJ</option>
-            <option>NM</option>
-            <option>NY</option>
-            <option>NC</option>
-            <option>ND</option>
-            <option>OH</option>
-            <option>OK</option>
-            <option>OR</option>
-            <option>PA</option>
-            <option>RI</option>
-            <option>SC</option>
-            <option>SD</option>
-            <option>TN</option>
-            <option>TX</option>
-            <option>UT</option>
-            <option>VT</option>
-            <option>VA</option>
-            <option>WA</option>
-            <option>WV</option>
-            <option>WI</option>
-            <option>WY</option>
+          <select class="form-control input-lg" id="demoFormState">
+            <option ng-repeat="state in stateChoices">{{state}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Job Role</label>
-          <select class="form-control input-lg">
-            <option>BDC Manager</option>
-            <option>Controller</option>
-            <option>Dealertrack Employee</option>
-            <option>Entry Level Technician</option>
-            <option>F&I Director</option>
-            <option>F&I Manager</option>
-            <option>Fixed Operations Director</option>
-            <option>General Manager</option>
-            <option>Internet Director</option>
-            <option>Lender</option>
-            <option>Office Manager</option>
-            <option>Parts Advisor</option>
-            <option>Parts Manager</option>
-            <option>Receptionist</option>
-            <option>Sales Consultant</option>
-            <option>Sales Manager</option>
-            <option>Service Advisor</option>
-            <option>Service Manager</option>
-            <option>Title Clerk</option>
-            <option>Other</option>
+          <select class="form-control input-lg" id="demoFormJob">
+            <option ng-repeat="job in jobChoices">{{job}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Employment</label>
-          <select class="form-control input-lg">
-            <option>Employed at home</option>
-            <option>Employed in an office</option>
-            <option>Employed outside an office</option>
-            <option>In school</option>
-            <option>Unemployed</option>
+          <select class="form-control input-lg" id="demoFormEmployment">
+            <option ng-repeat="employment in employmentChoices">{{employment}}</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Househol Income (Annual)</label>
-          <select class="form-control input-lg">
-            <option>Less Than $40,000</option>
-            <option>$40,000 to $100,000</option>
-            <option>$100,000 or more</option>
+          <label>Household Income (Annual)</label>
+          <select class="form-control input-lg" id="demoFormIncome">
+            <option ng-repeat="income in incomeChoices">{{income}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Experience With Computers</label>
           <p>If you know what "css padding for an html div" means then choose expert. Otherwise choose intermediate.</p>
-          <select class="form-control input-lg">
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>Expert</option>
+          <select class="form-control input-lg" id="demoFormExperience">
+            <option ng-repeat="experience in experienceChoices">{{experience}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Hours Online Per Day</label>
-          <select class="form-control input-lg">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10+</option>
+          <select class="form-control input-lg" id="demoFormHoursOnline">
+            <option ng-repeat="hours in hoursOnlineChoices">{{hours}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Education Level Completed</label>
-          <select class="form-control input-lg">
-            <option>High School</option>
-            <option>College</option>
-            <option>Graduate School</option>
+          <select class="form-control input-lg" id="demoFormEducationLevel">
+            <option ng-repeat="education in educationLevelChoices">{{education}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>When is a good time to participate in a test?</label>
-          <select class="form-control input-lg">
-            <option>Mornings</option>
-            <option>Afternoons</option>
-            <option>Night time</option>
+          <select class="form-control input-lg" id="demoFormParticipateTime">
+            <option ng-repeat="participate in participateTimeChoices">{{participate}}</option>
           </select>
         </div>
         <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg">Sign Up</button>

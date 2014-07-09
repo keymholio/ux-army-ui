@@ -14,7 +14,8 @@ app.config(function ($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        controller: 'SignupFormCtrl'
       })
       .when('/privacy-policy', {
         templateUrl: 'views/privacy-policy.html',
@@ -23,7 +24,8 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/thank-you.html',
       })
       .when('/demo-form', {
-        templateUrl: 'views/demo-form.html'
+        templateUrl: 'views/demo-form.html',
+        controller: 'DemoFormCtrl'
       })
       .when('/sign-in', {
         templateUrl: 'views/sign-in.html',
