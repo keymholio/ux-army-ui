@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6,
     color: #595A5C;
 }
 
+.centered { 
+    text-align: center;
+}
+
 .form-group { 
     margin-bottom: 25px; 
 }
@@ -31,6 +35,13 @@ h1, h2, h3, h4, h5, h6,
     color: #595A5C;
 }
   
+.input-lg {
+    border-radius: 0px;
+}
+
+.btn-primary {
+    border-radius: 0px;
+}
 
 /* ***** Header ***** */
 
@@ -49,23 +60,24 @@ header {
 
 /* ***** Pages ***** */
 
+.form-title {
+    font-size: 26px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
 /* main.html */   
 .section-main { 
     margin-top: 4%; 
 }
-.section-main h1 { 
-    font-size: 2.5em; 
-    margin-bottom: 30px; 
-}
 .main-form { 
-    max-width: 425px; 
+    max-width: 420px; 
     margin: 0 auto; 
+    background-color: #f1f1f1;
+    padding: 40px 50px;
 }
     
 /* demo-form.html */
-.section-df h2 { 
-    margin-bottom: 30px; 
-}
 .demo-form { 
     max-width: 650px; 
     margin: 0 auto; 

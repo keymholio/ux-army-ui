@@ -2,29 +2,76 @@
 
 /*global $, app */
 
-app.controller('FirstFormCtrl', function($scope, $http){
+app.controller('SignupFormCtrl', function($scope, $http){
 
-    $scope.postSuccess = function()
+  $scope.postSuccess = function()
         {
           window.location = '#thank-you';
         };
-	  $scope.submitForm = function()
-	  {
-		  var formName = $('#main-form-name').val();
-		  var formEmail = $('#main-form-email').val();
+  $scope.submitForm = function()
+        {
+          var formName = $('#main-form-name').val();
+          var formEmail = $('#main-form-email').val();
 
-	    $http({
-			  url: 'http://127.0.0.1:8000/api/',
-			  method: 'POST',
-			  data: { 'name':formName, 'email':formEmail }
-	    }).success(function(response)
-			  {
-				  $scope.formResponse = response;
+          $http({
+            url: 'http://127.0.0.1:8000/api/',
+            method: 'POST',
+            data: { 'name':formName, 'email':formEmail }
+          }).success(function(response)
+                {
+                  $scope.formResponse = response;
                   $scope.postSuccess();
-			  }
-	    );
-	  };
-	//end of submitForm function
+                }
+            );
+        };
+    //end of submitForm function
+});
 
-  });
+app.controller('DemoFormCtrl', function($scope, $http){
 
+  // $scope.selectedDemoFormFields = null;
+  // $scope.demoFormFields = [];
+
+  $http.get('http://127.0.0.1:8000/choices/').success(function (data) 
+        {
+          $scope.stateChoices = data.stateChoices;
+          $scope.jobChoices = data.jobChoices;
+          $scope.employmentChoices = data.employmentChoices;
+          $scope.incomeChoices = data.incomeChoices;
+          $scope.experienceChoices = data.experienceChoices;
+          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
+          $scope.educationLevelChoices = data.educationLevelChoices;
+          $scope.participateTimeChoices = data.participateTimeChoices;
+        }
+    );
+
+  $scope.submitForm = function()
+        {
+          formData = {
+            'name':$('#mainFormName').val(),
+            'email': $('#demoFormEmail').val(),
+            'phone': $('#demoFormPhone').val(),
+            'gender': $('#demoFormGender').val(),
+            'birthYear': $('#demoFormBirthYear').val(),
+            'state': $('#demoFormState').val(),
+            'job': $('#demoFormJob').val(),
+            'employment': $('#demoFormEmployment').val(),
+            'income': $('#demoFormIncome').val(),
+            'experience': $('#demoFormExperience').val(),
+            'hoursOnline': $('#demoFormHoursOnline').val(),
+            'educationLevel': $('#demoFormEducationLevel').val(),
+            'participateTime': $('#demoFormParticipateTime').val()
+          }
+
+          $http({
+            url: 'http://127.0.0.1:8000/api/',
+            method: 'POST',
+            data : formData
+          }).success(function(response)
+                {
+                  $scope.formResponse = response;
+                }
+            );
+        };
+    //end of submitForm function
+});
