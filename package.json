@@ -3,7 +3,10 @@
 {
   "name": "uxarmyui",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "gzippo" : "0.2.0",
+    "express" : "2.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/keymholio/ux-army-ui.git"
