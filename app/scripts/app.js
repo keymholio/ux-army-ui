@@ -40,4 +40,4 @@ app.config(function ($routeProvider, $httpProvider) {
       });
   });
 
-app.constant('API_SERVER', 'http://127.0.0.1:8000/');
+app.constant('API_SERVER', process.env['UX_API_SERVER']);
