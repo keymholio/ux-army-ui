@@ -5,7 +5,7 @@
         
         <div class="main-form">
             <h1 align="center" class="form-title">User Experience Labs</h1>
-            <form>
+            <form ng-submit="submitForm()">
 
                 <div class="form-group">
                     <input type="name" class="form-control input-lg" id="main-form-name" placeholder="Name" maxlength="25" required>
@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="centered">
-                    <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up">
                 </div>
                 <br />
 

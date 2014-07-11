@@ -4,62 +4,64 @@
   <div class="section-df">
     <h2 align="center">User Participant Application</h2>
     <div class="demo-form">
-      <form role="form" action="#">
+      <form name="demoForm" novalidate ng-submit="submitForm()">
         <div class="form-group">
-          <label for="demo-form-name">Name</label>
-          <input type="name" class="form-control input-lg" id="demoFormName" maxlength="25" required>
+          <label>Name</label>
+          <input type="name" class="form-control input-lg" id="demoFormName" name="userName" maxlength="25" required>
         </div>
 
         <div class="form-group">
-          <label for="demo-form-email">Email address</label>
-          <input type="email" class="form-control input-lg" id="demoFormEmail" maxlength="40" required>
+          <label>Email address</label>
+          <input type="userEmail" class="form-control input-lg" id="demoFormEmail" name="userEmail" maxlength="40" required>
         </div>
 
         <div class="form-group">
-          <label for="demo-form-phone">Phone</label>
-          <input type="text" class="form-control input-lg" id="demoFormPhone" maxlength="12" required>
+          <label>Phone</label>
+          <input type="text" class="form-control input-lg" id="demoFormPhone" name="userPhone" ng-model="userPhone" ng-pattern="/^([0-9]{10})+$/" maxlength="10" required>
+        </div>
+          <div class="custom-error" ng-show="demoForm.userPhone.$dirty && demoForm.userPhone.$invalid">Invalid: <span ng-show="demoForm.userPhone.$error.required">User phone is required.</span>
+          <span ng-show="demoForm.userPhone.$error.pattern">User phone doesn't respect the pattern.</span>
         </div>
 
         <div class="form-group">
           <label>Gender</label>
           <br />
-          <label class="radio-inline">
-      			<input type="radio" id="inlineCheckbox1" name="1" value="option1" required> Female
-      		</label>
-      		<label class="radio-inline">
-      			<input type="radio" id="inlineCheckbox2" name="1" value="option2"> Male
-      		</label>
+          <label class="radio-inline" ng-repeat="gender in genderChoices">
+      			<input type="radio" value={{gender}} id="demoFormGender{{gender}}" name="gender" required>{{gender}} <!-- check if name can be changed to userGender -->
+          </label>
         </div>
 
         <div class="form-group">
-          <label for="demo-form-birth">Birth Year</label>
-          <input type="text" class="form-control input-lg" id="demoFormBirthYear" >
+          <label>Birth Year</label>
+          <select class="form-control input-lg" id="demoFormBirthYear" name="userBirth">
+            <option ng-repeat="year in birthYearChoices">{{year}}</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label>State</label>
-          <select class="form-control input-lg" id="demoFormState">
+          <select class="form-control input-lg" id="demoFormState" name="userState">
             <option ng-repeat="state in stateChoices">{{state}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Job Role</label>
-          <select class="form-control input-lg" id="demoFormJob">
+          <select class="form-control input-lg" id="demoFormJob" name="userJob">
             <option ng-repeat="job in jobChoices">{{job}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Employment</label>
-          <select class="form-control input-lg" id="demoFormEmployment">
+          <select class="form-control input-lg" id="demoFormEmployment" name="userEmp">
             <option ng-repeat="employment in employmentChoices">{{employment}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Household Income (Annual)</label>
-          <select class="form-control input-lg" id="demoFormIncome">
+          <select class="form-control input-lg" id="demoFormIncome" name="userIncome">
             <option ng-repeat="income in incomeChoices">{{income}}</option>
           </select>
         </div>
@@ -67,33 +69,34 @@
         <div class="form-group">
           <label>Experience With Computers</label>
           <p>If you know what "css padding for an html div" means then choose expert. Otherwise choose intermediate.</p>
-          <select class="form-control input-lg" id="demoFormExperience">
+          <select class="form-control input-lg" id="demoFormExperience" name="userExp">
             <option ng-repeat="experience in experienceChoices">{{experience}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Hours Online Per Day</label>
-          <select class="form-control input-lg" id="demoFormHoursOnline">
+          <select class="form-control input-lg" id="demoFormHoursOnline" name="userHoursOnline">
             <option ng-repeat="hours in hoursOnlineChoices">{{hours}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Education Level Completed</label>
-          <select class="form-control input-lg" id="demoFormEducationLevel">
+          <select class="form-control input-lg" id="demoFormEducationLevel" name="userEdu">
             <option ng-repeat="education in educationLevelChoices">{{education}}</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>When is a good time to participate in a test?</label>
-          <select class="form-control input-lg" id="demoFormParticipateTime">
+          <select class="form-control input-lg" id="demoFormParticipateTime" name="userParticipate">
             <option ng-repeat="participate in participateTimeChoices">{{participate}}</option>
           </select>
         </div>
-        <button type="submit" ng-click="submitForm()" class="btn btn-primary btn-lg">Sign Up</button>
+        <input type="submit" ng-disabled="demoForm.userPhone.$pristine || demoForm.userPhone.$dirty && demoForm.userPhone.$invalid" class="btn btn-primary btn-lg" value="Submit">
       </form>
     </div>
   </div>
 </div>
+
