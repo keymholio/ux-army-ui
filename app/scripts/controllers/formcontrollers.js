@@ -29,11 +29,10 @@ app.controller('SignupFormCtrl', function($scope, $http){
 
 app.controller('DemoFormCtrl', function($scope, $http){
 
-  // $scope.selectedDemoFormFields = null;
-  // $scope.demoFormFields = [];
-
-  $http.get('http://127.0.0.1:8000/choices/').success(function (data) 
+  $http.get('http://127.0.0.1:8000/choices/').success(function (data)
         {
+          $scope.genderChoices = data.genderChoices;
+          $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
           $scope.employmentChoices = data.employmentChoices;
@@ -45,13 +44,28 @@ app.controller('DemoFormCtrl', function($scope, $http){
         }
     );
 
+  $scope.postSuccess = function()
+        {
+          window.location = '#thank-you';
+        };
+  $scope.handleGender = function()
+  {
+    $('[name="gender"]').each(function(){
+      if (this.checked)
+      {
+        localStorage.gender = this.value;
+      }
+
+    });
+    return localStorage.gender;
+  };
   $scope.submitForm = function()
         {
-          formData = {
-            'name':$('#mainFormName').val(),
+          var formData = {
+            'name':$('#demoFormName').val(),
             'email': $('#demoFormEmail').val(),
             'phone': $('#demoFormPhone').val(),
-            'gender': $('#demoFormGender').val(),
+            'gender': $scope.handleGender(),
             'birthYear': $('#demoFormBirthYear').val(),
             'state': $('#demoFormState').val(),
             'job': $('#demoFormJob').val(),
@@ -61,15 +75,16 @@ app.controller('DemoFormCtrl', function($scope, $http){
             'hoursOnline': $('#demoFormHoursOnline').val(),
             'educationLevel': $('#demoFormEducationLevel').val(),
             'participateTime': $('#demoFormParticipateTime').val()
-          }
+          };
 
           $http({
-            url: 'http://127.0.0.1:8000/api/',
-            method: 'POST',
+            url: 'http://127.0.0.1:8000/api/1/',
+            method: 'PUT',
             data : formData
           }).success(function(response)
                 {
                   $scope.formResponse = response;
+                  $scope.postSuccess();
                 }
             );
         };
