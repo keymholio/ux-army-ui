@@ -78,7 +78,7 @@ app.controller('DemoFormCtrl', function($scope, $http){
           };
 
           $http({
-            url: 'http://127.0.0.1:8000/api/1/',
+            url: 'http://127.0.0.1:8000/api/2/',
             method: 'PUT',
             data : formData
           }).success(function(response)
