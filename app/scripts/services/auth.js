@@ -2,11 +2,11 @@
 
 /*global $, app */
 
-app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
+app.factory('AuthService', function ($http, $window, $q, ENV) {
 
     var authenticate = function (username, password, endpoint) {
         
-        var url = API_SERVER + endpoint;
+        var url = ENV.API_SERVER + endpoint;
         var deferred = $q.defer();
         
         $http.post(url, 'username=' + username + '&password=' + password, {
@@ -36,7 +36,7 @@ app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
 
     var logout = function () {
         var deferred = $q.defer();
-        var url = API_SERVER + 'logout/';
+        var url = ENV.API_SERVER + 'logout/';
 
         $http.post(url).then(
           function () {
