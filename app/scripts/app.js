@@ -40,5 +40,3 @@ app.config(function ($routeProvider, $httpProvider) {
         redirectTo: '/'
       });
   });
-
-//app.constant('API_SERVER', ENV.apiEndPoint);

@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('SignupFormCtrl', function($scope, $http){
+app.controller('SignupFormCtrl', function($scope, $http, ENV){
 
   $scope.postSuccess = function()
         {
@@ -14,7 +14,7 @@ app.controller('SignupFormCtrl', function($scope, $http){
           var formEmail = $('#main-form-email').val();
 
           $http({
-            url: 'http://127.0.0.1:8000/api/',
+            url: ENV.API_SERVER + 'api/',
             method: 'POST',
             data: { 'name':formName, 'email':formEmail }
           }).success(function(response)
@@ -27,8 +27,10 @@ app.controller('SignupFormCtrl', function($scope, $http){
     //end of submitForm function
 });
 
-app.controller('DemoFormCtrl', function($scope, $http){
-
+app.controller('DemoFormCtrl', function($scope, $http, ENV){
+  
+  $scope.parser = document.createElement('a');
+  
   $scope.$watch('url', function ()
         {
           $scope.parser.href = $scope.url;
@@ -36,12 +38,12 @@ app.controller('DemoFormCtrl', function($scope, $http){
 
   $scope.init = function ()
         {
-          $scope.parser = document.createElement('a');
           $scope.url = window.location;
           $scope.hashed = $scope.url.hash.replace('/','');
         };
 
-  $http.get('http://127.0.0.1:8000/choices/').success(function (data)
+
+  $http.get(ENV.API_SERVER + 'choices/').success(function (data)
         {
           $scope.genderChoices = data.genderChoices;
           $scope.birthYearChoices = data.birthYearChoices;
@@ -90,7 +92,7 @@ app.controller('DemoFormCtrl', function($scope, $http){
           };
 
           $http({
-            url: 'http://127.0.0.1:8000/api/2/',
+            url: ENV.API_SERVER + 'api/2/',
             method: 'PUT',
             data : formData
           }).success(function(response)
