@@ -30,7 +30,7 @@ app.controller('SignupFormCtrl', function($scope, $http, ENV){
 app.controller('DemoFormCtrl', function($scope, $http, ENV){
   
   $scope.parser = document.createElement('a');
-  
+
   $scope.$watch('url', function ()
         {
           $scope.parser.href = $scope.url;
@@ -40,6 +40,25 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
         {
           $scope.url = window.location;
           $scope.hashed = $scope.url.hash.replace('/','');
+
+          $scope.demoFormCheckError = function()
+          {
+            window.location = '#thank-you';
+          };
+
+          $http.post(ENV.API_SERVER + 'demo-form-check').
+              sucess(function (data)
+                {
+                  $scope.checkedName = data.name;
+                  $scope.checkedEmail = data.email;
+                  $scope.checkedId = data.id;
+                }
+              ).
+              error(function (data, status)
+                {
+                  $scope.demoFormCheckError();
+                }
+              );
         };
 
 
