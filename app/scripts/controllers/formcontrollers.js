@@ -46,7 +46,11 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
             window.location = '#error-page';
           };
 
-          $http.post(ENV.API_SERVER + 'demo-form-check').
+          $http({
+              url: ENV.API_SERVER + 'demo-form-check',
+              method: 'POST',
+              data: $scope.hashed
+            }).
               sucess(function (data)
                 {
                   $scope.checkedName = data.name;
