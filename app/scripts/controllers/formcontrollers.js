@@ -29,6 +29,18 @@ app.controller('SignupFormCtrl', function($scope, $http){
 
 app.controller('DemoFormCtrl', function($scope, $http){
 
+  $scope.$watch('url', function ()
+        {
+          $scope.parser.href = $scope.url;
+        });
+
+  $scope.init = function ()
+        {
+          $scope.parser = document.createElement('a');
+          $scope.url = window.location;
+          $scope.hashed = $scope.url.hash.replace('/','');
+        };
+
   $http.get('http://127.0.0.1:8000/choices/').success(function (data)
         {
           $scope.genderChoices = data.genderChoices;
