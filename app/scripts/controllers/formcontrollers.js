@@ -43,7 +43,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
 
           $scope.demoFormCheckError = function()
           {
-            window.location = '#thank-you';
+            window.location = '#error-page';
           };
 
           $http.post(ENV.API_SERVER + 'demo-form-check').
