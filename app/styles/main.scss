@@ -85,6 +85,11 @@ header {
     background-color: #f1f1f1;
     padding: 40px 50px;
 }
+
+/* sign-in.html */   
+.section-si { 
+    margin-top: 4%; 
+}
     
 /* demo-form.html */
 .demo-form { 
@@ -104,6 +109,15 @@ header {
     text-align: center; 
 }
 .section-ty h1 {  
+    font-size: 4em; 
+}
+
+/* error-page.html */
+.section-ep { 
+    margin-top: 10%; 
+    text-align: center; 
+}
+.section-ep h1 {  
     font-size: 4em; 
 }
 
