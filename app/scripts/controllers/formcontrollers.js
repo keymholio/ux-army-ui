@@ -67,6 +67,7 @@ app.controller('DemoFormCtrl', function ($scope, $http, ENV){
                 }
               );
         };
+    //end of init function
 
   $http.get(ENV.API_SERVER + 'choices/').success(function (data)
         {
