@@ -4,7 +4,7 @@
 
 .constant("ENV", {
   "name": "development",
-  "API_SERVER": "http://ux-army-api.herokuapp.com/"
+  "API_SERVER": "http://127.0.0.1:8000/"
 })
 
 ;

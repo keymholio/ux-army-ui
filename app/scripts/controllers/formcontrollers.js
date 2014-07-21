@@ -2,13 +2,13 @@
 
 /*global $, app */
 
-app.controller('SignupFormCtrl', function($scope, $http, ENV){
+app.controller('SignupFormCtrl', function ($scope, $http, ENV){
 
-  $scope.postSuccess = function()
+  $scope.postSuccess = function ()
         {
           window.location = '#thank-you';
         };
-  $scope.submitForm = function()
+  $scope.submitForm = function ()
         {
           var formName = $('#main-form-name').val();
           var formEmail = $('#main-form-email').val();
@@ -17,7 +17,7 @@ app.controller('SignupFormCtrl', function($scope, $http, ENV){
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
             data: { 'name':formName, 'email':formEmail }
-          }).success(function(response)
+          }).success(function (response)
                 {
                   $scope.formResponse = response;
                   $scope.postSuccess();
@@ -27,7 +27,7 @@ app.controller('SignupFormCtrl', function($scope, $http, ENV){
     //end of submitForm function
 });
 
-app.controller('DemoFormCtrl', function($scope, $http, ENV){
+app.controller('DemoFormCtrl', function ($scope, $http, ENV){
   
   $scope.parser = document.createElement('a');
 
@@ -44,7 +44,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
             'hashed': $scope.hashed
           };
 
-          $scope.demoFormCheckError = function()
+          $scope.demoFormCheckError = function ()
           {
             window.location = '#error-page';
           };
@@ -83,13 +83,13 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
         }
     );
 
-  $scope.postSuccess = function()
+  $scope.postSuccess = function ()
         {
           window.location = '#thank-you';
         };
-  $scope.handleGender = function()
+  $scope.handleGender = function ()
   {
-    $('[name="gender"]').each(function(){
+    $('[name="gender"]').each(function (){
       if (this.checked)
       {
         localStorage.gender = this.value;
@@ -98,7 +98,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
     });
     return localStorage.gender;
   };
-  $scope.submitForm = function()
+  $scope.submitForm = function ()
         {
           var formData = {
             'name': $('#demoFormName').val(),
@@ -120,7 +120,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
             url: ENV.API_SERVER + 'api/' + $scope.checkedId + '/',
             method: 'PUT',
             data : formData
-          }).success(function(response)
+          }).success(function (response)
                 {
                   $scope.formResponse = response;
                   $scope.postSuccess();
