@@ -40,6 +40,9 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
         {
           $scope.url = window.location;
           $scope.hashed = $scope.url.hash.replace('/','');
+          var hashedData = {
+            'hashed': $scope.hashed
+          };
 
           $scope.demoFormCheckError = function()
           {
@@ -47,11 +50,11 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
           };
 
           $http({
-              url: ENV.API_SERVER + 'demo-form-check',
+              url: ENV.API_SERVER + 'demo-form-check/',
               method: 'POST',
-              data: $scope.hashed
+              data: hashedData
             }).
-              sucess(function (data)
+              success(function (data)
                 {
                   $scope.checkedName = data.name;
                   $scope.checkedEmail = data.email;
@@ -64,7 +67,6 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
                 }
               );
         };
-
 
   $http.get(ENV.API_SERVER + 'choices/').success(function (data)
         {
@@ -99,7 +101,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
   $scope.submitForm = function()
         {
           var formData = {
-            'name':$('#demoFormName').val(),
+            'name': $('#demoFormName').val(),
             'email': $('#demoFormEmail').val(),
             'phone': $('#demoFormPhone').val(),
             'gender': $scope.handleGender(),

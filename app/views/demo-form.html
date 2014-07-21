@@ -1,18 +1,18 @@
 <header-init></header-init>
 
-<div class="container">
+<div class="container" ng-init="init()">
   <div class="section-df">
     <h2 align="center">User Participant Application</h2>
     <div class="demo-form">
       <form name="demoForm" novalidate ng-submit="submitForm()">
         <div class="form-group">
           <label>Name</label>
-          <input type="name" class="form-control input-lg" id="demoFormName" name="userName" maxlength="25" required>
+          <input type="name" class="form-control input-lg" id="demoFormName" name="userName" maxlength="25" value="{{checkedName}}" readonly required>
         </div>
 
         <div class="form-group">
           <label>Email address</label>
-          <input type="userEmail" class="form-control input-lg" id="demoFormEmail" name="userEmail" maxlength="40" required>
+          <input type="userEmail" class="form-control input-lg" id="demoFormEmail" name="userEmail" maxlength="40" value="{{checkedEmail}}" readonly required>
         </div>
 
         <div class="form-group">
