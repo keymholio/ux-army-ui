@@ -117,7 +117,7 @@ app.controller('DemoFormCtrl', function($scope, $http, ENV){
           };
 
           $http({
-            url: ENV.API_SERVER + 'api/2/',
+            url: ENV.API_SERVER + 'api/' + $scope.checkedId + '/',
             method: 'PUT',
             data : formData
           }).success(function(response)
