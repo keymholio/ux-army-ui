@@ -31,6 +31,9 @@ app.config(function ($routeProvider, $httpProvider) {
       .when('/error-page', {
         templateUrl: 'views/error-page.html'
       })
+      .when('/form-finish', {
+        templateUrl: 'views/form-finish.html'
+      })
       .when('/sign-in', {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
