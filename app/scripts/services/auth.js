@@ -50,6 +50,7 @@ app.factory('AuthService', function ($http, $window, $q, ENV) {
         );
         return deferred.promise;
       };
+      //end of logout function
 
     return {
         login: function (username, password) {

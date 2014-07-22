@@ -28,6 +28,12 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/demo-form.html',
         controller: 'DemoFormCtrl'
       })
+      .when('/error-page', {
+        templateUrl: 'views/error-page.html'
+      })
+      .when('/form-finish', {
+        templateUrl: 'views/form-finish.html'
+      })
       .when('/sign-in', {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
@@ -40,5 +46,3 @@ app.config(function ($routeProvider, $httpProvider) {
         redirectTo: '/'
       });
   });
-
-//app.constant('API_SERVER', ENV.apiEndPoint);

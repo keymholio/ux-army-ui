@@ -20,4 +20,5 @@ app.controller('AuthCtrl', function ($scope, $location, AuthService) {
           $scope.error = 'Username and password required';
         }
       };
+      //end of login function
   });
