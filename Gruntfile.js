@@ -377,7 +377,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            API_SERVER: 'http://ux-army-api.herokuapp.com/api/'
+            API_SERVER: 'http://ux-army-api.herokuapp.com/'
           }
         }
       }
