@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "gzippo": "0.2.0",
-    "express": "2.x"
+    "express": "2.x",
+    "load-grunt-tasks": "~0.2.0"
   },
   "repository": {
     "type": "git",
