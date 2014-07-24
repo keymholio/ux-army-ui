@@ -55,7 +55,7 @@
 
 	        <div class="row filter-row">
 	            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 remove-padding-left">
-	                <strong>Household Income</strong>
+	                <strong>Income</strong>
 	            </div>
 	            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-filter" data-for=".income">
 	                <i class="glyphicon glyphicon-chevron-down text-muted"></i>
@@ -103,13 +103,29 @@
 
 	        <div class="row filter-row">
 	            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 remove-padding-left">
-	                <strong>Education Level</strong>
+	                <strong>Education</strong>
 	            </div>
 	            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-filter" data-for=".education-level">
 	                <i class="glyphicon glyphicon-chevron-down text-muted"></i>
 	            </div>
 	        </div>
 	        <div class="row filter-options education-level">
+	            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+	                <div class="panel panel-primary">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="row filter-row">
+	            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 remove-padding-left">
+	                <strong>Participation Time</strong>
+	            </div>
+	            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 dropdown-filter" data-for=".participation-time">
+	                <i class="glyphicon glyphicon-chevron-down text-muted"></i>
+	            </div>
+	        </div>
+	        <div class="row filter-options education-level participation-time">
 	            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
 	                <div class="panel panel-primary">
 
@@ -124,13 +140,29 @@
 		<h3>Participants</h3>
 		<br />
 	    <div class="row">
-	      	<div ng-repeat="u in users" class="col-md-3 col-xs-6 col-sm-4">
+	    	<div class="col-md-12"><h4>Completed</h4></div>
+	    	<br />
+	      	<div ng-repeat="u in users | filter: {completed_initial: true}" class="col-md-3 col-xs-6 col-sm-4">
 	        	<div class="user-box">
 	          		<img src="./images/default-user.jpg" class="img-thumbnail img-responsive">
 	          
-		          	<div class="user-info">
-		            	<h4 class="user-name">{{u.name}}</h4>
-		            	<h5>previous test</h5>
+		          	<div class="user-info-completed">
+		            	<h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
+		            	<h6 class="user-name">{{u.state}}</h6>
+		          	</div>
+		        </div>
+	        	<hr>
+	      	</div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-md-12"><h4>Incomplete</h4></div>
+	    	<br />
+	      	<div ng-repeat="u in users | filter: {completed_initial: false}" class="col-md-3 col-xs-6 col-sm-4">
+	        	<div class="user-box">
+	          		<img src="./images/default-user.jpg" class="img-thumbnail img-responsive">
+	          
+		          	<div class="user-info-incomplete">
+		            	<h5 class="user-name">{{u.name  | limitTo: 22 }}</h5>
 		          	</div>
 		        </div>
 	        	<hr>

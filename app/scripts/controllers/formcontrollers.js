@@ -38,7 +38,7 @@ app.controller('DemoFormCtrl', function ($scope, $http, ENV){
         $scope.url = window.location;
         $scope.hashed = $scope.url.hash.replace('/','');
         var hashedData = {
-            'hashed': '006feb9674380b43fa531c9accef63e250cd957bb0bf3845d2410c683c9037c7c5890433c3fb1bb0acf740ea0fa49d121c191f8ab776713dc31dca6c9ded0d4f'
+            'hashed': $scope.hashed
           };
 
         $scope.demoFormCheckError = function () {
