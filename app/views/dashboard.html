@@ -140,7 +140,10 @@
 		<h3>Participants</h3>
 		<br />
 	    <div class="row">
-	    	<div class="col-md-12"><h4>Completed</h4></div>
+	    	<div class="col-md-12">
+	    		<h4>Completed</h4>
+	    		<br />
+	    	</div>
 	    	<br />
 	      	<div ng-repeat="u in users | filter: {completed_initial: true}" class="col-md-3 col-xs-6 col-sm-4">
 	        	<div class="user-box">
@@ -155,8 +158,10 @@
 	      	</div>
 	    </div>
 	    <div class="row">
-	    	<div class="col-md-12"><h4>Incomplete</h4></div>
-	    	<br />
+	    	<div class="col-md-12">
+	    		<h4>Incomplete</h4>
+	    		<br />
+	    	</div>
 	      	<div ng-repeat="u in users | filter: {completed_initial: false}" class="col-md-3 col-xs-6 col-sm-4">
 	        	<div class="user-box">
 	          		<img src="./images/default-user.jpg" class="img-thumbnail img-responsive">
