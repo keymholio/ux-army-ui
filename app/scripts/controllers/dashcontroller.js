@@ -35,16 +35,12 @@ app.controller('DashboardCtrl', function ($scope, $http, $location, AuthService)
     var panelsButton = $('.dropdown-filter');
     panels.hide();
 
-    //Click dropdown
     panelsButton.click(function() {
-        //get data-for attribute
         var dataFor = $(this).attr('data-for');
         var idFor = $(dataFor);
 
-        //current button
         var currentButton = $(this);
         idFor.slideToggle(200, function() {
-            //Completed slidetoggle
             if(idFor.is(':visible'))
             {
                 currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
