@@ -29,4 +29,31 @@ app.controller('DashboardCtrl', function ($scope, $http, $location, AuthService)
 	      }
 	    );
 	  };
+
+	$(document).ready(function() {
+    var panels = $('.filter-options');
+    var panelsButton = $('.dropdown-filter');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(200, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        })
+    });
+});
 });
