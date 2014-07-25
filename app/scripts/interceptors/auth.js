@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
+app.factory('AuthInterceptor', ['$rootScope', '$q', '$window', '$location', function ($rootScope, $q, $window, $location){
   return {
     request: function (config) {
       config.headers = config.headers || {};
@@ -22,4 +22,4 @@ app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
       return $q.reject(response);
     }
   };
-});
+}]);

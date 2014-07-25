@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.factory('AuthService', function ($http, $window, $q, ENV) {
+app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $window, $q, ENV){
 
     var authenticate = function (username, password, endpoint) {
         
@@ -61,5 +61,4 @@ app.factory('AuthService', function ($http, $window, $q, ENV) {
           }
 
       };
-
-  });
+  }]);
