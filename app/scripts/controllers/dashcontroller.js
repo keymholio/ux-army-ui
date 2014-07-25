@@ -2,7 +2,8 @@
 
 /*global $, app */
 
-app.controller('DashboardCtrl', function ($scope, $http, $location, AuthService) {
+app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'AuthService', function ($scope, $http, $location, AuthService){
+
 	if (!localStorage.token) {
 		$location.path('/sign-in');
 		return;
@@ -31,25 +32,25 @@ app.controller('DashboardCtrl', function ($scope, $http, $location, AuthService)
 	  };
 
 	$(document).ready(function() {
-    var panels = $('.filter-options');
-    var panelsButton = $('.dropdown-filter');
-    panels.hide();
+	    var panels = $('.filter-options');
+	    var panelsButton = $('.dropdown-filter');
+	    panels.hide();
 
-    panelsButton.click(function() {
-        var dataFor = $(this).attr('data-for');
-        var idFor = $(dataFor);
+	    panelsButton.click(function() {
+	        var dataFor = $(this).attr('data-for');
+	        var idFor = $(dataFor);
 
-        var currentButton = $(this);
-        idFor.slideToggle(200, function() {
-            if(idFor.is(':visible'))
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-            }
-            else
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-            }
-        })
-    });
-});
-});
+	        var currentButton = $(this);
+	        idFor.slideToggle(200, function() {
+	            if(idFor.is(':visible'))
+	            {
+	              currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+	            }
+	            else
+	            {
+	              currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+	            }
+	          });
+	      });
+	  });
+}]);

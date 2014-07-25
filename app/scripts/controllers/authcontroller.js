@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('AuthCtrl', function ($scope, $location, AuthService) {
+app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService){
     $scope.login = function () {
         var username = $scope.loginUsername;
         var password = $scope.loginPassword;
@@ -21,4 +21,4 @@ app.controller('AuthCtrl', function ($scope, $location, AuthService) {
         }
       };
       //end of login function
-  });
+  }]);
