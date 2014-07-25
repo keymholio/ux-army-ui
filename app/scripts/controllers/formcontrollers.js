@@ -3,7 +3,7 @@
 /*global $, app */
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
-  
+
     $scope.postSuccess = function () {
           window.location = '#thank-you';
         };
@@ -26,8 +26,7 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
         //end of submitForm function
   }]);
 
-app.controller('DemoFormCtrl', function ($scope, $http, ENV){
-  
+app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
     $scope.parser = document.createElement('a');
 
     $scope.$watch('url', function () {
@@ -38,7 +37,7 @@ app.controller('DemoFormCtrl', function ($scope, $http, ENV){
         $scope.url = window.location;
         $scope.hashed = $scope.url.hash.replace('/','');
         var hashedData = {
-            'hashed': $scope.hashed
+            'hashed': 'd9e9b3ba2b1ef25ced1437b5bfd7dc7743e8354804ed0794b58ac835fc33c5e1f7268141f86074297acc933b8adb00b86b63d9ff2085a65f366a295676d97f9b'
           };
 
         $scope.demoFormCheckError = function () {
@@ -122,4 +121,4 @@ app.controller('DemoFormCtrl', function ($scope, $http, ENV){
         );
       };
       //end of submitForm function
-  });
+  }]);
