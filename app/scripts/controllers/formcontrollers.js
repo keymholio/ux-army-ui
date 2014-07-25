@@ -2,8 +2,8 @@
 
 /*global $, app */
 
-app.controller('SignupFormCtrl', function ($scope, $http, ENV){
-
+app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
+  
     $scope.postSuccess = function () {
           window.location = '#thank-you';
         };
@@ -24,7 +24,7 @@ app.controller('SignupFormCtrl', function ($scope, $http, ENV){
             );
         };
         //end of submitForm function
-  });
+  }]);
 
 app.controller('DemoFormCtrl', function ($scope, $http, ENV){
   
