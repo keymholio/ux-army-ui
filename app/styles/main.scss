@@ -214,11 +214,26 @@ header {
     border-color: #ffffff;
 }
 
-/* dashboard.html */
+/* participant-profile.html */
 
 .user-profile {
-    width: 300px;
-    height: 300px;
+    min-height: 400px;
+    max-width: 500px;
+    width: 100%;
+    background-color: #cccccc;
+    margin: 0 auto;
+    padding: 15px;
+    overflow: auto; 
+}
+
+.img-profile {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0px;
+    padding: 0px;
+    border: 1px solid #a3a3a3;
 }
 
 
