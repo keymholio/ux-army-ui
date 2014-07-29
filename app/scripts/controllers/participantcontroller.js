@@ -2,20 +2,21 @@
 
 /*global $, app */
 
-app.controller('ParticipantCtrl', ['$scope', '$http', '$location', 'AuthService', function ($scope, $http, $location, AuthService){
+app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams', 'AuthService', function ($scope, $http, $location, $routeParams, AuthService){
 
 	if (!localStorage.token) {
 		$location.path('/sign-in');
 		return;
 	}
+	console.log($routeParams.profileId);
 
 	$scope.token = localStorage.token;
 	$scope.username = localStorage['user.name'];
 
 	var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
 
-	$http.get('http://ux-army-api.herokuapp.com/api/', config).success(function(data) {
-	    $scope.users = data;
+	$http.get('http://ux-army-api.herokuapp.com/api/' + $routeParams.profileId + '/', config).success(function(data) {
+	    $scope.user = data;
 	  }).error(function(data, status) {
 	    alert('get data error!');
 	  });

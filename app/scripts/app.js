@@ -42,7 +42,7 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
-      .when('/participant-profile', {
+      .when('/participant-profile/:profileId', {
         templateUrl: 'views/participant-profile.html',
         controller: 'ParticipantCtrl'
       })
