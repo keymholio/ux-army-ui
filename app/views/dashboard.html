@@ -164,7 +164,7 @@
 	    	</div>
 	      	<div ng-repeat="u in users | filter: {completed_initial: false}" class="col-md-3 col-xs-6 col-sm-4">
 	        	<div class="user-box">
-	          		<img src="./images/default-user.jpg" class="img-thumbnail img-responsive">
+	          		<a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
 	          
 		          	<div class="user-info-incomplete">
 		            	<h5 class="user-name">{{u.name  | limitTo: 22 }}</h5>

@@ -57,6 +57,11 @@ hr {
     border-radius: 0px;
 }
 
+.table > tbody > tr > td {
+    padding: 2px;
+    border-top: 0px solid #dddddd;
+}
+
 
 /* ***** Header ***** */
 
@@ -226,6 +231,13 @@ header {
     overflow: auto; 
 }
 
+.user-profile .col-md-12 > h4, 
+.user-profile .col-sm-12 h4, 
+.user-profile .col-xs-12 h4 {
+    display: inline;
+    margin-right: 10px;
+}
+
 .img-profile {
     width: 100%;
     height: auto;
@@ -236,10 +248,15 @@ header {
     border: 1px solid #a3a3a3;
 }
 
-.profile-field-title {
-    float: left;
-    font-size: 15px;
+.table-profile {
+    margin-top: 15px;
+    border-collapse: separate;
 }
+
+.separator {
+    border-spacing: 0 1em;
+}
+
 
 
 /* ***** Footer ***** */

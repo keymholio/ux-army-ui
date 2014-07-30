@@ -8,24 +8,71 @@
 					<img src="./images/default-user.jpg" class="img-profile img-responsive">
 				</div>
 				<div class="col-md-7 col-sm-7 col-xs-12">
-					<h3>{{user.name}}</h3>
-					Age: {{user.birthYear}}<br />
-					Gender: {{user.gender}}<br />
-					State: {{user.state}}
+					<table class="table">
+                    <tbody>
+                      <tr>
+                        <td><h3>{{user.name}}</h3></td>
+                      </tr>
+                      <tr>
+                        <td><h4>Age:</h4></td>
+                        <td>{{age}}</td>
+                      </tr>
+                      <tr>
+                        <td><h4>Gender:</h4></td>
+                        <td>{{user.gender}}</td>
+                      </tr>
+                      <tr>
+                        <td><h4>State:</h4></td>
+                        <td>{{user.state}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<br />
-					Phone: {{user.phone}}<br />
-					Email: {{user.email}}<br />
-					<br />
-					Job Role: {{user.job}}<br />
-					Income: {{user.income}}<br />
-					<br />
-					Computer Experience: {{user.computerExperience}}<br />
-					Hours Online Per Day: {{user.hoursOnline}}<br />
-					Education Level: {{user.educationLevel}}<br />
-					Employment: {{user.employment}}<br />
-					Good Time for Test: {{user.particip}}
+				  <table class="table table-profile">
+                    <tbody>
+                      <tr>
+                        <td><h4>Phone:</h4></td>
+						<td><a href="tel:{{user.phone}}">{{user.phone}}</a></td>
+					  </tr>
+                      <tr>
+						<td><h4>Email:</h4></td>
+						<td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+					  </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-profile">
+                    <tbody>
+                      <tr>
+						<td><h4>Job Role:</h4></td>
+						<td>{{user.job}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Income:</h4></td>
+						<td>{{user.income}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Computer Experience:</h4></td>
+						<td>{{user.experience}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Hours Online Per Day:</h4></td>
+						<td>{{user.hoursOnline}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Education Level:</h4></td>
+						<td>{{user.educationLevel}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Employment:</h4></td>
+						<td>{{user.employment}}</td>
+					  </tr>
+                      <tr>
+						<td><h4>Good Time for Test:</h4></td>
+						<td>{{user.participateTime}}</td>
+					  </tr>
+                    </tbody>
+                  </table>
 				</div>
 			</div>
 		</div>

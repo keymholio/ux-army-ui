@@ -17,6 +17,14 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
 
 	$http.get('http://ux-army-api.herokuapp.com/api/' + $routeParams.profileId + '/', config).success(function(data) {
 	    $scope.user = data;
+
+	    var currentTime = new Date();
+	    var year = currentTime.getFullYear();
+	    $scope.age = year - $scope.user.birthYear;
+	    if ($scope.user.birthYear == null){
+	    	$scope.age = null;
+	    }
+
 	  }).error(function(data, status) {
 	    alert('get data error!');
 	  });
