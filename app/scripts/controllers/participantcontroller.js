@@ -4,39 +4,43 @@
 
 app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $location, $routeParams, AuthService, ENV){
 
-	if (!localStorage.token) {
-		$location.path('/sign-in');
-		return;
-	}
-	console.log($routeParams.profileId);
+    if (!localStorage.token) {
+      $location.path('/sign-in');
+      return;
+    }
+    console.log($routeParams.profileId);
 
-	$scope.token = localStorage.token;
-	$scope.username = localStorage['user.name'];
+    $scope.token = localStorage.token;
+    $scope.username = localStorage['user.name'];
 
-	var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
+    var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
 
-	$scope.getFormData = function () {
-		$http.get(ENV.API_SERVER + 'api/' + $routeParams.profileId + '/', config).success(function(data) {
+    // get participant data function
+    $scope.getParticipantData = function () {
+        $http.get(ENV.API_SERVER + 'api/' + $routeParams.profileId + '/', config).success(function(data) {
 
-		    $scope.formData = data;
-		    $scope.currentProfileId = $scope.formData.id;
+            $scope.formData = data;
+            $scope.currentProfileId = $scope.formData.id;
 
-		    var currentTime = new Date();
-		    var year = currentTime.getFullYear();
-		    $scope.age = year - $scope.formData.birthYear;
-		    if ($scope.formData.birthYear === null){
-		      $scope.age = null;
-		      return $scope.age;
-		    }
+            // evaluate age by using birthYear
+            var currentTime = new Date();
+            var year = currentTime.getFullYear();
+            $scope.age = year - $scope.formData.birthYear;
+            if ($scope.formData.birthYear === null){
+              $scope.age = null;
+              return $scope.age;
+            }
 
-		  }).error(function(data, status) {
-		    alert('get data error!');
-		  });
-	}
+          }).error(function(data, status) {
+            alert('User does not exist!');
+          });
+      };
+    // end of getParticipantData function
 
-	$scope.getFormData();
-	
-	$http.get(ENV.API_SERVER + 'choices/').success(function (data) {
+    $scope.getParticipantData();
+    
+    // get form choices
+    $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
           $scope.genderChoices = data.genderChoices;
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
@@ -50,7 +54,8 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
         }
       );
   
-    $scope.submitForm = function () {
+    // submit edit form (in modal) function
+    $scope.submitEditForm = function () {
 
         $http({
             url: ENV.API_SERVER + 'api/' + $scope.currentProfileId + '/',
@@ -60,20 +65,20 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           success(function (response) {
               $scope.formResponse = response;
               $('#editModal').modal('hide');
-              $scope.getFormData();
+              $scope.getParticipantData();
             }
         );
       };
-      //end of submitForm function
+      //end of submitEditForm function
 
-	$scope.logout = function () {
-	    AuthService.logout().then(
-	      function () {
-	        $location.path('/sign-in');
-	      },
-	      function (error) {
-	        $scope.error = error;
-	      }
-	    );
-	  };
-}]);
+    $scope.logout = function () {
+        AuthService.logout().then(
+          function () {
+            $location.path('/sign-in');
+          },
+          function (error) {
+            $scope.error = error;
+          }
+        );
+      };
+  }]);

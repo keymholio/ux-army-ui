@@ -14,7 +14,7 @@
 			<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 			  	<div class="modal-dialog">
 				    <div class="modal-content">
-				    	<form name="demoForm" novalidate ng-submit="submitForm()">
+				    	<form name="demoForm" novalidate ng-submit="submitEditForm()">
 				    		<div class="modal-header">
 				    			<button type="button" class="close" data-dismiss="modal">
 				    				<span aria-hidden="true">&times;</span>
@@ -46,9 +46,9 @@
 							        	<span ng-show="demoForm.userPhone.$error.required">
 							        		User phone is required.
 							        	</span>
-							          	<span ng-show="demoForm.userPhone.$error.pattern">
-							          		User phone doesn't respect the pattern.
-							          	</span>
+							          <span ng-show="demoForm.userPhone.$error.pattern">
+							          	User phone doesn't respect the pattern.
+							          </span>
 							        </div>
 
 							        <div class="form-group">

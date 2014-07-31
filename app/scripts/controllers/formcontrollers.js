@@ -8,7 +8,8 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
           window.location = '#thank-you';
         };
 
-    $scope.submitForm = function () {
+    // submit sign up form function
+    $scope.submitSignUpForm = function () {
           var formName = $('#main-form-name').val();
           var formEmail = $('#main-form-email').val();
 
@@ -23,7 +24,7 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
                 }
             );
         };
-        //end of submitForm function
+        //end of submitSignUpForm function
   }]);
 
 app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
@@ -33,16 +34,19 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           $scope.parser.href = $scope.url;
         });
 
-    $scope.init = function () {
+    // get participant data function (name, email, id via hashed link)
+    $scope.getParticipantData = function () {
         $scope.url = window.location;
         $scope.hashed = $scope.url.hash.replace('#/demo-form#','');
         var hashedData = {
             'hashed': $scope.hashed
           };
 
+        // demo form check error function
         $scope.demoFormCheckError = function () {
             window.location = '#error-page';
           };
+        //end of demoFormCheckError function
 
         $http({
             url: ENV.API_SERVER + 'demo-form-check/',
@@ -60,8 +64,11 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
             }
         );
       };
-      //end of init function
+      //end of getParticipantData function
 
+    $scope.getParticipantData();
+
+    // get form choices
     $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
           $scope.genderChoices = data.genderChoices;
           $scope.birthYearChoices = data.birthYearChoices;
@@ -80,7 +87,8 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
         window.location = '#thank-you';
       };
   
-    $scope.submitForm = function () {
+    // submit demo form function
+    $scope.submitDemoForm = function () {
 
         $http({
             url: ENV.API_SERVER + 'api/' + $scope.checkedId + '/',
@@ -93,5 +101,5 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
             }
         );
       };
-      //end of submitForm function
+      //end of submitDemoForm function
   }]);
