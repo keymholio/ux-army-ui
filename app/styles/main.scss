@@ -221,6 +221,13 @@ header {
 
 /* participant-profile.html */
 
+.user-profile-header {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: right;
+}
+
 .user-profile {
     min-height: 400px;
     max-width: 500px;

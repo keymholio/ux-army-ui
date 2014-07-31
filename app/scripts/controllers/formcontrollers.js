@@ -79,40 +79,13 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
     $scope.postSuccess = function () {
         window.location = '#thank-you';
       };
-
-    $scope.handleGender = function () {
-        $('[name="gender"]').each(function ()
-          {
-            if (this.checked) {
-              localStorage.gender = this.value;
-            }
-          }
-        );
-    
-        return localStorage.gender;
-      };
   
     $scope.submitForm = function () {
-        var formData = {
-          'name': $('#demoFormName').val(),
-          'email': $('#demoFormEmail').val(),
-          'phone': $('#demoFormPhone').val(),
-          'gender': $scope.handleGender(),
-          'birthYear': $('#demoFormBirthYear').val(),
-          'state': $('#demoFormState').val(),
-          'job': $('#demoFormJob').val(),
-          'employment': $('#demoFormEmployment').val(),
-          'income': $('#demoFormIncome').val(),
-          'experience': $('#demoFormExperience').val(),
-          'hoursOnline': $('#demoFormHoursOnline').val(),
-          'educationLevel': $('#demoFormEducationLevel').val(),
-          'participateTime': $('#demoFormParticipateTime').val()
-        };
 
         $http({
             url: ENV.API_SERVER + 'api/' + $scope.checkedId + '/',
             method: 'PUT',
-            data : formData
+            data : $scope.formData
           }).
           success(function (response) {
               $scope.formResponse = response;
