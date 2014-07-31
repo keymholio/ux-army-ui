@@ -59,6 +59,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           }).
           success(function (response) {
               $scope.formResponse = response;
+              $('#editModal').modal('hide');
               $scope.getFormData();
             }
         );
