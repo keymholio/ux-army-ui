@@ -65,11 +65,20 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           success(function (response) {
               $scope.formResponse = response;
               $('#editModal').modal('hide');
+              $('.modal-backdrop').remove();
               $scope.getParticipantData();
             }
-        );
+          );
       };
       //end of submitEditForm function
+
+    $scope.deleteUser = function () {
+      $http.delete(ENV.API_SERVER + 'api/' + $scope.currentProfileId + '/').success(function () {
+        $('#deleteModal').modal('hide');
+        $('.modal-backdrop').remove();
+        $location.path('/dashboard');
+      });
+    };
 
     $scope.logout = function () {
         AuthService.logout().then(

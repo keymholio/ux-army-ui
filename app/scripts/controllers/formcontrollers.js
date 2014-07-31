@@ -67,7 +67,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
       //end of getParticipantData function
 
     $scope.getParticipantData();
-
+    
     // get form choices
     $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
           $scope.genderChoices = data.genderChoices;
