@@ -43,14 +43,18 @@ hr {
     padding-left: 0px;
 }
 
+.add-margin {
+    margin-bottom: 25px;
+}
+
 .form-group { 
     margin-bottom: 25px; 
 }
 
 .form-group label {
     display: inline-block;
-    margin-bottom: 8px;        
-    font-weight: normal;
+    margin-bottom: 8px;
+    font-weight: 700;
     color: #595A5C;
 }
   
@@ -103,8 +107,12 @@ header {
     margin-bottom: 30px;
 }
 
-.custom-error {
-    color:#A94442;
+.custom-error-warning {
+    color: #8A6D3B;
+}
+
+.custom-error-remove {
+    color: #A94442;
 }
 
 .has-feedback .form-control-feedback {
@@ -125,7 +133,7 @@ header {
 }
 
 .glyphicon {
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
 /* main.html */   
@@ -147,7 +155,7 @@ header {
     
 /* demo-form.html */
 .demo-form { 
-    max-width: 650px; 
+    max-width: 720px; 
     margin: 0 auto; 
 }
 
@@ -157,7 +165,11 @@ header {
 
 #demo-form-birth { 
     max-width: 84px; 
-}        
+} 
+
+#gender-label {
+    font-weight: normal;
+}       
 
 /* thank-you.html */
 .section-ty { 

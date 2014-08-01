@@ -4,6 +4,7 @@
 
 app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'AuthService', function ($scope, $http, $location, AuthService){
 
+	// if user is not signed in, redirect to sign in
 	if (!localStorage.token) {
 		$location.path('/sign-in');
 		return;

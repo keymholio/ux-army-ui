@@ -4,11 +4,11 @@
 
 app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $location, $routeParams, AuthService, ENV){
 
+    // if user is not signed in, redirect to sign in
     if (!localStorage.token) {
       $location.path('/sign-in');
       return;
     }
-    console.log($routeParams.profileId);
 
     $scope.token = localStorage.token;
     $scope.username = localStorage['user.name'];
@@ -33,6 +33,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
 
           }).error(function(data, status) {
             alert('User does not exist!');
+            $location.path('/dashboard');
           });
       };
     // end of getParticipantData function
@@ -90,4 +91,9 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           }
         );
       };
+
+    // modal error fix when back button is pressed
+    $(window).on('hashchange', function() {
+      $('.modal-backdrop').remove();  
+    });
   }]);
