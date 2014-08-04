@@ -17,7 +17,7 @@
           </div>
           <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           </div>
           <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
           </div>
           <div id="collapse3" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
           </div>
           <div id="collapse4" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="panel-title">
-              <span>Computers Experience</span>
+              <span>Computer Experience</span>
               <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" href="">
                 <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
               </a>
@@ -81,7 +81,7 @@
           </div>
           <div id="collapse5" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
           </div>
           <div id="collapse6" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@
           </div>
           <div id="collapse7" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@
           </div>
           <div id="collapse8" class="panel-collapse collapse">
             <div class="panel-body">
-              
+
             </div>
           </div>
         </div>
@@ -155,13 +155,13 @@
       <div ng-repeat="u in users | filter: {completed_initial: true}" class="col-md-3 col-xs-6 col-sm-4">
         <div class="user-box">
           <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
-              
+
           <div class="user-info-completed">
             <h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
             <h6 class="user-name">{{u.state}}</h6>
           </div>
         </div>
-          
+
         <hr>
       </div>
     </div>
@@ -173,7 +173,7 @@
       <div ng-repeat="u in users | filter: {completed_initial: false}" class="col-md-3 col-xs-6 col-sm-4">
         <div class="user-box">
           <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
-              
+
           <div class="user-info-incomplete">
             <h5 class="user-name">{{u.name  | limitTo: 22 }}</h5>
           </div>
