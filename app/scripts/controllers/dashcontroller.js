@@ -31,27 +31,4 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'AuthService', 
 	      }
 	    );
 	  };
-
-	$(document).ready(function() {
-	    var panels = $('.filter-options');
-	    var panelsButton = $('.dropdown-filter');
-	    panels.hide();
-
-	    panelsButton.click(function() {
-	        var dataFor = $(this).attr('data-for');
-	        var idFor = $(dataFor);
-
-	        var currentButton = $(this);
-	        idFor.slideToggle(200, function() {
-	            if(idFor.is(':visible'))
-	            {
-	              currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-	            }
-	            else
-	            {
-	              currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-	            }
-	          });
-	      });
-	  });
 }]);
