@@ -8,7 +8,6 @@ var app = angular.module('uxArmyUiApp', [
   'ngSanitize',
   'ngRoute',
   'header-directives',
-  'infiniteScroll-directive',
   'config'
 ]);
 
