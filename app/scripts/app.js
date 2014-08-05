@@ -8,6 +8,7 @@ var app = angular.module('uxArmyUiApp', [
   'ngSanitize',
   'ngRoute',
   'header-directives',
+  'infiniteScroll-directive',
   'config'
 ]);
 
@@ -38,7 +39,7 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
       })
-      .when('/dashboard', {
+      .when('/dashboard/', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })

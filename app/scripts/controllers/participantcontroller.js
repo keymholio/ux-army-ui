@@ -94,6 +94,6 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
 
     // modal error fix when back button is pressed
     $(window).on('hashchange', function() {
-      $('.modal-backdrop').remove();  
+      $('.modal-backdrop').remove();
     });
   }]);

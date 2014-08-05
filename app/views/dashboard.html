@@ -138,7 +138,7 @@
     <br />
   </div>
   
-  <div class="col-md-9 col-sm-9">
+  <div class="col-md-9 col-sm-9" infinite-scroll="nextPage()">
     <h3>Participants</h3>
 
     <br />
@@ -151,7 +151,7 @@
 
       <br />
 
-      <div ng-repeat="u in users | filter: {completed_initial: true}" class="col-md-3 col-xs-6 col-sm-4">
+      <div ng-repeat="u in users" class="col-md-3 col-xs-6 col-sm-4">
         <div class="user-box">
           <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
 
@@ -161,22 +161,6 @@
           </div>
         </div>
 
-        <hr>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Incomplete</h4>
-        <br />
-      </div>
-      <div ng-repeat="u in users | filter: {completed_initial: false}" class="col-md-3 col-xs-6 col-sm-4">
-        <div class="user-box">
-          <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
-
-          <div class="user-info-incomplete">
-            <h5 class="user-name">{{u.name  | limitTo: 22 }}</h5>
-          </div>
-        </div>
         <hr>
       </div>
     </div>
