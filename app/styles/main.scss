@@ -148,9 +148,29 @@ header {
     padding: 40px 50px;
 }
 
+.main-form .form-group {
+    margin-bottom: 15px;
+}
+
 /* sign-in.html */   
-.section-si { 
+.section-signin { 
     margin-top: 4%; 
+}
+
+.signin-form { 
+    max-width: 420px; 
+    margin: 0 auto; 
+    background-color: #f1f1f1;
+    padding: 40px 50px;
+}
+
+.section-signin .form-group {
+    margin-bottom: 15px;
+}
+
+.login-error {
+    color: #A94442;
+    margin-bottom: 15px;
 }
     
 /* demo-form.html */
