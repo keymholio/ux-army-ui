@@ -4,13 +4,18 @@
 
 app.directive('infiniteScroll', function ($window) {
   return {
-    link: function (scope, element, attr) {
+    link: function (scope, element, attrs) {
+      var elementBottom, windowBottom;
       $window = angular.element($window);
-      $window.bind('scroll', function () {
-        if ($window.scrollTop() + $window.height() >= element.offset().top + element.innerHeight()) {
-          scope.$apply(attr.infiniteScroll);
+      $window.bind('scroll', function() {
+        windowBottom = $window.height() + $window.scrollTop();
+        elementBottom = element.offset().top + element.innerHeight();
+        if (windowBottom == $(document).height()) {
+          scope.$apply(attrs.infiniteScroll);
+
         }
       });
+
     }
   };
 });
