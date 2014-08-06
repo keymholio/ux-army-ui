@@ -1,5 +1,7 @@
 'use strict';
 
+/*global $, app */
+
 //var app = angular.module('infiniteScroll-directive', []);
 
 app.directive('infiniteScroll', function ($window) {

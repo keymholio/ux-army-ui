@@ -6,8 +6,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // if user is not signed in, redirect to sign in
     if (!localStorage.token) {
-        $location.path('/sign-in');
-        return;
+      $location.path('/sign-in');
+      return;
     }
 
     $scope.token = localStorage.token;
@@ -26,7 +26,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         
         $http({
           method: 'GET',
-          url: ENV.API_SERVER + 'api/?page=' + page  
+          url: ENV.API_SERVER + 'api/?page=' + page
         }).success(function(data) {
           $scope.users = $scope.users.concat(data.results);
           $scope.total = data.count;
@@ -34,14 +34,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.totalShown = $scope.page * 24;
           $scope.isShownMoreThanTotal();
         });
-    };
+      };
 
     $scope.nextPage = function () {
         if (!$scope.populating && $scope.more) {
-            $scope.page = $scope.page + 1;
-            $scope.populate($scope.page);
+          $scope.page = $scope.page + 1;
+          $scope.populate($scope.page);
         }
-    };
+      };
 
     $scope.isShownMoreThanTotal = function () {
       // shows and hides "show more" button

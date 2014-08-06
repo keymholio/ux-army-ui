@@ -10,13 +10,11 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
 
     // submit sign up form function
     $scope.submitSignUpForm = function () {
-          var formName = $('#main-form-name').val();
-          var formEmail = $('#main-form-email').val();
-
+          
           $http({
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
-            data: { 'name':formName, 'email':formEmail }
+            data: $scope.formData
           }).success(function (response)
                 {
                   $scope.formResponse = response;
