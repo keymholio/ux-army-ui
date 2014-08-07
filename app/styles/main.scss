@@ -222,6 +222,12 @@ header {
 }
 
 /* dashboard.html */
+
+.filter-group {
+    margin-right: 15px;
+    margin-top: 28px;
+}
+
 .user-box {
     background-color: #ffffff;
 }
@@ -236,14 +242,10 @@ header {
     border: 1px solid #a3a3a3;
 }
 
-.user-info-completed {
+.user-info {
     padding: 10px 8px;
     min-height: 85px;
-}
-
-.user-info-incomplete {
-    padding: 10px 8px;
-    min-height: 60px;
+    background-color: whitesmoke;
 }
 
 .user-name {
@@ -290,7 +292,6 @@ header {
     min-height: 400px;
     max-width: 500px;
     width: 100%;
-    background-color: #cccccc;
     margin: 0 auto;
     padding: 15px;
     overflow: auto; 

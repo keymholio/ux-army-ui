@@ -4,7 +4,7 @@
   <div class="col-md-3 col-sm-3">
     <h3>Filters</h3>
 
-    <div class="panel-group" id="accordion">
+    <div class="panel-group filter-group" id="accordion">
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -143,7 +143,7 @@
 
     <br />
 
-    <div class="row">
+    <div class="well row">
       <div class="col-md-12">
         <h4>Completed</h4>
         <br />
@@ -155,7 +155,7 @@
         <div class="user-box">
           <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
 
-          <div class="user-info-completed">
+          <div class="user-info">
             <h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
             <h6 class="user-name">{{u.state}}</h6>
           </div>

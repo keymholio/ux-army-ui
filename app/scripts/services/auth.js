@@ -45,7 +45,10 @@ app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $w
             deferred.resolve();
           },
           function (error) {
-            deferred.reject(error.data.error);
+            $window.localStorage.removeItem('token');
+            $window.localStorage.removeItem('username');
+            deferred.resolve();
+            // deferred.reject(error.data.error);
           }
         );
         return deferred.promise;
