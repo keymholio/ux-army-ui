@@ -365,9 +365,14 @@ header {
 
 /* ***** Media Queries ***** */
 
-@media screen and (min-width: 768px){
-    .accordion-heading {
-        display: none;
+@media screen and (max-width: 768px){
+    .navbar-header {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        margin: auto;
     }
 }
 
