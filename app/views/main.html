@@ -1,26 +1,22 @@
-<header-init></header-init>
+<header-default></header-default>
 
 <div class="container">
-    <div class="section-main">
-        
-        <div class="main-form">
-            <h1 align="center" class="form-title">User Experience Labs</h1>
-            <form ng-submit="submitForm()">
+  <div id="section-main">
+    <div id="main-form">
+      <h1 align="center" class="form-title">User Experience Labs</h1>
 
-                <div class="form-group">
-                    <input type="name" class="form-control input-lg" id="main-form-name" placeholder="Name" maxlength="25" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="email" class="form-control input-lg" id="main-form-email" placeholder="Email" maxlength="45" required>
-                </div>
-
-                <div class="centered">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up">
-                </div>
-                <br />
-
-            </form>
-        </div>    
+      <form ng-submit="submitSignUpForm()">
+        <div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="formData.name" placeholder="Name" maxlength="25" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="Email" maxlength="45" required>
+        </div>
+        <div class="centered">
+          <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up">
+        </div>
+        <br />
+      </form>
     </div>
+  </div>
 </div>

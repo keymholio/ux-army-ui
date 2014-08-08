@@ -4,17 +4,10 @@
 
 var app = angular.module('header-directives', []);
 
-app.directive('headerInit', function () {
+app.directive('headerDefault', function () {
   return {
     restrict: 'E',
-    templateUrl: 'views/headers/header-init.html'
-  };
-});
-
-app.directive('headerSignin', function () {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/headers/header-signin.html'
+    templateUrl: 'views/headers/header-default.html'
   };
 });
 

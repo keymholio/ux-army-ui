@@ -38,9 +38,13 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
       })
-      .when('/dashboard', {
+      .when('/dashboard/', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
+      })
+      .when('/participant-profile/:profileId', {
+        templateUrl: 'views/participant-profile.html',
+        controller: 'ParticipantCtrl'
       })
       .otherwise({
         redirectTo: '/'

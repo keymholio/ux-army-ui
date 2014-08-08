@@ -1,25 +1,161 @@
 <header-post></header-post>
 
 <div class="container">
-	<div class="col-md-2 col-sm-2">
-	    <h3>Filters</h3>
-	    <br />
-	</div>
-	<div class="col-md-10 col-sm-10">
-		<h3>Participants</h3>
-		<br />
-	    <div class="row">
-	      	<div ng-repeat="u in users" class="col-md-3 col-xs-6 col-sm-4">
-	        	<div class="user-box">
-	          		<img src="" class="img-thumbnail img-responsive">
-	          
-		          	<div class="user-info">
-		            	<h4 class="user-name">{{u.name}}</h4>
-		            	<h5>previous test</h5>
-		          	</div>
-		        </div>
-	        	<hr>
-	      	</div>
-	    </div>
-	</div>
+  <div class="col-md-3 col-sm-4">
+    <h3>Filters</h3>
+
+    <div class="panel-group filter-group" id="accordion2">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>State</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Job Role</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Employment</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Income</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Computer Experience</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Hours Online</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse6" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Education</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse7" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <span>Participation Time</span>
+            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse8" href="">
+              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+            </a>
+          </div>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse">
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br />
+  </div>
+
+  <div class="col-md-9 col-sm-8" infinite-scroll="nextPage()">
+    <h3>Participants</h3>
+
+    <br />
+
+    <div class="well row user-group">
+      <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12">
+        <div>
+          <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
+
+          <div class="user-info">
+            <h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
+            <h6 class="user-name">{{u.state}}</h6>
+          </div>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
 </div>

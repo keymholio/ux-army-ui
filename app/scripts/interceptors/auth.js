@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
+app.factory('AuthInterceptor', ['$rootScope', '$q', '$window', '$location', function ($rootScope, $q, $window, $location){
   return {
     request: function (config) {
       config.headers = config.headers || {};
@@ -13,7 +13,7 @@ app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
     },
 
     responseError: function (response) {
-      if (response.status === 401 || response.status === 403) {
+      if (response.status === 401) {// || response.status === 403) {
         $window.localStorage.removeItem('token');
         $window.localStorage.removeItem('user.name');
         $location.path('/sign-in');
@@ -22,4 +22,4 @@ app.factory('AuthInterceptor', function ($rootScope, $q, $window, $location) {
       return $q.reject(response);
     }
   };
-});
+}]);

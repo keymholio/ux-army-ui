@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.factory('AuthService', function ($http, $window, $q, ENV) {
+app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $window, $q, ENV){
 
     var authenticate = function (username, password, endpoint) {
         
@@ -45,7 +45,10 @@ app.factory('AuthService', function ($http, $window, $q, ENV) {
             deferred.resolve();
           },
           function (error) {
-            deferred.reject(error.data.error);
+            $window.localStorage.removeItem('token');
+            $window.localStorage.removeItem('username');
+            deferred.resolve();
+            // deferred.reject(error.data.error);
           }
         );
         return deferred.promise;
@@ -61,5 +64,4 @@ app.factory('AuthService', function ($http, $window, $q, ENV) {
           }
 
       };
-
-  });
+  }]);
