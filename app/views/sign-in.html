@@ -1,8 +1,8 @@
 <header-default></header-default>
 
 <div class="container">
-  <div class="section-signin">
-    <div class="signin-form">
+  <div id="section-signin">
+    <div id="signin-form">
       <h1 align="center" class="form-title">Sign In</h1>
 
       <form ng-submit="login()">
@@ -12,7 +12,7 @@
         <div class="form-group">
           <input type="password" class="form-control input-lg" ng-model="loginPassword" placeholder="Password" maxlength="25" required>
         </div>
-        <p ng-show="loginError" class="login-error">{{ loginError }}</p>
+        <p ng-show="loginError" class="display-error">{{ loginError }}</p>
         <div class="centered">
           <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
         </div>

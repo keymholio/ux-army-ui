@@ -47,35 +47,6 @@ hr {
     margin-bottom: 25px;
 }
 
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: inline-block;
-    margin-bottom: 8px;
-    font-weight: 700;
-    color: #595A5C;
-}
-
-.input-lg {
-    border-radius: 0px;
-}
-
-.btn-primary, .btn-default {
-    border-radius: 2px;
-}
-
-.table > tbody > tr > td {
-    padding: 2px;
-    border-top: 0px solid #dddddd;
-}
-
-.help-block {
-    margin-top: 0px;
-    margin-bottom: 25px;
-}
-
 
 /* ***** Header ***** */
 
@@ -89,11 +60,6 @@ header {
     border-color: #ffffff;
 }
 
-#logo img {
-    max-width: 14em;
-    height: auto;
-}
-
 .header-username {
     margin: 21px 15px;
 }
@@ -101,10 +67,29 @@ header {
 
 /* ***** Pages ***** */
 
+.btn-primary, .btn-default, .input-lg {
+    border-radius: 0px;
+}
+
+.well {
+    border-radius: 0px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
+}
+
 .form-title {
     font-size: 26px;
     margin-top: 0px;
     margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #595A5C;
 }
 
 .custom-error-warning {
@@ -136,40 +121,40 @@ header {
     margin-right: 2px;
 }
 
+.display-error {
+    color: #A94442;
+    margin-bottom: 15px;
+}
+
 /* main.html */
-.section-main {
+#section-main {
     margin-top: 4%;
 }
 
-.main-form {
+#main-form {
     max-width: 420px;
     margin: 0 auto;
     background-color: #f1f1f1;
     padding: 40px 50px;
 }
 
-.main-form .form-group {
+#main-form .form-group {
     margin-bottom: 15px;
 }
 
 /* sign-in.html */
-.section-signin {
+#section-signin {
     margin-top: 4%;
 }
 
-.signin-form {
+#signin-form {
     max-width: 420px;
     margin: 0 auto;
     background-color: #f1f1f1;
     padding: 40px 50px;
 }
 
-.section-signin .form-group {
-    margin-bottom: 15px;
-}
-
-.login-error {
-    color: #A94442;
+#section-signin .form-group {
     margin-bottom: 15px;
 }
 
@@ -185,6 +170,11 @@ header {
 
 #demo-form-birth {
     max-width: 84px;
+}
+
+#phone-help-block {
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 
 #gender-label {
@@ -238,10 +228,10 @@ header {
     height: auto;
     margin: 0 auto;
     display: block;
-    border-radius: 4px;
+    border-radius: 0px;
     padding: 0px;
     border: 1px solid #cccccc;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
 }
 
 .user-info {
@@ -282,6 +272,11 @@ header {
 }
 
 /* participant-profile.html */
+
+.table > tbody > tr > td {
+    padding: 2px;
+    border-top: 0px solid #dddddd;
+}
 
 .user-profile-header {
     max-width: 500px;
