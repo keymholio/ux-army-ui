@@ -159,12 +159,12 @@ header {
 }
 
 /* demo-form.html */
-.demo-form {
+#demo-form {
     max-width: 620px;
     margin: 0 auto;
 }
 
-.demo-form select {
+#demo-form select {
     max-width: 300px;
 }
 
@@ -182,32 +182,32 @@ header {
 }
 
 /* thank-you.html */
-.section-ty {
+#section-ty {
     margin-top: 10%;
     text-align: center;
 }
 
-.section-ty h1 {
+#section-ty h1 {
     font-size: 4em;
 }
 
 /* form-finish.html */
-.section-ff {
+#section-ff {
     margin-top: 10%;
     text-align: center;
 }
 
-.section-ff h1 {
+#section-ff h1 {
     font-size: 4em;
 }
 
 /* error-page.html */
-.section-ep {
+#section-ep {
     margin-top: 10%;
     text-align: center;
 }
 
-.section-ep h1 {
+#section-ep h1 {
     font-size: 4em;
 }
 
