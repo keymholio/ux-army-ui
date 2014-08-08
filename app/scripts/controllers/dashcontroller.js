@@ -23,7 +23,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.users = [];
 
     $scope.populate = function (page) {
-        
+
         $http({
           method: 'GET',
           url: ENV.API_SERVER + 'api/?page=' + page

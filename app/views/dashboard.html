@@ -1,10 +1,10 @@
 <header-post></header-post>
 
 <div class="container">
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-3 col-sm-4">
     <h3>Filters</h3>
 
-    <div class="panel-group filter-group" id="accordion">
+    <div class="panel-group filter-group" id="accordion2">
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -137,22 +137,15 @@
     </div>
     <br />
   </div>
-  
-  <div class="col-md-9 col-sm-9" infinite-scroll="nextPage()">
+
+  <div class="col-md-9 col-sm-8" infinite-scroll="nextPage()">
     <h3>Participants</h3>
 
     <br />
 
-    <div class="well row">
-      <div class="col-md-12">
-        <h4>Completed</h4>
-        <br />
-      </div>
-
-      <br />
-
+    <div class="well row user-group">
       <div ng-repeat="u in users" class="col-md-3 col-xs-6 col-sm-4">
-        <div class="user-box">
+        <div>
           <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
 
           <div class="user-info">

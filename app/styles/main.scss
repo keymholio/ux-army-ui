@@ -10,13 +10,13 @@ html {
     min-height: 100%;
 }
 
-body { 
-    padding-top: 20px; 
-    padding-bottom: 20px; 
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.body { 
-    margin-bottom: 60px; 
+.body {
+    margin-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -30,7 +30,7 @@ hr {
     border-top: 0px solid #ffffff;
 }
 
-.centered { 
+.centered {
     text-align: center;
 }
 
@@ -47,8 +47,8 @@ hr {
     margin-bottom: 25px;
 }
 
-.form-group { 
-    margin-bottom: 25px; 
+.form-group {
+    margin-bottom: 25px;
 }
 
 .form-group label {
@@ -57,13 +57,13 @@ hr {
     font-weight: 700;
     color: #595A5C;
 }
-  
+
 .input-lg {
     border-radius: 0px;
 }
 
-.btn-primary {
-    border-radius: 0px;
+.btn-primary, .btn-default {
+    border-radius: 2px;
 }
 
 .table > tbody > tr > td {
@@ -79,19 +79,19 @@ hr {
 
 /* ***** Header ***** */
 
-header { 
-    margin-bottom: 30px; 
+header {
+    margin-bottom: 30px;
 }
 
 /* Navbar */
-.navbar-default { 
-    background-color: #ffffff; 
-    border-color: #ffffff; 
+.navbar-default {
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
-#logo img { 
-    max-width: 14em; 
-    height: auto; 
+#logo img {
+    max-width: 14em;
+    height: auto;
 }
 
 .header-username {
@@ -136,14 +136,14 @@ header {
     margin-right: 2px;
 }
 
-/* main.html */   
-.section-main { 
-    margin-top: 4%; 
+/* main.html */
+.section-main {
+    margin-top: 4%;
 }
 
-.main-form { 
-    max-width: 420px; 
-    margin: 0 auto; 
+.main-form {
+    max-width: 420px;
+    margin: 0 auto;
     background-color: #f1f1f1;
     padding: 40px 50px;
 }
@@ -152,14 +152,14 @@ header {
     margin-bottom: 15px;
 }
 
-/* sign-in.html */   
-.section-signin { 
-    margin-top: 4%; 
+/* sign-in.html */
+.section-signin {
+    margin-top: 4%;
 }
 
-.signin-form { 
-    max-width: 420px; 
-    margin: 0 auto; 
+.signin-form {
+    max-width: 420px;
+    margin: 0 auto;
     background-color: #f1f1f1;
     padding: 40px 50px;
 }
@@ -172,53 +172,53 @@ header {
     color: #A94442;
     margin-bottom: 15px;
 }
-    
+
 /* demo-form.html */
-.demo-form { 
-    max-width: 620px; 
-    margin: 0 auto; 
+.demo-form {
+    max-width: 620px;
+    margin: 0 auto;
 }
 
-.demo-form select { 
-    max-width: 300px; 
+.demo-form select {
+    max-width: 300px;
 }
 
-#demo-form-birth { 
-    max-width: 84px; 
-} 
+#demo-form-birth {
+    max-width: 84px;
+}
 
 #gender-label {
     font-weight: normal;
-}       
-
-/* thank-you.html */
-.section-ty { 
-    margin-top: 10%; 
-    text-align: center; 
 }
 
-.section-ty h1 {  
-    font-size: 4em; 
+/* thank-you.html */
+.section-ty {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.section-ty h1 {
+    font-size: 4em;
 }
 
 /* form-finish.html */
-.section-ff { 
-    margin-top: 10%; 
-    text-align: center; 
+.section-ff {
+    margin-top: 10%;
+    text-align: center;
 }
 
-.section-ff h1 {  
-    font-size: 4em; 
+.section-ff h1 {
+    font-size: 4em;
 }
 
 /* error-page.html */
-.section-ep { 
-    margin-top: 10%; 
-    text-align: center; 
+.section-ep {
+    margin-top: 10%;
+    text-align: center;
 }
 
-.section-ep h1 {  
-    font-size: 4em; 
+.section-ep h1 {
+    font-size: 4em;
 }
 
 /* dashboard.html */
@@ -228,8 +228,9 @@ header {
     margin-top: 28px;
 }
 
-.user-box {
-    background-color: #ffffff;
+.user-group {
+    margin: 0px 0 20px 0;
+    padding: 25px 10px 0 10px;
 }
 
 .img-thumbnail {
@@ -237,9 +238,10 @@ header {
     height: auto;
     margin: 0 auto;
     display: block;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 0px;
-    border: 1px solid #a3a3a3;
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .user-info {
@@ -294,11 +296,11 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 15px;
-    overflow: auto; 
+    overflow: auto;
 }
 
-.user-profile .col-md-12 > h4, 
-.user-profile .col-sm-12 h4, 
+.user-profile .col-md-12 > h4,
+.user-profile .col-sm-12 h4,
 .user-profile .col-xs-12 h4 {
     display: inline;
     margin-right: 10px;
@@ -328,21 +330,21 @@ header {
 /* ***** Footer ***** */
 
 #footer {
-    position: absolute; 
+    position: absolute;
     bottom: 0;
-    width: 100%; 
+    width: 100%;
     height: 60px;
 }
 
-.footer-nav { 
-    margin: 20px 0; 
-    text-align: center; 
-    padding-left: 0px; 
+.footer-nav {
+    margin: 20px 0;
+    text-align: center;
+    padding-left: 0px;
 }
 
 .footer-nav {
-    ol { 
-        margin: 0px; padding: 0px; 
+    ol {
+        margin: 0px; padding: 0px;
     }
 
     li {
@@ -351,21 +353,27 @@ header {
         margin: 0 8px 0 8px;
     }
 
-    a { 
-        color: #999999; 
+    a {
+        color: #999999;
     }
 
-    a:hover { 
-        text-decoration: none; color: #666666; 
+    a:hover {
+        text-decoration: none; color: #666666;
     }
 }
 
 
 /* ***** Media Queries ***** */
 
+@media screen and (min-width: 768px){
+    .accordion-heading {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 490px){
-    .section-main h1, .section-ty h1 { 
-        font-size: 2em; 
-        margin-bottom: 30px; 
+    .section-main h1, .section-ty h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
     }
 }
