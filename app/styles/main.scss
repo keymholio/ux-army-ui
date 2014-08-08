@@ -121,6 +121,15 @@ header {
     margin-right: 2px;
 }
 
+.alert-content {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.alert-content h1 {
+    font-size: 4em;
+}
+
 .display-error {
     color: #A94442;
     margin-bottom: 15px;
@@ -179,36 +188,6 @@ header {
 
 #gender-label {
     font-weight: normal;
-}
-
-/* thank-you.html */
-#section-ty {
-    margin-top: 10%;
-    text-align: center;
-}
-
-#section-ty h1 {
-    font-size: 4em;
-}
-
-/* form-finish.html */
-#section-ff {
-    margin-top: 10%;
-    text-align: center;
-}
-
-#section-ff h1 {
-    font-size: 4em;
-}
-
-/* error-page.html */
-#section-ep {
-    margin-top: 10%;
-    text-align: center;
-}
-
-#section-ep h1 {
-    font-size: 4em;
 }
 
 /* dashboard.html */
