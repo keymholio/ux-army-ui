@@ -76,12 +76,6 @@ header {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
 }
 
-.form-title {
-    font-size: 26px;
-    margin-top: 0px;
-    margin-bottom: 30px;
-}
-
 .form-group {
     margin-bottom: 25px;
 }
@@ -121,6 +115,10 @@ header {
     margin-right: 2px;
 }
 
+.loading {
+    padding: 15px
+}
+
 .alert-content {
     margin-top: 10%;
     text-align: center;
@@ -136,15 +134,44 @@ header {
 }
 
 /* main.html */
+
+#navbar-header-main {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: 15px auto 0 auto;
+}
+
 #section-main {
     margin-top: 4%;
 }
 
+#main-title {
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#main-desciption {
+    font-weight: 200;
+}
+
 #main-form {
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 50px auto 0 auto;
     background-color: #f1f1f1;
-    padding: 40px 50px;
+    padding: 40px 35px 20px 35px;
+}
+
+#main-form-name {
+    padding: 0 10px 0 0;
+}
+
+#main-form-email {
+    padding: 0 0 0 10px;
 }
 
 #main-form .form-group {
@@ -154,6 +181,12 @@ header {
 /* sign-in.html */
 #section-signin {
     margin-top: 4%;
+}
+
+#login-title {
+    font-size: 26px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 #signin-form {
@@ -339,6 +372,16 @@ header {
 
 /* ***** Media Queries ***** */
 
+@media screen and (max-width: 991px){
+    #main-form-name {
+        padding: 0;
+    }
+
+    #main-form-email {
+        padding: 0;
+    }
+}
+
 @media screen and (max-width: 768px){
     .navbar-header {
         position: absolute;
@@ -347,6 +390,14 @@ header {
         top: 0;
         text-align: center;
         margin: auto;
+    }
+
+    #main-form-name {
+        padding: 0;
+    }
+
+    #main-form-email {
+        padding: 0;
     }
 }
 

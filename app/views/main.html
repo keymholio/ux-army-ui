@@ -1,19 +1,43 @@
-<header-default></header-default>
+<header>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div id="navbar-header-main">
+        <a ng-href="#main">
+          <img src="./images/logo.svg" alt="" style="width: 240px;">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="container">
   <div id="section-main">
-    <div id="main-form">
-      <h1 align="center" class="form-title">User Experience Labs</h1>
+    <h1 align="center" id="main-title">Welcome to our User Experience Labs</h1>
+    <h3 align="center" id="main-desciption">Sign up to be a participant for upcoming tests!</h3>
+    <br />
 
+    <div id="main-form">
       <form ng-submit="submitSignUpForm()">
-        <div class="form-group">
-          <input type="name" class="form-control input-lg" ng-model="formData.name" placeholder="Name" maxlength="25" required>
+        <div class="col-md-12 remove-padding">
+          <div class="col-md-6" id="main-form-name">
+            <div class="form-group">
+              <input type="name" class="form-control input-lg" ng-model="formData.name" placeholder="Name" maxlength="25" required>
+            </div>
+          </div>
+
+          <div class="col-md-6" id="main-form-email">
+            <div class="form-group">
+              <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="Email" maxlength="45" required>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="Email" maxlength="45" required>
-        </div>
+
         <div class="centered">
-          <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign Up">
+          <input type="submit" class="btn btn-primary btn-lg" value="Sign Up">
         </div>
         <br />
       </form>

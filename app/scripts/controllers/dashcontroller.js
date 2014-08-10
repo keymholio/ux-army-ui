@@ -24,6 +24,10 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     $scope.populate = function (page) {
 
+      if (!$scope.populating) {
+        $scope.populating = true;
+      }
+
         $http({
           method: 'GET',
           url: ENV.API_SERVER + 'api/?page=' + page
@@ -33,6 +37,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.itemsPerPage = data.results.length;
           $scope.totalShown = $scope.page * 24;
           $scope.isShownMoreThanTotal();
+          $scope.populating = false;
         });
       };
 
