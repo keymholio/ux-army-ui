@@ -12,7 +12,7 @@ app.directive('infiniteScroll', function ($window) {
       $window.bind('scroll', function() {
         windowBottom = $window.height() + $window.scrollTop();
         elementBottom = element.offset().top + element.innerHeight();
-        if (windowBottom == $(document).height()) {
+        if (windowBottom === $(document).height()) {
           scope.$apply(attrs.infiniteScroll);
 
         }

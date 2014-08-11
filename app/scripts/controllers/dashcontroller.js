@@ -28,7 +28,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         $scope.populating = true;
       }
 
-        $http({
+      $http({
           method: 'GET',
           url: ENV.API_SERVER + 'api/?page=' + page
         }).success(function(data) {
@@ -39,14 +39,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.isShownMoreThanTotal();
           $scope.populating = false;
         });
-      };
+    };
 
     $scope.nextPage = function () {
-        if (!$scope.populating && $scope.more) {
-          $scope.page = $scope.page + 1;
-          $scope.populate($scope.page);
-        }
-      };
+      if (!$scope.populating && $scope.more) {
+        $scope.page = $scope.page + 1;
+        $scope.populate($scope.page);
+      }
+    };
 
     $scope.isShownMoreThanTotal = function () {
       // shows and hides "show more" button
@@ -69,4 +69,4 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           }
         );
       };
-}]);
+  }]);

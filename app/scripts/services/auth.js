@@ -5,10 +5,10 @@
 app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $window, $q, ENV){
 
     var authenticate = function (username, password, endpoint) {
-        
+
         var url = ENV.API_SERVER + endpoint;
         var deferred = $q.defer();
-        
+
         $http.post(url, 'username=' + username + '&password=' + password, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -18,7 +18,7 @@ app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $w
                 // success callback
                 var token = response.data.token;
 
-                if (token) {
+                if (token && username) {
                   $window.localStorage.token = token;
                   localStorage['user.name'] = username;
                   deferred.resolve(true);

@@ -10,7 +10,9 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
 
     // submit sign up form function
     $scope.submitSignUpForm = function () {
-          
+
+          $scope.formData.name = $scope.firstName + ' ' + $scope.lastName;
+
           $http({
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
@@ -65,7 +67,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
       //end of getParticipantData function
 
     $scope.getParticipantData();
-    
+
     // get form choices
     $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
           $scope.genderChoices = data.genderChoices;
@@ -84,7 +86,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
     $scope.postSuccess = function () {
         window.location = '#thank-you';
       };
-  
+
     // submit demo form function
     $scope.submitDemoForm = function () {
 

@@ -23,15 +23,21 @@
     <div id="main-form">
       <form ng-submit="submitSignUpForm()">
         <div class="col-md-12 remove-padding">
-          <div class="col-md-6" id="main-form-name">
+          <div class="col-md-6 col-sm-6" id="main-form-name">
             <div class="form-group">
-              <input type="name" class="form-control input-lg" ng-model="formData.name" placeholder="Name" maxlength="25" required>
+              <input type="name" class="form-control input-lg" ng-model="firstName" placeholder="first name" maxlength="25" capitalize-first required>
             </div>
           </div>
 
-          <div class="col-md-6" id="main-form-email">
+          <div class="col-md-6 col-sm-6" id="main-form-email">
             <div class="form-group">
-              <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="Email" maxlength="45" required>
+              <input type="name" class="form-control input-lg" ng-model="lastName" placeholder="last name" maxlength="25" capitalize-first required>
+            </div>
+          </div>
+
+          <div class="col-md-12 remove-padding">
+            <div class="form-group">
+              <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="email" maxlength="45" required>
             </div>
           </div>
         </div>

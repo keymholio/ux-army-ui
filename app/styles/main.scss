@@ -372,12 +372,6 @@ header {
 
 /* ***** Media Queries ***** */
 
-@media screen and (max-width: 991px){
-    #main-form-name, #main-form-email {
-        padding: 0;
-    }
-}
-
 @media screen and (max-width: 768px){
     .navbar-header {
         position: absolute;
@@ -386,6 +380,12 @@ header {
         top: 0;
         text-align: center;
         margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #main-form-name, #main-form-email {
+        padding: 0;
     }
 }
 
