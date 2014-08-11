@@ -4,6 +4,15 @@
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
+    $scope.$watch('firstName', function() {
+        $scope.firstName = $scope.firstName.substring(0,1).toUpperCase()+$scope.firstName.substring(1);
+    });
+
+    $scope.$watch('lastName', function() {
+        $scope.lastName = $scope.lastName.substring(0,1).toUpperCase()+$scope.lastName.substring(1);
+    });
+
+
     $scope.postSuccess = function () {
           window.location = '#thank-you';
         };
