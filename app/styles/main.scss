@@ -225,9 +225,12 @@ header {
 
 /* dashboard.html */
 
-.filter-group {
-    margin-right: 15px;
-    margin-top: 28px;
+#filters-heading {
+    padding: 0;
+}
+
+#filter-options-group {
+    padding: 15px 15px 0 0;
 }
 
 .user-group {

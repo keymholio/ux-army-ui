@@ -15,6 +15,33 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
 
+    $(window).ready(function(){
+      if( $(this).width() < 767 )
+      {
+        $('#collapse0').removeClass('in');
+        $('#collapse0').addClass('out');
+      }
+      else
+      {
+        $('#collapse0').removeClass('out');
+        $('#collapse0').addClass('in');
+      }   
+    });
+
+    $(window).bind('resize load',function(){
+      if( $(this).width() < 767 )
+      {
+        $('#collapse0').removeClass('in');
+        $('#collapse0').addClass('out');
+      }
+      else
+      {
+        $('#collapse0').removeClass('out');
+        $('#collapse0').addClass('in');
+        $('#collapse0').removeAttr("style");
+      }   
+    });
+
     $scope.page = 1;
     $scope.total = 0;
     $scope.totalShown = 0;
