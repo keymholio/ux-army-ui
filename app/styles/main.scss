@@ -60,6 +60,11 @@ header {
     border-color: #ffffff;
 }
 
+.container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 0px;
+    margin-left: 15px;
+}
+
 .header-username {
     margin: 21px 15px;
 }
@@ -380,6 +385,16 @@ header {
 /* ***** Media Queries ***** */
 
 @media screen and (max-width: 767px){
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .container > .navbar-header, .container > .navbar-collapse {
+        margin-right: -15px;
+        margin-left: 0px;
+    }
+
     .navbar-header {
         position: absolute;
         width: 100%;
@@ -393,13 +408,17 @@ header {
         padding: 0;
     }
 
+    .user-group {
+        padding: 25px 0 0 0;
+    }
+
     #user {
         margin: 12px 0;
     }
 
     #user-info {
         min-height: 1px;
-        padding: 10px 8px;
+        padding: 10px 8px 10px 10px;
     }
 
     #user-name {

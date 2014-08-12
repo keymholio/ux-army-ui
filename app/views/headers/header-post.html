@@ -8,11 +8,11 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="header-username">Welcome, {{username}}!</li>
-          <li>
-            <a ng-click="logout()">
-              <input type="button" class="btn btn-default" value="Log out">
-            </a>
+          <li id="fat-menu" class="dropdown">
+            <a href="" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Welcome, {{username}}! <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+              <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Log out</a></li>
+            </ul>
           </li>
         </ul>
       </div>
