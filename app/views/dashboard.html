@@ -162,13 +162,13 @@
     <div class="well row user-group">
       <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12" id="user">
         <div>
-          <div class="col-md-12 col-sm-12 col-xs-4 remove-padding">
+          <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
             <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
           </div>
 
-          <div class="user-info col-md-12 col-sm-12 col-xs-8">
-            <h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
-            <h6 class="user-name">{{u.state}}</h6>
+          <div class="col-md-12 col-sm-12 col-xs-10" id="user-info">
+            <h5 id="user-name">{{u.name | limitTo: 22 }}</h5>
+            <h6 id="user-state">{{u.state}}</h6>
           </div>
         </div>
 
