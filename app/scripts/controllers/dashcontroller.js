@@ -14,7 +14,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.username = localStorage['user.name'];
 
     $(window).ready(function(){
-      if( $(this).width() < 766 )
+      if( $(this).width() < 751 )
       {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
@@ -27,7 +27,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     });
 
     $(window).bind('resize load',function(){
-      if( $(this).width() < 766 )
+      if( $(this).width() < 751 )
       {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
