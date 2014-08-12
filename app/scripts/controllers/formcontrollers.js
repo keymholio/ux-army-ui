@@ -1,6 +1,6 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
@@ -8,13 +8,13 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
         if (!angular.isUndefined($scope.firstName)){
           $scope.firstName = $scope.firstName.substring(0,1).toUpperCase()+$scope.firstName.substring(1);
         }
-    });
+      });
 
     $scope.$watch('lastName', function() {
         if (!angular.isUndefined($scope.lastName)){
           $scope.lastName = $scope.lastName.substring(0,1).toUpperCase()+$scope.lastName.substring(1);
         }
-    });
+      });
 
 
     $scope.postSuccess = function () {
@@ -72,7 +72,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
               $scope.checkedId = data.id;
             }
           ).
-          error(function (data, status) {
+          error(function () {
               $scope.demoFormCheckError();
             }
         );

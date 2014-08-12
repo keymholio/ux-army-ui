@@ -13,10 +13,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.token = localStorage.token;
     $scope.username = localStorage['user.name'];
 
-    var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
-
     $(window).ready(function(){
-      if( $(this).width() < 767 )
+      if( $(this).width() < 766 )
       {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
@@ -25,11 +23,11 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
-      }   
+      }
     });
 
     $(window).bind('resize load',function(){
-      if( $(this).width() < 767 )
+      if( $(this).width() < 766 )
       {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
@@ -38,8 +36,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
-        $('#collapse0').removeAttr("style");
-      }   
+        $('#collapse0').removeAttr('style');
+      }
     });
 
     $scope.page = 1;

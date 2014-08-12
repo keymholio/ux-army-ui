@@ -1,6 +1,6 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
 app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService){
 

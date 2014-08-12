@@ -1,6 +1,6 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
 app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $window, $q, ENV){
 

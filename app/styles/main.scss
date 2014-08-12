@@ -375,7 +375,7 @@ header {
 
 /* ***** Media Queries ***** */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     .navbar-header {
         position: absolute;
         width: 100%;
@@ -384,11 +384,13 @@ header {
         text-align: center;
         margin: auto;
     }
-}
 
-@media screen and (max-width: 767px){
     #main-form-name, #main-form-email {
         padding: 0;
+    }
+
+    #user {
+        margin: 12px 0;
     }
 }
 
