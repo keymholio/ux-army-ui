@@ -265,6 +265,12 @@ header {
 }
 
 #user-state {
+    color: #8a8b8c;
+    margin: 2px 5px 0 0;
+}
+
+#user-age {
+    color: #8a8b8c;
     margin: 10px 0 0 0;
 }
 
@@ -293,6 +299,12 @@ header {
 .filter-glyph {
     float: right;
     padding-top: 4px;
+}
+
+.user-icons {
+    float: left;
+    color: #bcbdbd;
+    margin-right: 5px;
 }
 
 /* participant-profile.html */

@@ -63,6 +63,23 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.totalShown = $scope.page * 24;
           $scope.isShownMoreThanTotal();
           $scope.populating = false;
+
+          // evaluate age by using birthYear
+          var currentTime = new Date();
+          var year = currentTime.getFullYear();
+
+          for (var u = 0; u < $scope.users.length; u++) {
+            if ($scope.users[u].birthYear === null){
+              $scope.users[u].age = 'n/a';
+              
+            } else {
+              $scope.users[u].age = year - $scope.users[u].birthYear;
+            }
+
+            if ($scope.users[u].state === ''){
+              $scope.users[u].state = 'n/a';
+            }
+          }
         });
     };
 
