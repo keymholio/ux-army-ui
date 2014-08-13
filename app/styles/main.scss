@@ -47,6 +47,10 @@ hr {
     margin-bottom: 25px;
 }
 
+.float-left {
+    float: left;
+}
+
 
 /* ***** Header ***** */
 
@@ -266,12 +270,12 @@ header {
 
 #user-state {
     color: #8a8b8c;
-    margin: 2px 5px 0 0;
+    margin: 2px 12px 0 0;
 }
 
 #user-age {
     color: #8a8b8c;
-    margin: 10px 0 0 0;
+    margin: 12px 0 0 0;
 }
 
 .panel {
