@@ -159,21 +159,21 @@
 
     <br />
 
-    <div class="well row user-group">
+    <div class="well row" id="dash-user-group">
       <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12" id="user">
         <div>
           <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
-            <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
+            <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-responsive" id="dash-user-thumbnail"></a>
           </div>
 
-          <div class="col-md-12 col-sm-12 col-xs-10" id="user-info">
-            <h5 id="user-name">{{u.name | limitTo: 22 }}</h5>
+          <div class="col-md-12 col-sm-12 col-xs-10" id="dash-user-info">
+            <h5 id="dash-user-name">{{u.name | limitTo: 22 }}</h5>
             <div>
               
-                <i class="fa fa-home user-icons"></i><h6 class="float-left" id="user-state">{{u.state}}</h6>
+                <i class="fa fa-home user-icons"></i><h6 class="float-left" id="dash-user-state">{{u.state}}</h6>
               
               
-                <i class="fa fa-user user-icons"></i><h6 class="float-left" id="user-age">{{u.age}}</h6>
+                <i class="fa fa-user user-icons"></i><h6 class="float-left" id="dash-user-age">{{u.age}}</h6>
               
             </div>
           </div>
@@ -183,7 +183,7 @@
       </div>
 
       <div class="col-md-12">
-        <div class="loading centered" ng-show="populating"><img src="images/loading.gif" alt="" /></div>
+        <div class="loading-spinner centered" ng-show="populating"><img src="images/loading.gif" alt="" /></div>
       </div>
     </div>
   </div>

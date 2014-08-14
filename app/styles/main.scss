@@ -95,14 +95,6 @@ header {
     color: #595A5C;
 }
 
-.custom-error-warning {
-    color: #8A6D3B;
-}
-
-.custom-error-remove {
-    color: #A94442;
-}
-
 .has-feedback .form-control-feedback {
     top: 6px;
     right: 15px;
@@ -124,10 +116,24 @@ header {
     margin-right: 2px;
 }
 
-.loading {
+.error-warning-glyph {
+    color: #8A6D3B;
+}
+
+.error-remove-glyph {
+    color: #A94442;
+}
+
+.loading-spinner {
     padding: 15px
 }
 
+.display-error {
+    color: #A94442;
+    margin-bottom: 15px;
+}
+
+/* error-page.html, form-finish.html, thank-you.html */
 .alert-content {
     margin-top: 10%;
     text-align: center;
@@ -135,11 +141,6 @@ header {
 
 .alert-content h1 {
     font-size: 4em;
-}
-
-.display-error {
-    color: #A94442;
-    margin-bottom: 15px;
 }
 
 /* main.html */
@@ -192,7 +193,7 @@ header {
     margin-top: 4%;
 }
 
-#login-title {
+#signin-title {
     font-size: 26px;
     margin-top: 0px;
     margin-bottom: 30px;
@@ -223,12 +224,12 @@ header {
     max-width: 84px;
 }
 
-#phone-help-block {
+#demo-phone-block {
     margin-top: 0px;
     margin-bottom: 25px;
 }
 
-#gender-label {
+#dmeo-gender-label {
     font-weight: normal;
 }
 
@@ -242,12 +243,12 @@ header {
     padding: 15px 15px 0 0;
 }
 
-.user-group {
+#dash-user-group {
     margin: 0px 0 20px 0;
     padding: 25px 10px 0 10px;
 }
 
-.img-thumbnail {
+#dash-user-thumbnail {
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -258,22 +259,22 @@ header {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
 }
 
-#user-info {
+#dash-user-info {
     padding: 10px 0;
-    min-height: 85px;
+    min-height: 92px;
     background-color: whitesmoke;
 }
 
-#user-name {
+#dash-user-name {
     margin-top: 0px;
 }
 
-#user-state {
+#dash-user-state {
     color: #8a8b8c;
     margin: 1px 12px 0 0;
 }
 
-#user-age {
+#dash-user-age {
     color: #8a8b8c;
     margin: 1px 0 0 0;
 }
@@ -424,38 +425,35 @@ header {
         padding: 0;
     }
 
-    .user-group {
+    #dash-user-group {
         padding: 25px 0 0 0;
     }
 
+    // spacing between stacked users on mobile
     #user {
         margin: 12px 0;
     }
 
-    #user-info {
+    #dash-user-info {
         min-height: 1px;
         padding: 10px 8px 10px 10px;
     }
 
-    #user-name {
-        font-size: 20px;
+    #dash-user-name {
+        font-size: 22px;
     }
 }
 
 @media screen and (max-width: 480px){
-    #user-info {
+    #dash-user-info {
         padding: 0 8px 10px 8px;
     }
 
-    #user-name {
+    #dash-user-name {
         font-size: 16px;
     }
 
-    #user-state {
-        font-size: 10px;
-    }
-
-    #user-age {
-        font-size: 10px;
+    #dash-user-state, #dash-ser-age {
+        font-size: 12px;
     }
 }
