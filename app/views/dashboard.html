@@ -168,12 +168,14 @@
 
           <div class="col-md-12 col-sm-12 col-xs-10" id="user-info">
             <h5 id="user-name">{{u.name | limitTo: 22 }}</h5>
-            <span>
-              <i class="fa fa-home user-icons"></i><h6 class="float-left" id="user-state">{{u.state}}</h6>
-            </span>
-            <span>
-              <i class="fa fa-user user-icons"></i><h6 id="user-age">{{u.age}}</h6>
-            </span>
+            <div>
+              
+                <i class="fa fa-home user-icons"></i><h6 class="float-left" id="user-state">{{u.state}}</h6>
+              
+              
+                <i class="fa fa-user user-icons"></i><h6 class="float-left" id="user-age">{{u.age}}</h6>
+              
+            </div>
           </div>
         </div>
 
