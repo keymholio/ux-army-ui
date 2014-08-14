@@ -51,6 +51,10 @@ hr {
     float: left;
 }
 
+.float-right {
+    float: right;
+}
+
 
 /* ***** Header ***** */
 
@@ -243,8 +247,19 @@ header {
     padding: 15px 15px 0 0;
 }
 
+#mobile-participant-title {
+    float: left; 
+    margin: 0px;
+}
+
+.filter-icon {
+    color: #595A5C;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
 #dash-user-group {
-    margin: 0px 0 20px 0;
+    margin: 28px 0 20px 0;
     padding: 25px 10px 0 10px;
 }
 
@@ -401,6 +416,12 @@ header {
 
 /* ***** Media Queries ***** */
 
+@media screen and (min-width: 767px){
+    #mobile-dash-header {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 767px){
     .container {
         padding-left: 0px;
@@ -425,8 +446,17 @@ header {
         padding: 0;
     }
 
+    #filter-options-group {
+        padding: 15px 5px 0 0;
+    }
+
+    #default-filter-header, #participant-title {
+        display: none;
+    }
+
     #dash-user-group {
-        padding: 25px 0 0 0;
+        margin: 0 0 20px 0;
+        padding: 5px 0 0 0;
     }
 
     // spacing between stacked users on mobile
