@@ -41,7 +41,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         $('#collapse0').removeAttr('style');
       }
     });
-
+    
     $scope.page = 1;
     $scope.total = 0;
     $scope.totalShown = 0;
