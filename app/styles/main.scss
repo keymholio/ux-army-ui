@@ -159,7 +159,7 @@ header {
 }
 
 #section-main {
-    margin-top: 4%;
+    margin-top: 6%;
 }
 
 #main-title {
@@ -416,7 +416,7 @@ header {
 
 /* ***** Media Queries ***** */
 
-@media screen and (min-width: 767px){
+@media screen and (min-width: 768px){
     #mobile-dash-header {
         display: none;
     }
@@ -440,6 +440,21 @@ header {
         top: 0;
         text-align: center;
         margin: auto;
+    }
+
+    #main-title {
+        font-size: 30px;
+        padding: 0 8px;
+        margin-top: 10px;
+    }
+
+    #main-desciption {
+        font-size: 20px;
+        padding: 0 8px;
+    }
+
+    #main-form {
+        margin: 20px auto 0 auto;
     }
 
     #main-form-name, #main-form-email {

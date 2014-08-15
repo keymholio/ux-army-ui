@@ -13,6 +13,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.token = localStorage.token;
     $scope.username = localStorage['user.name'];
 
+    // opens filter group on dekstop and closes on mobile
     $(window).ready(function(){
       if( $(this).width() < 751 )
       {
@@ -26,6 +27,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       }
     });
 
+    // when window is resized, filter group is opened on desktop and closed on mobile
     $(window).bind('resize load',function(){
       if( $(this).width() < 751 )
       {
