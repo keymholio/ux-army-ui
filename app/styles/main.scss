@@ -69,8 +69,16 @@ header {
 }
 
 .container > .navbar-header, .container > .navbar-collapse {
-    margin-right: 0px;
+    margin-right: 15px;
     margin-left: 15px;
+}
+
+#drop-right, #drop-right:hover, #drop-right:focus {
+    background-color: #ffffff;
+}
+
+.navbar-nav > li > a, .nav > li > a {
+    padding: 0;
 }
 
 .header-username {
