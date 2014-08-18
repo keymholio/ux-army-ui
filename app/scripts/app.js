@@ -46,10 +46,6 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/participant-profile.html',
         controller: 'ParticipantCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
       .otherwise({
         redirectTo: '/'
       });

@@ -49,6 +49,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.populating = false;
     $scope.users = [];
 
+
+    // populate dashboard with users function 
     $scope.populate = function (page) {
 
       if (!$scope.populating) {
@@ -78,6 +80,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
               $scope.users[u].age = year - $scope.users[u].birthYear;
             }
 
+            // additionally checking if state d.n.e. so result can display "n/a"
             if ($scope.users[u].state === ''){
               $scope.users[u].state = 'n/a';
             }
