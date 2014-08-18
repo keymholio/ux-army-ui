@@ -64,7 +64,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.populating = false;
     $scope.users = [];
 
-
     // populate dashboard with users function 
     $scope.populate = function (page) {
 
@@ -75,7 +74,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $http({
           method: 'GET',
           url: ENV.API_SERVER + 'api/',
-          data: {'page': page}
+          params: {'page': page}
         }).success(function(data) {
           $scope.users = $scope.users.concat(data.results);
           $scope.total = data.count;
