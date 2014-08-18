@@ -74,7 +74,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
       $http({
           method: 'GET',
-          url: ENV.API_SERVER + 'api/?page=' + page
+          url: ENV.API_SERVER + 'api/',
+          data: {'page': page}
         }).success(function(data) {
           $scope.users = $scope.users.concat(data.results);
           $scope.total = data.count;
