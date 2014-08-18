@@ -105,6 +105,10 @@ header {
     padding: 0 3px 0 0;
 }
 
+.dropdown-menu > li > a {
+    cursor: pointer;
+}
+
 .header-username {
     margin: 21px 15px;
 }
@@ -114,6 +118,10 @@ header {
 
 .btn-primary, .btn-default, .input-lg {
     border-radius: 0px;
+}
+
+.btn-primary:hover {
+    border-color: #428bca;
 }
 
 .well {

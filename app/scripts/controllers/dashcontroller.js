@@ -41,6 +41,21 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         $('#collapse0').removeAttr('style');
       }
     });
+
+    // get form choices
+    $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
+          $scope.genderChoices = data.genderChoices;
+          $scope.birthYearChoices = data.birthYearChoices;
+          $scope.stateChoices = data.stateChoices;
+          $scope.jobChoices = data.jobChoices;
+          $scope.employmentChoices = data.employmentChoices;
+          $scope.incomeChoices = data.incomeChoices;
+          $scope.experienceChoices = data.experienceChoices;
+          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
+          $scope.educationLevelChoices = data.educationLevelChoices;
+          $scope.participateTimeChoices = data.participateTimeChoices;
+        }
+    );
     
     $scope.page = 1;
     $scope.total = 0;
