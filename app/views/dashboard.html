@@ -32,6 +32,8 @@
             <h3 id="default-filter-header">Filters</h3>
             
             <!-- only on mobile -->
+            <input type="text" class="search-bar ng-valid ng-dirty" id="mobile-search-bar" ng-model="search" placeholder="search">
+            
             <div class="row" id="mobile-dash-header">
               <div class="col-md-6">
                 <h3 id="mobile-participant-title">Participants</h3>
@@ -47,6 +49,8 @@
         <div id="collapse0" class="panel-collapse collapse in">
           <div class="panel-body" id="filter-options-group">
             <div class="panel-group" id="filterOptionAccordion">
+
+              <input type="text" class="search-bar" id="desktop-search-bar" ng-model="search" placeholder="search">
 
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -205,7 +209,7 @@
     <h3 id="participant-title">Participants</h3>
 
     <div class="well row" id="dash-user-group">
-      <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12" id="user">
+      <div ng-repeat="u in users | filter: search" class="col-md-3 col-sm-4 col-xs-12" id="user">
         <div>
           <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
             <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.svg" class="img-responsive" id="dash-user-thumbnail"></a>

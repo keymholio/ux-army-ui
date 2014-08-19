@@ -283,6 +283,14 @@ header {
 
 /* dashboard.html */
 
+.search-bar {
+    width: 100%;
+    background-color: white;
+    border: #e0e0e0 solid 1px;
+    padding: 5px;
+    margin: 0 0 20px 0;
+}
+
 #filters-heading {
     padding: 0;
 }
@@ -354,6 +362,10 @@ header {
 .panel-default > .panel-heading {
     background-color: #ffffff;
     border-color: #ffffff;
+}
+
+.panel-body {
+    padding: 5px 0 5px 2px;
 }
 
 .panel-default >.panel-heading +.panel-collapse .panel-body {
@@ -461,6 +473,10 @@ header {
 /* ***** Media Queries ***** */
 
 @media screen and (min-width: 768px){
+    #mobile-search-bar {
+        display: none;
+    }
+
     #mobile-dash-header {
         display: none;
     }
@@ -507,6 +523,10 @@ header {
 
     #main-form-name, #main-form-email {
         padding: 0;
+    }
+
+    #desktop-search-bar {
+        display: none;
     }
 
     #filter-options-group {
