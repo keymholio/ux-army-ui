@@ -60,12 +60,11 @@
                 <div id="collapse1" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="gender in genderChoices">
-                      <input type="checkbox" ng-model="formData.gender" name="gender" value="{{gender}}" required>{{gender}}
+                      <input type="checkbox" ng-model = "$parent.genderCheck[gender]" ng-change="checkFilter()"name="gender" value="{{gender}}" required>{{gender}}
                     </label>
                   </div>
                 </div>
               </div>
-
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <div class="panel-title">

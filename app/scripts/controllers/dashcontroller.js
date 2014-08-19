@@ -63,6 +63,59 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.more = false;
     $scope.populating = false;
     $scope.users = [];
+    $scope.genderCheck = {};
+
+    $scope.filterParams = {};
+    $scope.getCheckedKeys = function(filterDict)
+    {
+      var key;
+      // var fieldValues = [];
+      for (key in filterDict)
+      {
+        if (filterDict[key] === true)
+        {
+          return key;
+        }
+      }
+      // return fieldValues;
+    };
+
+    // check if filter is checked, then calls repopulate function
+    $scope.checkFilter = function() {
+      var newFilter = {
+        'gender':$scope.getCheckedKeys($scope.genderCheck)
+      };
+      angular.extend($scope.filterParams,newFilter);
+      $scope.users = [];
+      $scope.rePopulate($scope.page);
+      $scope.filtering = true;
+    };
+
+    // repopulates data based on filter options
+    $scope.rePopulate = function(page) {
+      var config = {params: angular.extend({'page':page}, $scope.filterParams)};
+      $http.get(ENV.API_SERVER + 'api/',config).success(function(data){
+        $scope.users = $scope.users.concat(data.results);
+
+        // evaluate age by using birthYear
+        var currentTime = new Date();
+        var year = currentTime.getFullYear();
+
+        for (var u = 0; u < $scope.users.length; u++) {
+          if ($scope.users[u].birthYear === null){
+            $scope.users[u].age = 'n/a';
+              
+          } else {
+            $scope.users[u].age = year - $scope.users[u].birthYear;
+          }
+
+          // additionally checking if state d.n.e. so result can display "n/a"
+          if ($scope.users[u].state === ''){
+            $scope.users[u].state = 'n/a';
+          }
+        }
+      });
+    };
 
     // populate dashboard with users function 
     $scope.populate = function (page) {
@@ -106,7 +159,12 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.nextPage = function () {
       if (!$scope.populating && $scope.more) {
         $scope.page = $scope.page + 1;
-        $scope.populate($scope.page);
+        if ($scope.filtering === true) {
+          $scope.rePopulate($scope.page);
+        } else {
+          $scope.populate($scope.page);
+        }
+        
       }
     };
 
