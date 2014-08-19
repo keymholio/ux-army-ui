@@ -11,6 +11,7 @@ html {
 }
 
 body {
+    font-family: Helvetica, Arial, sans-serif;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -22,6 +23,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #595A5C;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 hr {
@@ -47,6 +49,14 @@ hr {
     margin-bottom: 25px;
 }
 
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
 
 /* ***** Header ***** */
 
@@ -60,6 +70,45 @@ header {
     border-color: #ffffff;
 }
 
+.container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#drop-right, #drop-right:hover, #drop-right:focus {
+    background-color: #ffffff;
+}
+
+.open > .dropdown-menu {    
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);   
+}
+
+.dropdown-menu {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.175);
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-fill-mode: forwards; 
+    -moz-animation-fill-mode: forwards;  
+    animation-fill-mode: forwards; 
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    display: block;
+  
+    transition: all 0.15s ease-out;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+}
+
+.navbar-nav > li > a, .nav > li > a {
+    padding: 0 3px 0 0;
+}
+
+.dropdown-menu > li > a {
+    cursor: pointer;
+}
+
 .header-username {
     margin: 21px 15px;
 }
@@ -71,15 +120,13 @@ header {
     border-radius: 0px;
 }
 
+.btn-primary:hover {
+    border-color: #428bca;
+}
+
 .well {
     border-radius: 0px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
-}
-
-.form-title {
-    font-size: 26px;
-    margin-top: 0px;
-    margin-bottom: 30px;
 }
 
 .form-group {
@@ -92,12 +139,8 @@ header {
     color: #595A5C;
 }
 
-.custom-error-warning {
-    color: #8A6D3B;
-}
-
-.custom-error-remove {
-    color: #A94442;
+.checkbox {
+    font-weight: normal;
 }
 
 .has-feedback .form-control-feedback {
@@ -121,6 +164,24 @@ header {
     margin-right: 2px;
 }
 
+.error-warning-glyph {
+    color: #8A6D3B;
+}
+
+.error-remove-glyph {
+    color: #A94442;
+}
+
+.loading-spinner {
+    padding: 15px
+}
+
+.display-error {
+    color: #A94442;
+    margin-bottom: 15px;
+}
+
+/* error-page.html, form-finish.html, thank-you.html */
 .alert-content {
     margin-top: 10%;
     text-align: center;
@@ -130,21 +191,45 @@ header {
     font-size: 4em;
 }
 
-.display-error {
-    color: #A94442;
-    margin-bottom: 15px;
+/* main.html */
+
+#navbar-header-main {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: 15px auto 0 auto;
 }
 
-/* main.html */
 #section-main {
-    margin-top: 4%;
+    margin-top: 6%;
+}
+
+#main-title {
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#main-desciption {
+    font-weight: 200;
 }
 
 #main-form {
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 50px auto 0 auto;
     background-color: #f1f1f1;
-    padding: 40px 50px;
+    padding: 40px 35px 20px 35px;
+}
+
+#main-form-name {
+    padding: 0 10px 0 0;
+}
+
+#main-form-email {
+    padding: 0 0 0 10px;
 }
 
 #main-form .form-group {
@@ -154,6 +239,12 @@ header {
 /* sign-in.html */
 #section-signin {
     margin-top: 4%;
+}
+
+#signin-title {
+    font-size: 26px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 #signin-form {
@@ -181,28 +272,42 @@ header {
     max-width: 84px;
 }
 
-#phone-help-block {
+#demo-phone-block {
     margin-top: 0px;
     margin-bottom: 25px;
 }
 
-#gender-label {
+#dmeo-gender-label {
     font-weight: normal;
 }
 
 /* dashboard.html */
 
-.filter-group {
-    margin-right: 15px;
-    margin-top: 28px;
+#filters-heading {
+    padding: 0;
 }
 
-.user-group {
-    margin: 0px 0 20px 0;
+#filter-options-group {
+    padding: 15px 15px 0 0;
+}
+
+#mobile-participant-title {
+    float: left; 
+    margin: 0px;
+}
+
+.filter-icon {
+    color: #595A5C;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#dash-user-group {
+    margin: 28px 0 20px 0;
     padding: 25px 10px 0 10px;
 }
 
-.img-thumbnail {
+#dash-user-thumbnail {
     width: 100%;
     height: auto;
     margin: 0 auto;
@@ -213,14 +318,24 @@ header {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
 }
 
-.user-info {
-    padding: 10px 8px;
-    min-height: 85px;
+#dash-user-info {
+    padding: 10px 0;
+    min-height: 92px;
     background-color: whitesmoke;
 }
 
-.user-name {
+#dash-user-name {
     margin-top: 0px;
+}
+
+#dash-user-state {
+    color: #8a8b8c;
+    margin: 1px 12px 0 0;
+}
+
+#dash-user-age {
+    color: #8a8b8c;
+    margin: 1px 0 0 0;
 }
 
 .panel {
@@ -248,6 +363,12 @@ header {
 .filter-glyph {
     float: right;
     padding-top: 4px;
+}
+
+.user-icons {
+    float: left;
+    color: #bcbdbd;
+    margin-right: 5px;
 }
 
 /* participant-profile.html */
@@ -339,7 +460,23 @@ header {
 
 /* ***** Media Queries ***** */
 
-@media screen and (max-width: 768px){
+@media screen and (min-width: 768px){
+    #mobile-dash-header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .container > .navbar-header, .container > .navbar-collapse {
+        margin-right: -15px;
+        margin-left: 0px;
+    }
+
     .navbar-header {
         position: absolute;
         width: 100%;
@@ -348,11 +485,72 @@ header {
         text-align: center;
         margin: auto;
     }
+
+    #logo {
+        max-width: 150px;
+    }
+
+    #main-title {
+        font-size: 30px;
+        padding: 0 8px;
+        margin-top: 10px;
+    }
+
+    #main-desciption {
+        font-size: 20px;
+        padding: 0 8px;
+    }
+
+    #main-form {
+        margin: 20px auto 0 auto;
+    }
+
+    #main-form-name, #main-form-email {
+        padding: 0;
+    }
+
+    #filter-options-group {
+        padding: 15px 5px 0 0;
+    }
+
+    #default-filter-header, #participant-title {
+        display: none;
+    }
+
+    #dash-user-group {
+        margin: 0 0 20px 0;
+        padding: 5px 0 0 0;
+    }
+
+    // spacing between stacked users on mobile
+    #user {
+        margin: 12px 0;
+    }
+
+    #dash-user-info {
+        min-height: 1px;
+        padding: 10px 8px 10px 10px;
+    }
+
+    #dash-user-name {
+        font-size: 22px;
+    }
 }
 
-@media screen and (max-width: 490px){
-    .section-main h1, .section-ty h1 {
-        font-size: 2em;
-        margin-bottom: 30px;
+@media screen and (max-width: 480px){
+    #logo {
+        max-width: 130px;
+    }
+
+    #dash-user-info {
+        padding: 0 8px 10px 8px;
+    }
+
+    #dash-user-name {
+        font-size: 16px;
+    }
+
+    #dash-user-state, #dash-ser-age {
+        font-size: 12px;
     }
 }

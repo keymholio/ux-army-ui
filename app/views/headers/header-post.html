@@ -3,16 +3,18 @@
     <div class="container">
       <div class="navbar-header">
         <a ng-href="#main">
-          <img src="./images/logo.svg" alt="">
+          <img src="./images/logo.svg" alt="" id="logo">
         </a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="header-username">Welcome, {{username}}!</li>
-          <li>
-            <a ng-click="logout()">
-              <input type="button" class="btn btn-default" value="Log out">
-            </a>
+          <li id="fat-menu" class="dropdown">
+            <a href="" id="drop-right" role="button" class="dropdown-toggle" data-toggle="dropdown">Welcome, {{username}}! <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop-right">
+              <!-- launch edit password modal -->
+              <li role="presentation"><a role"menuitem" tabindex="-1" data-toggle="modal" data-target="#passwordModal">Change Password</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Log out</a></li>
+            </ul>
           </li>
         </ul>
       </div>

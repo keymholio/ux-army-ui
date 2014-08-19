@@ -1,9 +1,9 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
 app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($scope, $location, AuthService){
-    
+
     // if user is already signed in, redirect to dashboard
     if (localStorage.token) {
       $location.path('/dashboard');
@@ -13,7 +13,7 @@ app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($sco
     $scope.login = function () {
         var username = $scope.loginUsername;
         var password = $scope.loginPassword;
-          
+
         if (username && password) {
           AuthService.login(username, password).then(
                 function () {

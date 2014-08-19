@@ -31,8 +31,8 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
               return $scope.age;
             }
 
-          }).error(function(data, status) {
-            alert('User does not exist!');
+          }).error(function() {
+            window.alert('User does not exist!');
             $location.path('/dashboard');
           });
       };

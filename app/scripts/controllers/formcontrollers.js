@@ -1,8 +1,21 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
+
+    $scope.$watch('firstName', function() {
+        if (!angular.isUndefined($scope.firstName)){
+          $scope.firstName = $scope.firstName.substring(0,1).toUpperCase()+$scope.firstName.substring(1);
+        }
+      });
+
+    $scope.$watch('lastName', function() {
+        if (!angular.isUndefined($scope.lastName)){
+          $scope.lastName = $scope.lastName.substring(0,1).toUpperCase()+$scope.lastName.substring(1);
+        }
+      });
+
 
     $scope.postSuccess = function () {
           window.location = '#thank-you';
@@ -10,7 +23,9 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
 
     // submit sign up form function
     $scope.submitSignUpForm = function () {
-          
+
+          $scope.formData.name = $scope.firstName + ' ' + $scope.lastName;
+
           $http({
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
@@ -57,7 +72,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
               $scope.checkedId = data.id;
             }
           ).
-          error(function (data, status) {
+          error(function () {
               $scope.demoFormCheckError();
             }
         );
@@ -65,7 +80,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
       //end of getParticipantData function
 
     $scope.getParticipantData();
-    
+
     // get form choices
     $http.get(ENV.API_SERVER + 'choices/').success(function (data) {
           $scope.genderChoices = data.genderChoices;
@@ -84,7 +99,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
     $scope.postSuccess = function () {
         window.location = '#thank-you';
       };
-  
+
     // submit demo form function
     $scope.submitDemoForm = function () {
 

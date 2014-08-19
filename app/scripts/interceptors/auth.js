@@ -1,8 +1,8 @@
 'use strict';
 
-/*global $, app */
+/* global app */
 
-app.factory('AuthInterceptor', ['$rootScope', '$q', '$window', '$location', function ($rootScope, $q, $window, $location){
+app.factory('AuthInterceptor', ['$rootScope', '$q', '$window', function ($rootScope, $q, $window){
   return {
     request: function (config) {
       config.headers = config.headers || {};
@@ -13,12 +13,12 @@ app.factory('AuthInterceptor', ['$rootScope', '$q', '$window', '$location', func
     },
 
     responseError: function (response) {
-      if (response.status === 401) {// || response.status === 403) {
-        $window.localStorage.removeItem('token');
-        $window.localStorage.removeItem('user.name');
-        $location.path('/sign-in');
-        return;
-      }
+      // if (response.status === 401) {
+      //   $window.localStorage.removeItem('token');
+      //   $window.localStorage.removeItem('user.name');
+      //   $location.path('/sign-in');
+      //   return;
+      // }
       return $q.reject(response);
     }
   };

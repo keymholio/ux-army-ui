@@ -1,160 +1,236 @@
 <header-post></header-post>
 
 <div class="container">
-  <div class="col-md-3 col-sm-4">
-    <h3>Filters</h3>
+  <!-- change password modal -->
+  <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
 
-    <div class="panel-group filter-group" id="accordion2">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>State</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
+          <h4 class="modal-title" id="myModalLabel">Change Password</h4>
         </div>
-        <div id="collapse1" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ng-click="">Change Password</button>
         </div>
       </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Job Role</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse2" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Employment</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse3" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Income</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse4" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse4" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Computer Experience</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse5" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse5" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Hours Online</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse6" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse6" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Education</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse7" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse7" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <span>Participation Time</span>
-            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapse8" href="">
-              <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-            </a>
-          </div>
-        </div>
-        <div id="collapse8" class="panel-collapse collapse">
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
     </div>
+  </div>  
+
+  <div class="col-md-3 col-sm-4">
+    
+    <div class="panel-group" id="filterAccordion">
+      <div class="panel panel-default">
+        <div class="panel-heading" id="filters-heading">
+          <div class="panel-title">
+            <!-- only on desktop -->
+            <h3 id="default-filter-header">Filters</h3>
+            
+            <!-- only on mobile -->
+            <div class="row" id="mobile-dash-header">
+              <div class="col-md-6">
+                <h3 id="mobile-participant-title">Participants</h3>
+              </div>
+              <div class="col-md-6 float-right">
+                <a data-toggle="collapse" data-parent="#filterAccordion" data-target="#collapse0" href="">
+                  <i class="fa fa-filter float-right filter-icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="collapse0" class="panel-collapse collapse in">
+          <div class="panel-body" id="filter-options-group">
+            <div class="panel-group" id="filterOptionAccordion">
+
+              <input type="text">
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Gender</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse1" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="gender in genderChoices">
+                      <input type="checkbox" ng-model="$parent.genderCheck[gender]" ng-change="checkFilter()" name="gender" value="{{gender}}">{{gender}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Job Role</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse2" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="job in jobChoices">
+                      <input type="checkbox" ng-model="$parent.jobRoleCheck[job]" ng-change="checkFilter()" name="job" value="{{job}}">{{job}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Employment</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse3" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="employment in employmentChoices">
+                      <input type="checkbox" ng-model="$parent.employmentCheck[employment]" ng-change="checkFilter()" name="employment" value="{{employment}}" required>{{employment}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Income</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse4" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="income in incomeChoices">
+                      <input type="checkbox" ng-model="$parent.incomeCheck[income]" ng-change="checkFilter()" name="income" value="{{income}}" required>{{income}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Computer Experience</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse5" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="experience in experienceChoices">
+                      <input type="checkbox" ng-model="$parent.experienceCheck[experience]" ng-change="checkFilter()" name="experience" value="{{experience}}" required>{{experience}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Hours Online</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse6" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse6" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="hours in hoursOnlineChoices">
+                      <input type="checkbox" ng-model="$parent.hoursOnlineCheck[hours]" ng-change="checkFilter()" name="hours" value="{{hours}}" required>{{hours}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Education</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse7" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse7" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="education in educationLevelChoices">
+                      <input type="checkbox" ng-model="$parent.educationCheck[education]" ng-change="checkFilter()" name="education" value="{{education}}" required>{{education}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">
+                    <span>Participation Time</span>
+                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse8" href="">
+                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
+                    </a>
+                  </div>
+                </div>
+                <div id="collapse8" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="participate in participateTimeChoices">
+                      <input type="checkbox" ng-model="$parent.participateTimeCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
     <br />
   </div>
 
   <div class="col-md-9 col-sm-8" infinite-scroll="nextPage()">
-    <h3>Participants</h3>
+    <h3 id="participant-title">Participants</h3>
 
-    <br />
-
-    <div class="well row user-group">
-      <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12">
+    <div class="well row" id="dash-user-group">
+      <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12" id="user">
         <div>
-          <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.jpg" class="img-thumbnail img-responsive"></a>
+          <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
+            <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.svg" class="img-responsive" id="dash-user-thumbnail"></a>
+          </div>
 
-          <div class="user-info">
-            <h5 class="user-name">{{u.name | limitTo: 22 }}</h5>
-            <h6 class="user-name">{{u.state}}</h6>
+          <div class="col-md-12 col-sm-12 col-xs-10" id="dash-user-info">
+            <h5 id="dash-user-name">{{u.name | limitTo: 22 }}</h5>
+            <div>
+              
+                <i class="fa fa-home user-icons"></i><h6 class="float-left" id="dash-user-state">{{u.state}}</h6>
+              
+              
+                <i class="fa fa-user user-icons"></i><h6 class="float-left" id="dash-user-age">{{u.age}}</h6>
+              
+            </div>
           </div>
         </div>
 
         <hr>
+      </div>
+
+      <div class="col-md-12">
+        <div class="loading-spinner centered" ng-show="populating"><img src="images/loading.gif" alt="" /></div>
       </div>
     </div>
   </div>
