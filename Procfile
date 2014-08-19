@@ -1,2 +1,2 @@
 // heroku config file
-web: grunt build ; node web.js
+web: ./node_modules/grunt/.bin/grunt grunt build ; node web.js
