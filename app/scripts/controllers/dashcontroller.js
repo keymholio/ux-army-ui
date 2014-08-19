@@ -77,19 +77,20 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.getCheckedKeys = function(filterDict)
     {
       var key;
-      // var fieldValues = [];
+      var fieldValues = [];
       for (key in filterDict)
       {
         if (filterDict[key] === true)
         {
-          return key;
+          fieldValues.push(key);
         }
       }
-      // return fieldValues;
+      return fieldValues;
     };
 
     // check if filter is checked, then calls repopulate function
     $scope.checkFilter = function() {
+
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
         'job':$scope.getCheckedKeys($scope.jobRoleCheck),
@@ -104,6 +105,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.users = [];
       $scope.rePopulate($scope.page);
       $scope.filtering = true;
+      $scope.page = 1;
     };
 
     // repopulates data based on filter options
