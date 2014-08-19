@@ -60,7 +60,7 @@
                 <div id="collapse1" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="gender in genderChoices">
-                      <input type="checkbox" ng-model = "$parent.genderCheck[gender]" ng-change="checkFilter()"name="gender" value="{{gender}}" required>{{gender}}
+                      <input type="checkbox" ng-model="$parent.genderCheck[gender]" ng-change="checkFilter()" name="gender" value="{{gender}}">{{gender}}
                     </label>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div id="collapse2" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="job in jobChoices">
-                      <input type="checkbox" ng-model="formData.job" name="job" value="{{job}}" required>{{job}}
+                      <input type="checkbox" ng-model="$parent.jobRoleCheck[job]" ng-change="checkFilter()" name="job" value="{{job}}">{{job}}
                     </label>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div id="collapse3" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="employment in employmentChoices">
-                      <input type="checkbox" ng-model="formData.employment" name="employment" value="{{employment}}" required>{{employment}}
+                      <input type="checkbox" ng-model="$parent.employmentCheck[employment]" ng-change="checkFilter()" name="employment" value="{{employment}}" required>{{employment}}
                     </label>
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                 <div id="collapse4" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="income in incomeChoices">
-                      <input type="checkbox" ng-model="formData.employment" name="income" value="{{income}}" required>{{income}}
+                      <input type="checkbox" ng-model="$parent.incomeCheck[income]" ng-change="checkFilter()" name="income" value="{{income}}" required>{{income}}
                     </label>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
                 <div id="collapse5" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="experience in experienceChoices">
-                      <input type="checkbox" ng-model="formData.experience" name="experience" value="{{experience}}" required>{{experience}}
+                      <input type="checkbox" ng-model="$parent.experienceCheck[experience]" ng-change="checkFilter()" name="experience" value="{{experience}}" required>{{experience}}
                     </label>
                   </div>
                 </div>
@@ -149,7 +149,7 @@
                 <div id="collapse6" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="hours in hoursOnlineChoices">
-                      <input type="checkbox" ng-model="formData.hours" name="hours" value="{{hours}}" required>{{hours}}
+                      <input type="checkbox" ng-model="$parent.hoursOnlineCheck[hours]" ng-change="checkFilter()" name="hours" value="{{hours}}" required>{{hours}}
                     </label>
                   </div>
                 </div>
@@ -167,7 +167,7 @@
                 <div id="collapse7" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="education in educationLevelChoices">
-                      <input type="checkbox" ng-model="formData.education" name="education" value="{{education}}" required>{{education}}
+                      <input type="checkbox" ng-model="$parent.educationCheck[education]" ng-change="checkFilter()" name="education" value="{{education}}" required>{{education}}
                     </label>
                   </div>
                 </div>
@@ -185,7 +185,7 @@
                 <div id="collapse8" class="panel-collapse collapse">
                   <div class="panel-body">
                     <label class="checkbox" ng-repeat="participate in participateTimeChoices">
-                      <input type="checkbox" ng-model="formData.participate" name="participate" value="{{participate}}" required>{{participate}}
+                      <input type="checkbox" ng-model="$parent.participateTimeCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
                     </label>
                   </div>
                 </div>

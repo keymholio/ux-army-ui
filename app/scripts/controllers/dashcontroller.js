@@ -63,7 +63,15 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.more = false;
     $scope.populating = false;
     $scope.users = [];
+    
     $scope.genderCheck = {};
+    $scope.jobRoleCheck = {};
+    $scope.employmentCheck = {};
+    $scope.incomeCheck = {};
+    $scope.experienceCheck = {};
+    $scope.hoursOnlineCheck = {};
+    $scope.educationCheck = {};
+    $scope.participateTimeCheck = {};
 
     $scope.filterParams = {};
     $scope.getCheckedKeys = function(filterDict)
@@ -83,7 +91,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     // check if filter is checked, then calls repopulate function
     $scope.checkFilter = function() {
       var newFilter = {
-        'gender':$scope.getCheckedKeys($scope.genderCheck)
+        'gender':$scope.getCheckedKeys($scope.genderCheck),
+        'job':$scope.getCheckedKeys($scope.jobRoleCheck),
+        'employment':$scope.getCheckedKeys($scope.employmentCheck),
+        'income':$scope.getCheckedKeys($scope.incomeCheck),
+        'experience':$scope.getCheckedKeys($scope.experienceCheck),
+        'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
+        'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
+        'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck)
       };
       angular.extend($scope.filterParams,newFilter);
       $scope.users = [];
