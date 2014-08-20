@@ -110,9 +110,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // repopulates data based on filter options
     $scope.rePopulate = function(page) {
+      if (!$scope.populating) {
+        $scope.populating = true;
+      }
+
       var config = {params: angular.extend({'page':page}, $scope.filterParams)};
       $http.get(ENV.API_SERVER + 'api/',config).success(function(data){
         $scope.users = $scope.users.concat(data.results);
+        $scope.populating = false;
 
         // evaluate age by using birthYear
         var currentTime = new Date();
