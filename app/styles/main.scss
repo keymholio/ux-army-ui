@@ -283,6 +283,14 @@ header {
 
 /* dashboard.html */
 
+.search-bar {
+    width: 100%;
+    background-color: white;
+    border: #e0e0e0 solid 1px;
+    padding: 5px;
+    margin: 0 0 20px 0;
+}
+
 #filters-heading {
     padding: 0;
 }
@@ -291,15 +299,33 @@ header {
     padding: 15px 15px 0 0;
 }
 
-#mobile-participant-title {
-    float: left; 
-    margin: 0px;
+.panel-heading.accordion-toggle:before {
+    font-family:'Glyphicons Halflings';
+    content:"\e113";
+    float: right;
+    color: #595A5C;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.panel-heading.accordion-toggle.collapsed:before {
+    content:"\e114";
+    color: #595A5C;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.panel-heading {
+    cursor: pointer;
 }
 
 .filter-icon {
     color: #595A5C;
     font-size: 20px;
     margin-right: 5px;
+}
+
+#mobile-participant-title {
+    float: left; 
+    margin: 0px;
 }
 
 #dash-user-group {
@@ -354,6 +380,10 @@ header {
 .panel-default > .panel-heading {
     background-color: #ffffff;
     border-color: #ffffff;
+}
+
+.panel-body {
+    padding: 5px 0 5px 2px;
 }
 
 .panel-default >.panel-heading +.panel-collapse .panel-body {
@@ -461,6 +491,10 @@ header {
 /* ***** Media Queries ***** */
 
 @media screen and (min-width: 768px){
+    #mobile-search-bar {
+        display: none;
+    }
+
     #mobile-dash-header {
         display: none;
     }
@@ -470,6 +504,11 @@ header {
     .container {
         padding-left: 0px;
         padding-right: 0px;
+    }
+
+    .add-padding-left-right {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .container > .navbar-header, .container > .navbar-collapse {
@@ -507,6 +546,10 @@ header {
 
     #main-form-name, #main-form-email {
         padding: 0;
+    }
+
+    #desktop-search-bar {
+        display: none;
     }
 
     #filter-options-group {

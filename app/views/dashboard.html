@@ -32,6 +32,8 @@
             <h3 id="default-filter-header">Filters</h3>
             
             <!-- only on mobile -->
+            <input type="text" class="search-bar ng-valid ng-dirty" id="mobile-search-bar" ng-model="search" placeholder="search">
+            
             <div class="row" id="mobile-dash-header">
               <div class="col-md-6">
                 <h3 id="mobile-participant-title">Participants</h3>
@@ -48,13 +50,12 @@
           <div class="panel-body" id="filter-options-group">
             <div class="panel-group" id="filterOptionAccordion">
 
+              <input type="text" class="search-bar" id="desktop-search-bar" ng-model="search" placeholder="search">
+
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse1">
                   <div class="panel-title">
                     <span>Gender</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse1" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">
@@ -66,12 +67,9 @@
                 </div>
               </div>
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse2">
                   <div class="panel-title">
                     <span>Job Role</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse2" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse2" class="panel-collapse collapse">
@@ -84,12 +82,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse3">
                   <div class="panel-title">
                     <span>Employment</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse3" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse3" class="panel-collapse collapse">
@@ -102,12 +97,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse4">
                   <div class="panel-title">
                     <span>Income</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse4" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse4" class="panel-collapse collapse">
@@ -120,12 +112,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse5">
                   <div class="panel-title">
                     <span>Computer Experience</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse5" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse5" class="panel-collapse collapse">
@@ -138,12 +127,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse6">
                   <div class="panel-title">
                     <span>Hours Online</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse6" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse6" class="panel-collapse collapse">
@@ -156,12 +142,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse7">
                   <div class="panel-title">
                     <span>Education</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse7" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse7" class="panel-collapse collapse">
@@ -174,12 +157,9 @@
               </div>
 
               <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse8">
                   <div class="panel-title">
                     <span>Participation Time</span>
-                    <a data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse8" href="">
-                      <i class="glyphicon glyphicon-chevron-down filter-glyph"></i>
-                    </a>
                   </div>
                 </div>
                 <div id="collapse8" class="panel-collapse collapse">
@@ -205,7 +185,7 @@
     <h3 id="participant-title">Participants</h3>
 
     <div class="well row" id="dash-user-group">
-      <div ng-repeat="u in users" class="col-md-3 col-sm-4 col-xs-12" id="user">
+      <div ng-repeat="u in users | filter: search" class="col-md-3 col-sm-4 col-xs-12" id="user">
         <div>
           <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
             <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.svg" class="img-responsive" id="dash-user-thumbnail"></a>
