@@ -1,5 +1,5 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-$fa-font-path: "/bower_components/font-awesome/fonts";
+$fa-font-path: "/bower_components/fontawesome/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
 @import "fontawesome/scss/font-awesome";
@@ -81,9 +81,9 @@ header {
     background-color: #ffffff;
 }
 
-.open > .dropdown-menu {    
+.open > .dropdown-menu {
     -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);   
+    transform: scale(1, 1);
 }
 
 .dropdown-menu {
@@ -91,13 +91,13 @@ header {
     -webkit-transform-origin: top;
     -moz-transform-origin: top;
     transform-origin: top;
-    -webkit-animation-fill-mode: forwards; 
-    -moz-animation-fill-mode: forwards;  
-    animation-fill-mode: forwards; 
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     -webkit-transform: scale(1, 0);
     -moz-transform: scale(1, 0);
     display: block;
-  
+
     transition: all 0.15s ease-out;
     -webkit-transition: all 0.15s ease-out;
     -moz-transition: all 0.15s ease-out;
@@ -326,7 +326,7 @@ header {
 }
 
 #mobile-participant-title {
-    float: left; 
+    float: left;
     margin: 0px;
 }
 
