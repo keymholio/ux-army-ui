@@ -21,6 +21,14 @@ body {
     margin-bottom: 60px;
 }
 
+.container {
+    min-width: 320px;
+}
+
+a, a:hover, a:focus {
+    color: #939393;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #595A5C;
@@ -473,11 +481,11 @@ header {
 /* ***** Media Queries ***** */
 
 @media screen and (min-width: 768px){
-    #mobile-search-bar {
+    #mobile-search-bar, #mobile-dash-header {
         display: none;
     }
 
-    #mobile-dash-header {
+    #user-profile-mobile-heading, #user-profile-mobile-options {
         display: none;
     }
 }
@@ -530,16 +538,12 @@ header {
         padding: 0;
     }
 
-    #desktop-search-bar {
+    #desktop-search-bar, #default-filter-header, #participant-title {
         display: none;
     }
 
     #filter-options-group {
         padding: 15px 5px 0 0;
-    }
-
-    #default-filter-header, #participant-title {
-        display: none;
     }
 
     #dash-user-group {
@@ -560,6 +564,14 @@ header {
     #dash-user-name {
         font-size: 22px;
     }
+
+    #user-profile-left {
+        display: none;
+    }
+
+    #user-profile-name {
+        padding-left: 10px;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -577,5 +589,9 @@ header {
 
     #dash-user-state, #dash-ser-age {
         font-size: 12px;
+    }
+
+    #user-profile-name h2 {
+        font-size: 22px;
     }
 }
