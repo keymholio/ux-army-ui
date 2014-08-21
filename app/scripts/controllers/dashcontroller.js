@@ -115,28 +115,38 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       }
 
       var config = {params: angular.extend({'page':page}, $scope.filterParams)};
-      $http.get(ENV.API_SERVER + 'api/',config).success(function(data){
-        $scope.users = $scope.users.concat(data.results);
-        $scope.populating = false;
+      $http.get(ENV.API_SERVER + 'api/',config).
+        success(function (data) {
+          $scope.users = $scope.users.concat(data.results);
+          $scope.populating = false;
 
-        // evaluate age by using birthYear
-        var currentTime = new Date();
-        var year = currentTime.getFullYear();
+          // evaluate age by using birthYear
+          var currentTime = new Date();
+          var year = currentTime.getFullYear();
 
-        for (var u = 0; u < $scope.users.length; u++) {
-          if ($scope.users[u].birthYear === null){
-            $scope.users[u].age = 'n/a';
-              
-          } else {
-            $scope.users[u].age = year - $scope.users[u].birthYear;
+          for (var u = 0; u < $scope.users.length; u++) {
+            if ($scope.users[u].birthYear === null){
+              $scope.users[u].age = 'n/a';
+                
+            } else {
+              $scope.users[u].age = year - $scope.users[u].birthYear;
+            }
+
+            // additionally checking if state d.n.e. so result can display "n/a"
+            if ($scope.users[u].state === ''){
+              $scope.users[u].state = 'n/a';
+            }
           }
 
-          // additionally checking if state d.n.e. so result can display "n/a"
-          if ($scope.users[u].state === ''){
-            $scope.users[u].state = 'n/a';
+          if (data.count === 0){
+            $scope.noResults = 'There are no users';
           }
-        }
-      });
+        }).
+        error(function () {
+            $scope.populating = false;
+            $scope.noResults = 'There are no users';
+          }
+        );
     };
 
     // populate dashboard with users function 
@@ -150,32 +160,32 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           method: 'GET',
           url: ENV.API_SERVER + 'api/',
           params: {'page': page}
-        }).success(function(data) {
-          $scope.users = $scope.users.concat(data.results);
-          $scope.total = data.count;
-          $scope.itemsPerPage = data.results.length;
-          $scope.totalShown = $scope.page * 24;
-          $scope.isShownMoreThanTotal();
-          $scope.populating = false;
+        }).
+        success(function(data) {
+            $scope.users = $scope.users.concat(data.results);
+            $scope.total = data.count;
+            $scope.itemsPerPage = data.results.length;
+            $scope.totalShown = $scope.page * 24;
+            $scope.isShownMoreThanTotal();
+            $scope.populating = false;
 
-          // evaluate age by using birthYear
-          var currentTime = new Date();
-          var year = currentTime.getFullYear();
+            // evaluate age by using birthYear
+            var currentTime = new Date();
+            var year = currentTime.getFullYear();
 
-          for (var u = 0; u < $scope.users.length; u++) {
-            if ($scope.users[u].birthYear === null){
-              $scope.users[u].age = 'n/a';
-              
-            } else {
-              $scope.users[u].age = year - $scope.users[u].birthYear;
+            for (var u = 0; u < $scope.users.length; u++) {
+              if ($scope.users[u].birthYear === null){
+                $scope.users[u].age = 'n/a';
+              } else {
+                $scope.users[u].age = year - $scope.users[u].birthYear;
+              }
+
+              // additionally checking if state d.n.e. so result can display "n/a"
+              if ($scope.users[u].state === ''){
+                $scope.users[u].state = 'n/a';
+              }
             }
-
-            // additionally checking if state d.n.e. so result can display "n/a"
-            if ($scope.users[u].state === ''){
-              $scope.users[u].state = 'n/a';
-            }
-          }
-        });
+          });
     };
 
     $scope.nextPage = function () {
