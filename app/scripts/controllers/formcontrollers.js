@@ -75,7 +75,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           error(function () {
               $scope.demoFormCheckError();
             }
-        );
+          );
       };
       //end of getParticipantData function
 

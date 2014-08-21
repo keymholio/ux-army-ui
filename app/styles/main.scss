@@ -42,6 +42,10 @@ hr {
     padding-right: 0px;
 }
 
+.remove-margin {
+    margin: 0px;
+}
+
 .remove-padding-left {
     padding-left: 0px;
 }
@@ -409,27 +413,9 @@ header {
     border-top: 0px solid #dddddd;
 }
 
-.user-profile-header {
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: right;
-}
-
-.user-profile {
-    min-height: 400px;
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 15px;
-    overflow: auto;
-}
-
-.user-profile .col-md-12 > h4,
-.user-profile .col-sm-12 h4,
-.user-profile .col-xs-12 h4 {
-    display: inline;
-    margin-right: 10px;
+.table h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .img-profile {
@@ -442,13 +428,8 @@ header {
     border: 1px solid #a3a3a3;
 }
 
-.table-profile {
-    margin-top: 15px;
-    border-collapse: separate;
-}
-
 .separator {
-    border-spacing: 0 1em;
+    height: 50px;
 }
 
 
