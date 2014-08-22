@@ -14,7 +14,6 @@ app.directive('infiniteScroll', function ($window) {
         elementBottom = element.offset().top + element.innerHeight();
         if (windowBottom === $(document).height()) {
           scope.$apply(attrs.infiniteScroll);
-
         }
       });
 

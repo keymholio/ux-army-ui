@@ -2,19 +2,7 @@
 
 <div class="container">
   <div>
-    <div class="col-md-12">
-      <div class="user-profile-header">
-        <!-- launch delete user modal -->
-        <a href="" data-toggle="modal" data-target="#deleteModal">
-          Delete
-        </a>
-
-        <!-- launch edit participant data modal -->
-        <a href="" data-toggle="modal" data-target="#editModal">
-          Edit
-        </a>
-      </div>
-
+    <div class="col-md-12 remove-padding">
       <!-- delete user modal -->
       <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -152,16 +140,37 @@
         </div>
       </div>
 
-      <div class="user-profile well">
-        <div class="col-md-5 col-sm-5 col-xs-12 remove-padding-left">
-          <img src="./images/default-user.svg" class="img-profile img-responsive">
+      <br/>
+
+      <div class="row" style="max-width: 800px; margin: 0 auto;">
+        <div class="col-md-3 col-sm-4" id="user-profile-left">
+          <img src="./images/default-user.svg" class="img-profile img-responsive"><br />
+
+          <!-- launch edit participant data modal -->
+          <a href="" data-toggle="modal" data-target="#editModal">Edit Information</a><br />
+
+          <!-- launch delete user modal -->
+          <a href="" data-toggle="modal" data-target="#deleteModal">Delete User</a>
         </div>
-        <div class="col-md-7 col-sm-7 col-xs-12">
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <!-- only visible on mobile -->
+          <div class="col-xs-4 remove-padding" id="user-profile-mobile-heading">
+            <img src="./images/default-user.svg" class="img-profile img-responsive">
+            <br />
+          </div>
+          <div class="col-md-12 col-xs-8 remove-padding" id="user-profile-name">
+            <h2 class="remove-margin">{{formData.name}}</h2><br />
+            <div id="user-profile-mobile-options">
+              <!-- launch edit participant data modal -->
+              <a href="" data-toggle="modal" data-target="#editModal">Edit Information</a><br />
+
+              <!-- launch delete user modal -->
+              <a href="" data-toggle="modal" data-target="#deleteModal">Delete User</a>
+            </div>
+          </div>
+
           <table class="table">
             <tbody>
-              <tr>
-                <td><h3>{{formData.name}}</h3></td>
-              </tr>
               <tr>
                 <td><h4>Age:</h4></td>
                 <td>{{age}}</td>
@@ -170,28 +179,18 @@
                 <td><h4>Gender:</h4></td>
                 <td>{{formData.gender}}</td>
               </tr>
-              <tr>
+              <tr class="separator">
                 <td><h4>State:</h4></td>
                 <td>{{formData.state}}</td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <table class="table table-profile">
-            <tbody>
               <tr>
                 <td><h4>Phone:</h4></td>
                 <td><a href="tel:{{formData.phone}}">{{formData.phone}}</a></td>
               </tr>
-              <tr>
+              <tr class="separator">
                 <td><h4>Email:</h4></td>
                 <td><a href="mailto:{{formData.email}}">{{formData.email}}</a></td>
               </tr>
-            </tbody>
-          </table>
-          <table class="table table-profile">
-            <tbody>
               <tr>
                 <td><h4>Job Role:</h4></td>
                 <td>{{formData.job}}</td>
@@ -224,6 +223,7 @@
           </table>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
