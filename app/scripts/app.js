@@ -28,6 +28,9 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/demo-form.html',
         controller: 'DemoFormCtrl'
       })
+      .when('/complete', {
+        templateUrl: 'views/complete.html',
+      })
       .when('/error-page', {
         templateUrl: 'views/error-page.html'
       })

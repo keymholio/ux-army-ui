@@ -97,7 +97,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
     );
 
     $scope.postSuccess = function () {
-        window.location = '#thank-you';
+        window.location = '#complete';
       };
 
     // submit demo form function
