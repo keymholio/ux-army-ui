@@ -2,11 +2,15 @@
   <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
+        <span type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-collapse">
+          <i class="fa fa-cog"></i>
+        </span>
+
         <a ng-href="#dashboard">
           <img src="./images/logo.svg" alt="" id="logo">
         </a>
       </div>
-      <div class="navbar-collapse collapse">
+      <div class="navbar-collapse collapse hidden-xs">
         <ul class="nav navbar-nav navbar-right">
           <li id="fat-menu" class="dropdown">
             <a href="" id="drop-right" role="button" class="dropdown-toggle" data-toggle="dropdown">Welcome, {{username}}! <span class="caret"></span></a>
@@ -16,6 +20,14 @@
               <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Log out</a></li>
             </ul>
           </li>
+        </ul>
+      </div>
+
+      <div class="navbar-collapse collapse" id="mobile-collapse">
+        <ul class="nav navbar-nav navbar-right align-right" id="mobile-nav">
+          <!-- launch edit password modal -->
+          <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#passwordModal">Change Password</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="logout()">Log out</a></li>
         </ul>
       </div>
     </div>

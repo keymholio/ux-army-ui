@@ -186,23 +186,25 @@
 
     <div class="well row" id="dash-user-group">
       <div ng-repeat="u in users | filter: search" class="col-md-3 col-sm-4 col-xs-12" id="user">
-        <div>
-          <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
-            <a href="#participant-profile/{{u.id}}"><img src="./images/default-user.svg" class="img-responsive" id="dash-user-thumbnail"></a>
-          </div>
+        <a href="#participant-profile/{{u.id}}">
+          <div>
+            <div class="col-md-12 col-sm-12 col-xs-2 remove-padding">
+              <img src="./images/default-user.svg" class="img-responsive" id="dash-user-thumbnail">
+            </div>
 
-          <div class="col-md-12 col-sm-12 col-xs-10" id="dash-user-info">
-            <h5 id="dash-user-name">{{u.name | limitTo: 22 }}</h5>
-            <div>
-              
-                <i class="fa fa-home user-icons"></i><h6 class="float-left" id="dash-user-state">{{u.state}}</h6>
-              
-              
-                <i class="fa fa-user user-icons"></i><h6 class="float-left" id="dash-user-age">{{u.age}}</h6>
-              
+            <div class="col-md-12 col-sm-12 col-xs-10" id="dash-user-info">
+              <h5 id="dash-user-name">{{u.name | limitTo: 22 }}</h5>
+              <div>
+                
+                  <i class="fa fa-home user-icons"></i><h6 class="float-left" id="dash-user-state">{{u.state}}</h6>
+                
+                
+                  <i class="fa fa-user user-icons"></i><h6 class="float-left" id="dash-user-age">{{u.age}}</h6>
+                
+              </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <hr>
       </div>
