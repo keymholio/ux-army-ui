@@ -90,7 +90,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // check if filter is checked, then calls repopulate function
     $scope.checkFilter = function() {
-
+      $scope.page = 1;
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
         'job':$scope.getCheckedKeys($scope.jobRoleCheck),
@@ -105,7 +105,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.users = [];
       $scope.rePopulate($scope.page);
       $scope.filtering = true;
-      $scope.page = 1;
     };
 
     // repopulates data based on filter options
@@ -119,6 +118,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         success(function (data) {
           $scope.users = $scope.users.concat(data.results);
           $scope.populating = false;
+          $scope.noResults = null;
 
           // evaluate age by using birthYear
           var currentTime = new Date();
@@ -139,12 +139,13 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           }
 
           if (data.count === 0){
-            $scope.noResults = 'There are no users';
-          }
+            $scope.noResults = 'There are no users'; }
+          // } else {
+          //   $scope.prevCheck = true;
+          // }
         }).
         error(function () {
             $scope.populating = false;
-            $scope.noResults = 'There are no users';
           }
         );
     };
