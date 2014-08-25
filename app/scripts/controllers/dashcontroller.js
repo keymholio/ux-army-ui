@@ -139,10 +139,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           }
 
           if (data.count === 0){
-            $scope.noResults = 'There are no users'; }
-          // } else {
-          //   $scope.prevCheck = true;
-          // }
+            $scope.noResults = 'There are no users';
+          }
         }).
         error(function () {
             $scope.populating = false;
