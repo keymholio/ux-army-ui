@@ -13,10 +13,29 @@
           <h4 class="modal-title" id="myModalLabel">Change Password</h4>
         </div>
         <div class="modal-body">
-          
+          <form id="loginForm" method="post" class="form-horizontal">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Old Password</label>
+              <div class="col-md-6">
+                <input type="password" class="form-control" name="oldPass" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label">New Password</label>
+              <div class="col-md-6">
+                <input type="password" class="form-control" name="newPass1" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label">Confirm Password</label>
+              <div class="col-md-6">
+                <input type="password" class="form-control" name="newPass2" />
+              </div>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" ng-click="">Change Password</button>
+          <button type="button" class="btn btn-default" ng-click="">Change Password</button>
         </div>
       </div>
     </div>
