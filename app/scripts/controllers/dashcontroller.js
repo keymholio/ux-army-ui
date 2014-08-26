@@ -65,7 +65,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.users = [];
     
     $scope.genderCheck = {};
-    $scope.jobRoleCheck = {};
     $scope.employmentCheck = {};
     $scope.incomeCheck = {};
     $scope.experienceCheck = {};
@@ -93,13 +92,16 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.page = 1;
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
-        'job':$scope.getCheckedKeys($scope.jobRoleCheck),
+        'birthYear':$scope.yearCheck,
+        'state':$scope.stateCheck,
+        'job':$scope.jobRoleCheck,
         'employment':$scope.getCheckedKeys($scope.employmentCheck),
         'income':$scope.getCheckedKeys($scope.incomeCheck),
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
         'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
         'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
         'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck)
+
       };
       angular.extend($scope.filterParams,newFilter);
       $scope.users = [];
