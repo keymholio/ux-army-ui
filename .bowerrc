@@ -1,5 +1,7 @@
 {
     "directory": "app/bower_components",
 	"userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:22.0) Gecko/20100101 Firefox/22.0",
+	"proxy": "http://sushma.sharma:DTpass14@192.168.90.226:8080",
+    "https-proxy": "http://sushma.sharma:DTpass14@192.168.90.226:8080",
 	"json": "bower.json"
 }

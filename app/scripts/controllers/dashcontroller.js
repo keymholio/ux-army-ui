@@ -93,7 +93,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
         'state':$scope.stateCheck,
-        'job':$scope.jobRoleCheck,
+        'job':$scope.jobRoleCheck == "" ? undefined: $scope.jobRoleCheck,
         'employment':$scope.getCheckedKeys($scope.employmentCheck),
         'income':$scope.getCheckedKeys($scope.incomeCheck),
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
