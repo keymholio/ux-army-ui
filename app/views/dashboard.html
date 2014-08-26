@@ -110,6 +110,7 @@
                 <div id="collapse4" class="panel-collapse collapse">
                   <div class="panel-body">
                     <select class="form-control" ng-model="jobRoleCheck" ng-change="checkFilter()">
+                      <option value="">None</option>
                       <option ng-repeat="job in jobChoices" value="{{job}}">{{job}}</option>
                     </select>
                   </div>
