@@ -116,6 +116,15 @@ header {
     background-color: #ffffff;
 }
 
+#navbar-header-default {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: 15px auto 0 auto;
+}
+
 #drop-right, #drop-right:hover, #drop-right:focus {
     background-color: #ffffff;
 }
@@ -233,15 +242,6 @@ header {
 }
 
 /* main.html */
-
-#navbar-header-main {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    margin: 15px auto 0 auto;
-}
 
 #section-main {
     margin-top: 6%;
