@@ -210,6 +210,30 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     $scope.populate($scope.page);
 
+    // change password function 
+    $scope.submitPassChange = function () {
+        
+        if ($scope.passChange.newPassword === $scope.passChange.confirm){
+          $http({
+              url: ENV.API_SERVER + 'update-pass/',
+              method: 'PUT',
+              data : $scope.passChange
+            }).
+            success(function (response) {
+                $('#passwordModal').modal('hide');
+                $('.modal-backdrop').remove();
+              }
+            ).
+            error(function () {
+                $scope.changePassIncorrectError = 'The password entered is incorrect';
+              }
+            );
+        } else {
+          $scope.changePassMatchError = 'Passwords do not match';
+        }
+
+      };
+
     $scope.logout = function () {
         AuthService.logout().then(
           function () {
