@@ -1,41 +1,13 @@
 <header-post></header-post>
 
 <div class="container">
+  <!-- change password modal -->
   <change-password></change-password> 
 
   <div class="col-md-3 col-sm-4">
-    
-    <div class="panel-group" id="filterAccordion">
-      <div class="panel panel-default">
-        <div class="panel-heading" id="filters-heading">
-          <div class="panel-title">
-            <!-- only on desktop -->
-            <h3 id="default-filter-header">Filters</h3>
-            
-            <!-- only on mobile -->
-            <input type="text" class="search-bar ng-valid ng-dirty" id="mobile-search-bar" ng-model="search" placeholder="search">
-            
-            <div class="row" id="mobile-dash-header">
-              <div class="col-md-6">
-                <h3 id="mobile-participant-title">Participants</h3>
-              </div>
-              <div class="col-md-6 float-right">
-                <a data-toggle="collapse" data-parent="#filterAccordion" data-target="#collapse0" href="">
-                  <i class="fa fa-filter float-right filter-icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="collapse0" class="panel-collapse collapse in">
-          <div class="panel-body" id="filter-options-group">
-            <!-- only on mobile -->
-            <filter-options></filter-options>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+    <!-- filters -->
+    <filter-options></filter-options>
+       
     <br />
   </div>
 
@@ -53,12 +25,8 @@
             <div class="col-md-12 col-sm-12 col-xs-10" id="dash-user-info">
               <h5 id="dash-user-name">{{u.name | limitTo: 22 }}</h5>
               <div>
-                
                   <i class="fa fa-home user-icons"></i><h6 class="float-left" id="dash-user-state">{{u.state}}</h6>
-                
-                
                   <i class="fa fa-user user-icons"></i><h6 class="float-left" id="dash-user-age">{{u.age}}</h6>
-                
               </div>
             </div>
           </div>

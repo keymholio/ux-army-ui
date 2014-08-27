@@ -1,142 +1,171 @@
-<div class="panel-group" id="filterOptionAccordion">
-
-  <input type="text" class="search-bar" id="desktop-search-bar" ng-model="search" placeholder="search">
-
+<div class="panel-group" id="filterAccordion">
   <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse1">
+    <div class="panel-heading" id="filters-heading">
       <div class="panel-title">
-        <span>Gender</span>
-      </div>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="gender in genderChoices">
-          <input type="checkbox" ng-model="$parent.genderCheck[gender]" ng-change="checkFilter()" name="gender" value="{{gender}}">{{gender}}
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse3">
-        <div class="panel-title">
-          <span>State</span>
-        </div>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-          <select class="form-control" ng-model="stateCheck" ng-change="checkFilter()">
-            <option value=""></option> 
-            <option ng-repeat="state in stateChoices" value="{{state}}">{{state}}</option>
-          </select>
+        <!-- only on desktop -->
+        <h3 id="default-filter-header">Filters</h3>
+            
+        <!-- only on mobile -->
+        <input type="text" class="search-bar ng-valid ng-dirty" id="mobile-search-bar" ng-model="search" placeholder="search">
+            
+        <!-- only on mobile -->
+        <div class="row" id="mobile-dash-header">
+          <div class="col-md-6">
+            <h3 id="mobile-participant-title">Participants</h3>
+          </div>
+          <div class="col-md-6 float-right">
+            <a data-toggle="collapse" data-parent="#filterAccordion" data-target="#collapse0" href="">
+              <i class="fa fa-filter float-right filter-icon"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+    <div id="collapse0" class="panel-collapse collapse in">
+      <div class="panel-body" id="filter-options-group">
+        <div class="panel-group" id="filterOptionAccordion">
 
-    <div class="panel panel-default">
-      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse4">
-        <div class="panel-title">
-          <span>Job Role</span>
+          <input type="text" class="search-bar" id="desktop-search-bar" ng-model="search" placeholder="search">
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse1">
+              <div class="panel-title">
+                <span>Gender</span>
+              </div>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="gender in genderChoices">
+                  <input type="checkbox" ng-model="$parent.genderCheck[gender]" ng-change="checkFilter()" name="gender" value="{{gender}}">{{gender}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+              <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse3">
+                <div class="panel-title">
+                  <span>State</span>
+                </div>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <select class="form-control" ng-model="stateCheck" ng-change="checkFilter()">
+                    <option value=""></option> 
+                    <option ng-repeat="state in stateChoices" value="{{state}}">{{state}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse4">
+                <div class="panel-title">
+                  <span>Job Role</span>
+                </div>
+              </div>
+              <div id="collapse4" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <select class="form-control" ng-model="jobRoleCheck" ng-change="checkFilter()">
+                    <option value=""></option> 
+                    <option ng-repeat="job in jobChoices" value="{{job}}">{{job}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse5">
+                <div class="panel-title">
+                  <span>Employment</span>
+                </div>
+              </div>
+              <div id="collapse5" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <label class="checkbox" ng-repeat="employment in employmentChoices">
+                    <input type="checkbox" ng-model="$parent.employmentCheck[employment]" ng-change="checkFilter()" name="employment" value="{{employment}}" required>{{employment}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse6">
+              <div class="panel-title">
+                <span>Income</span>
+              </div>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="income in incomeChoices">
+                  <input type="checkbox" ng-model="$parent.incomeCheck[income]" ng-change="checkFilter()" name="income" value="{{income}}" required>{{income}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse7">
+              <div class="panel-title">
+                <span>Computer Experience</span>
+              </div>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="experience in experienceChoices">
+                  <input type="checkbox" ng-model="$parent.experienceCheck[experience]" ng-change="checkFilter()" name="experience" value="{{experience}}" required>{{experience}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse8">
+              <div class="panel-title">
+                <span>Hours Online</span>
+              </div>
+            </div>
+            <div id="collapse8" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="hours in hoursOnlineChoices">
+                  <input type="checkbox" ng-model="$parent.hoursOnlineCheck[hours]" ng-change="checkFilter()" name="hours" value="{{hours}}" required>{{hours}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse9">
+              <div class="panel-title">
+                <span>Education</span>
+              </div>
+            </div>
+            <div id="collapse9" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="education in educationLevelChoices">
+                  <input type="checkbox" ng-model="$parent.educationCheck[education]" ng-change="checkFilter()" name="education" value="{{education}}" required>{{education}}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse10">
+              <div class="panel-title">
+                <span>Participation Time</span>
+              </div>
+            </div>
+            <div id="collapse10" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="participate in participateTimeChoices">
+                  <input type="checkbox" ng-model="$parent.participateTimeCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
+                </label>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body">
-          <select class="form-control" ng-model="jobRoleCheck" ng-change="checkFilter()">
-            <option value=""></option> 
-            <option ng-repeat="job in jobChoices" value="{{job}}">{{job}}</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-default">
-      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse5">
-        <div class="panel-title">
-          <span>Employment</span>
-        </div>
-      </div>
-      <div id="collapse5" class="panel-collapse collapse">
-        <div class="panel-body">
-          <label class="checkbox" ng-repeat="employment in employmentChoices">
-            <input type="checkbox" ng-model="$parent.employmentCheck[employment]" ng-change="checkFilter()" name="employment" value="{{employment}}" required>{{employment}}
-          </label>
-        </div>
-      </div>
-    </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse6">
-      <div class="panel-title">
-        <span>Income</span>
-      </div>
-    </div>
-    <div id="collapse6" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="income in incomeChoices">
-          <input type="checkbox" ng-model="$parent.incomeCheck[income]" ng-change="checkFilter()" name="income" value="{{income}}" required>{{income}}
-        </label>
-      </div>
     </div>
   </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse7">
-      <div class="panel-title">
-        <span>Computer Experience</span>
-      </div>
-    </div>
-    <div id="collapse7" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="experience in experienceChoices">
-          <input type="checkbox" ng-model="$parent.experienceCheck[experience]" ng-change="checkFilter()" name="experience" value="{{experience}}" required>{{experience}}
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse8">
-      <div class="panel-title">
-        <span>Hours Online</span>
-      </div>
-    </div>
-    <div id="collapse8" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="hours in hoursOnlineChoices">
-          <input type="checkbox" ng-model="$parent.hoursOnlineCheck[hours]" ng-change="checkFilter()" name="hours" value="{{hours}}" required>{{hours}}
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse9">
-      <div class="panel-title">
-        <span>Education</span>
-      </div>
-    </div>
-    <div id="collapse9" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="education in educationLevelChoices">
-          <input type="checkbox" ng-model="$parent.educationCheck[education]" ng-change="checkFilter()" name="education" value="{{education}}" required>{{education}}
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse10">
-      <div class="panel-title">
-        <span>Participation Time</span>
-      </div>
-    </div>
-    <div id="collapse10" class="panel-collapse collapse">
-      <div class="panel-body">
-        <label class="checkbox" ng-repeat="participate in participateTimeChoices">
-          <input type="checkbox" ng-model="$parent.participateTimeCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
-        </label>
-      </div>
-    </div>
-  </div>
-
 </div>
