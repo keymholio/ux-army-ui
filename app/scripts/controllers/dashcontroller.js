@@ -100,7 +100,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
         'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
         'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck)
-
       };
       angular.extend($scope.filterParams,newFilter);
       $scope.users = [];
