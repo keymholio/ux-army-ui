@@ -6,4 +6,27 @@
     <br />
     <h4>You have now completed the sign up process.<br /> Your contribution will make Dealertrack's solutions even better. Thank you.</h4>
   </div>
+
+  <div id="send-friend-form">
+  	<h2>Refer a friend!</h2>
+
+  	<form ng-submit="sendToFriend()">
+  		<div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="firstName" placeholder="first name" maxlength="25" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="email" maxlength="45" required>
+        </div>
+        <div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="firstName" placeholder="first name" maxlength="25" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control input-lg" ng-model="formData.email" placeholder="email" maxlength="45" required>
+        </div>
+        <div class="centered">
+          <input type="submit" class="btn btn-primary btn-lg" value="Send to Friend">
+        </div>
+        <br />
+      </form>
+  </div>
 </div>

@@ -6,18 +6,20 @@ $fa-font-path: "/bower_components/components-font-awesome/fonts";
 
 /* ***** Global ***** */
 
+$font-stack: Helvetica, Arial, sans-serif;
+
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-stack;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.body {
+#body {
     margin-bottom: 60px;
 }
 
@@ -28,7 +30,7 @@ a, a:hover, a:focus {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #595A5C;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-stack;
 }
 
 hr {
@@ -37,38 +39,18 @@ hr {
     border-top: 0px solid #ffffff;
 }
 
-.centered {
-    text-align: center;
-}
-
-.remove-padding {
+.rm-pad-left-right {
     padding-left: 0px;
     padding-right: 0px;
 }
 
-.remove-margin {
-    margin: 0px;
-}
+.rm-margin { margin: 0px; }
+.add-margin { margin-bottom: 25px; }
 
-.remove-padding-left {
-    padding-left: 0px;
-}
+.float-left { float: left; }
+.float-right { float: right; }
 
-.add-margin {
-    margin-bottom: 25px;
-}
-
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-}
-
-.align-right {
-    text-align: right;
-}
+.centered { text-align: center; }
 
 
 /* ***** Header ***** */
@@ -98,18 +80,18 @@ header {
 }
 
 .container > .navbar-header, .container > .navbar-collapse {
+    border-color: #ffffff;
     margin-right: 15px;
     margin-left: 15px;
-    border-color: #ffffff;
 }
 
 .navbar-default .navbar-toggle {
-    margin-right: 0px;
+    color: #595A5C;
     border-color: #fff;
+    font-size: 20px;
     padding: 0 5px;
     margin-top: 5px;
-    font-size: 20px;
-    color: #595A5C;
+    margin-right: 0px;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -117,12 +99,12 @@ header {
 }
 
 #navbar-header-default {
+    text-align: center;
+    margin: 15px auto 0 auto;
     position: absolute;
     width: 100%;
     left: 0;
     top: 0;
-    text-align: center;
-    margin: 15px auto 0 auto;
 }
 
 #drop-right, #drop-right:hover, #drop-right:focus {
@@ -163,6 +145,10 @@ header {
     margin: 21px 15px;
 }
 
+#mobile-collapse {
+    text-align: right;
+}
+
 
 /* ***** Pages ***** */
 
@@ -180,7 +166,7 @@ header {
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -231,16 +217,6 @@ header {
     margin-bottom: 15px;
 }
 
-/* error-page.html, form-finish.html, thank-you.html */
-.alert-content {
-    margin-top: 10%;
-    text-align: center;
-}
-
-.alert-content h1 {
-    font-size: 4em;
-}
-
 /* main.html */
 
 #section-main {
@@ -273,10 +249,6 @@ header {
     padding: 0 0 0 10px;
 }
 
-#main-form .form-group {
-    margin-bottom: 15px;
-}
-
 /* sign-in.html */
 #section-signin {
     margin-top: 4%;
@@ -293,10 +265,6 @@ header {
     margin: 0 auto;
     background-color: #f1f1f1;
     padding: 40px 50px;
-}
-
-#section-signin .form-group {
-    margin-bottom: 15px;
 }
 
 /* demo-form.html */
@@ -466,6 +434,26 @@ header {
 
 .separator {
     height: 50px;
+}
+
+/* error-page.html, form-finish.html, thank-you.html, complete.html */
+
+.alert-content {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.alert-content h1 {
+    font-size: 4em;
+}
+
+/* complete.html */
+
+#send-friend-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    text-align: center;
 }
 
 

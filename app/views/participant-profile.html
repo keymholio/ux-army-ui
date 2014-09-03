@@ -4,7 +4,7 @@
   <div>
     <change-password></change-password>
     
-    <div class="col-md-12 remove-padding">
+    <div class="col-md-12 rm-pad-left-right">
       <!-- delete user modal -->
       <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -43,12 +43,12 @@
         </div>
         <div class="col-md-9 col-sm-8 col-xs-12">
           <!-- only visible on mobile -->
-          <div class="col-xs-4 remove-padding" id="user-profile-mobile-heading">
+          <div class="col-xs-4 rm-pad-left-right" id="user-profile-mobile-heading">
             <img src="./images/default-user.svg" class="img-profile img-responsive">
             <br />
           </div>
-          <div class="col-md-12 col-xs-8 remove-padding" id="user-profile-name">
-            <h2 class="remove-margin">{{formData.name}}</h2><br />
+          <div class="col-md-12 col-xs-8 rm-pad-left-right" id="user-profile-name">
+            <h2 class="rm-margin">{{formData.name}}</h2><br />
             <div id="user-profile-mobile-options">
               <!-- launch edit participant data modal -->
               <a href="" data-toggle="modal" data-target="#editModal">Edit Information</a><br />
