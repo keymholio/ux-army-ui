@@ -90,7 +90,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
               method: 'PUT',
               data : $scope.passChange
             }).
-            success(function (response) {
+            success(function () {
                 $('#passwordModal').modal('hide');
                 $('.modal-backdrop').remove();
               }

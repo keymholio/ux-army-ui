@@ -54,6 +54,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.hoursOnlineChoices = data.hoursOnlineChoices;
           $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
+          $scope.completedChoices = data.completedChoices;
         }
     );
     
@@ -71,6 +72,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.hoursOnlineCheck = {};
     $scope.educationCheck = {};
     $scope.participateTimeCheck = {};
+    $scope.completedCheck = {};
 
     $scope.filterParams = {};
     $scope.getCheckedKeys = function(filterDict)
@@ -99,7 +101,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
         'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
         'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
-        'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck)
+        'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck),
+        'completed_initial':$scope.getCheckedKeys($scope.completedCheck)
       };
       angular.extend($scope.filterParams,newFilter);
       $scope.users = [];
@@ -219,7 +222,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
               method: 'PUT',
               data : $scope.passChange
             }).
-            success(function (response) {
+            success(function () {
                 $('#passwordModal').modal('hide');
                 $('.modal-backdrop').remove();
               }

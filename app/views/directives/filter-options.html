@@ -164,6 +164,21 @@
             </div>
           </div>
 
+          <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse11">
+              <div class="panel-title">
+                <span>Registration Status</span>
+              </div>
+            </div>
+            <div id="collapse11" class="panel-collapse collapse">
+              <div class="panel-body">
+                <label class="checkbox" ng-repeat="complete in completedChoices">
+                  <input type="checkbox" ng-model="$parent.completedCheck[complete]" ng-change="checkFilter()" name="comeplete" value="{{complete}}" required>{{complete}}
+                </label>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
