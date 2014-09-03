@@ -33,6 +33,11 @@ h1, h2, h3, h4, h5, h6,
     font-family: $font-stack;
 }
 
+h1, .h1 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
 hr {
     margin-top: 8px;
     margin-bottom: 8px;
@@ -504,6 +509,14 @@ header {
 }
 
 @media screen and (max-width: 767px){
+    h1, .h1 {
+        font-size: 30px;
+    }
+
+    h3, .h3 {
+        font-size: 20px;
+    }
+    
     .container {
         padding-left: 0px;
         padding-right: 0px;

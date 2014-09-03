@@ -30,6 +30,7 @@ app.config(function ($routeProvider, $httpProvider) {
       })
       .when('/complete', {
         templateUrl: 'views/complete.html',
+        controller: 'SendFriendFormCtrl'
       })
       .when('/error-page', {
         templateUrl: 'views/error-page.html'

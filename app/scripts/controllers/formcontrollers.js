@@ -116,3 +116,21 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
       };
       //end of submitDemoForm function
   }]);
+
+app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
+
+    // send to friend form function
+    $scope.sendToFriend = function () {
+        
+        $http({
+          url: ENV.API_SERVER + 'send-to-friend/',
+          method: 'POST',
+          data: $scope.formData
+        }).success(function (response)
+            {
+              $scope.sendToFriendPost = "Thank you for sharing!";
+            }
+          );
+      };
+      //end of sendToFriend function
+  }]);
