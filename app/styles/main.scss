@@ -223,17 +223,6 @@ header {
     margin-top: 6%;
 }
 
-#main-title {
-    font-size: 40px;
-    font-weight: 300;
-    margin-top: 0px;
-    margin-bottom: 30px;
-}
-
-#main-desciption {
-    font-weight: 200;
-}
-
 #main-form {
     max-width: 600px;
     margin: 50px auto 0 auto;
@@ -436,7 +425,7 @@ header {
     height: 50px;
 }
 
-/* error-page.html, form-finish.html, thank-you.html, complete.html */
+/* error-page.html, form-finish.html, thank-you.html */
 
 .alert-content {
     margin-top: 10%;
@@ -448,6 +437,11 @@ header {
 }
 
 /* complete.html */
+
+#section-complete {
+    text-align: center;
+    margin-top: 4%;
+}
 
 #send-friend-form {
     max-width: 500px;
@@ -526,17 +520,6 @@ header {
 
     #desktop-collapse {
         display: none;
-    }
-
-    #main-title {
-        font-size: 30px;
-        padding: 0 8px;
-        margin-top: 10px;
-    }
-
-    #main-desciption {
-        font-size: 20px;
-        padding: 0 8px;
     }
 
     #main-form {
