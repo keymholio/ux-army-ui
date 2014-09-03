@@ -122,6 +122,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.users = $scope.users.concat(data.results);
           $scope.populating = false;
           $scope.noResults = null;
+          $scope.total = data.count;
 
           // evaluate age by using birthYear
           var currentTime = new Date();
