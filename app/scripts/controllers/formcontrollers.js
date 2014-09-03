@@ -127,7 +127,11 @@ app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope
           method: 'POST',
           data: $scope.formData
         }).success(function (response)
-            {
+            { 
+              $scope.formData.fromName = "";
+              $scope.formData.fromEmail = "";
+              $scope.formData.toName = "";
+              $scope.formData.toEmail = "";
               $scope.sendToFriendPost = "Thank you for sharing!";
             }
           );

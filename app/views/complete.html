@@ -13,27 +13,25 @@
       <p>Do you know someone who would be interested in participating in a test? Invite them to join Dealertrack's UX Lab!</p>
 
       <br />
-      <span ng-hide="sendToFriendPost">
-        <form ng-submit="sendToFriend()">
-          <div class="form-group">
-            <input type="name" class="form-control input-lg" ng-model="formData.fromName" placeholder="your name" maxlength="25" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control input-lg" ng-model="formData.fromEmail" placeholder="your email" maxlength="45" required>
-          </div>
-          <div class="form-group">
-            <input type="name" class="form-control input-lg" ng-model="formData.toName" placeholder="friend's name" maxlength="25" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control input-lg" ng-model="formData.toEmail" placeholder="friend's email" maxlength="45" required>
-          </div>
-          <div class="centered">
-            <input type="submit" class="btn btn-primary btn-lg" value="Send to Friend">
-          </div>
-          <br />
-        </form>
-      </span>
-      <p><em>{{sendToFriendPost}}</em></p>
+    	<form ng-submit="sendToFriend()">
+    		<div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="formData.fromName" placeholder="your name" maxlength="25" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control input-lg" ng-model="formData.fromEmail" placeholder="your email" maxlength="45" required>
+        </div>
+        <div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="formData.toName" placeholder="friend's name" maxlength="25" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control input-lg" ng-model="formData.toEmail" placeholder="friend's email" maxlength="45" required>
+        </div>
+        <div class="centered">
+          <input type="submit" class="btn btn-primary btn-lg" value="Send to Friend">
+        </div>
+        <br />
+        <p><em>{{sendToFriendPost}}</em></p>
+      </form>
     </div>
   </div>
 </div>
