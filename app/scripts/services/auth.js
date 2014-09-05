@@ -20,7 +20,7 @@ app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $w
 
                 if (token && username) {
                   $window.localStorage.token = token;
-                  localStorage['user.name'] = username;
+                  localStorage['username'] = username;
                   deferred.resolve(true);
                 } else {
                   deferred.reject('Invalid data from server');
