@@ -42,6 +42,12 @@ app.config(function ($routeProvider, $httpProvider) {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
       })
+      .when('/forgot-password', {
+        templateUrl: 'views/forgot-password.html'
+      })
+      .when('/change-password', {
+        templateUrl: 'views/change-password.html'
+      })
       .when('/dashboard/', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
