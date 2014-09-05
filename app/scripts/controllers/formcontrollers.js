@@ -4,18 +4,19 @@
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
+    // auto capitalize first name
     $scope.$watch('firstName', function() {
         if (!angular.isUndefined($scope.firstName)){
           $scope.firstName = $scope.firstName.substring(0,1).toUpperCase()+$scope.firstName.substring(1);
         }
       });
 
+    // auto capitalize text name
     $scope.$watch('lastName', function() {
         if (!angular.isUndefined($scope.lastName)){
           $scope.lastName = $scope.lastName.substring(0,1).toUpperCase()+$scope.lastName.substring(1);
         }
       });
-
 
     $scope.postSuccess = function () {
           window.location = '#thank-you';
@@ -30,12 +31,16 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
             data: $scope.formData
-          }).success(function (response)
-                {
-                  $scope.formResponse = response;
-                  $scope.postSuccess();
-                }
-            );
+          }).
+          success(function (response) {
+              $scope.formResponse = response;
+              $scope.postSuccess();
+            }
+          ).
+          error(function () {
+              $scope.existingEmail = 'Email address already registered';
+            }
+          );;
         };
         //end of submitSignUpForm function
   }]);
@@ -127,12 +132,12 @@ app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope
           method: 'POST',
           data: $scope.formData
         }).success(function (response)
-            { 
-              $scope.formData.fromName = "";
-              $scope.formData.fromEmail = "";
-              $scope.formData.toName = "";
-              $scope.formData.toEmail = "";
-              $scope.sendToFriendPost = "Thank you for sharing!";
+            {
+              $scope.formData.fromName = '';
+              $scope.formData.fromEmail = '';
+              $scope.formData.toName = '';
+              $scope.formData.toEmail = '';
+              $scope.sendToFriendPost = 'Thank you for sharing!';
             }
           );
       };
