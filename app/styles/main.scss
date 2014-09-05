@@ -176,9 +176,21 @@ header {
     color: #737373;
 }
 
+.display-error {
+    color: #A94442;
+    margin-bottom: 15px;
+}
+
 .well {
     border-radius: 0px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0);
+}
+
+/* 1 - 3 field forms */
+.mini-form {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px;
 }
 
 .form-group {
@@ -228,15 +240,10 @@ header {
     padding: 15px
 }
 
-.display-error {
-    color: #A94442;
-    margin-bottom: 15px;
-}
-
 /* main.html */
 #main-form {
     max-width: 600px;
-    margin: 50px auto 0 auto;
+    margin-top: 50px;
     background-color: #f1f1f1;
     padding: 40px 35px 20px 35px;
 }
@@ -250,10 +257,6 @@ header {
 }
 
 /* sign-in.html */
-#section-signin {
-    margin-top: 4%;
-}
-
 #signin-title {
     font-size: 26px;
     margin-top: 0px;
@@ -261,24 +264,7 @@ header {
 }
 
 #signin-form {
-    max-width: 420px;
-    margin: 0 auto;
     background-color: #f1f1f1;
-    padding: 40px 50px;
-}
-
-/* forgot-password.html */
-#forgot-pass-form {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 40px 50px;
-    text-align: center;
-}
-
-/* change-password.html */
-#change-pass-form {
-    max-width: 450px;
-    margin: 0 auto;
     padding: 40px 50px;
 }
 
@@ -465,7 +451,6 @@ header {
 /* complete.html */
 
 #section-complete {
-    text-align: center;
     margin-top: 4%;
 }
 
