@@ -3,8 +3,9 @@
 <div class="container">
   <div class="section-default">
     <div class="mini-form" id="signin-form">
-      <h1 align="center" id="signin-title">Sign In</h1>
+      <h3 align="center" class="rm-margin-top">Sign In</h3>
 
+      <br />
       <form ng-submit="login()">
         <div class="form-group">
           <input type="text" class="form-control input-lg" ng-model="loginUsername" placeholder="username" maxlength="45" required>
@@ -15,7 +16,7 @@
         <p ng-show="loginError" class="display-error">{{ loginError }}</p>
         <div class="centered">
           <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
-          <a ng-href="#forgot-password"><span class="assist-block">Forgot Password</span></a>
+          <!--<a ng-href="#forgot-password"><span class="assist-block">Forgot Password</span></a>-->
         </div>
       </form>
     </div>

@@ -30,14 +30,14 @@
           <span class="glyphicon glyphicon-warning-sign error-warning-glyph form-control-feedback" ng-show="demoForm.userPhone.$dirty && demoForm.userPhone.$invalid && demoForm.userPhone.$error.required"></span>
           <span class="glyphicon glyphicon-remove error-remove-glyph form-control-feedback" ng-show="demoForm.userPhone.$invalid && demoForm.userPhone.$error.pattern"></span>
 
-          <span class="help-block" id="demo-phone-block">Do not use dashes or spaces. (i.e. 5165555555)</span>
+          <span class="help-block rm-margin-top" id="demo-phone-block">Do not use dashes or spaces. (i.e. 5165555555)</span>
         </div>
       </div>
 
       <div class="form-group">
         <label>Gender</label>
         <br />
-        <label class="radio-inline" id="demo-gender-label" ng-repeat="gender in genderChoices">
+        <label class="radio-inline" ng-repeat="gender in genderChoices">
           <input type="radio" ng-model="formData.gender" name="gender" value="{{gender}}" required>{{gender}}
         </label>
       </div>
