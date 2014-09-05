@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthService', function ($scope, $http, $location, ENV, AuthService){
+app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV', 'AuthService', function ($scope, $http, $window, $location, ENV, AuthService){
 
     // if user is not signed in, redirect to sign in
     if (!localStorage.token) {

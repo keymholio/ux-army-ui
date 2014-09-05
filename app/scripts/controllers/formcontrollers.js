@@ -40,7 +40,7 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
           error(function () {
               $scope.existingEmail = 'Email address already registered';
             }
-          );;
+          );
         };
         //end of submitSignUpForm function
   }]);
@@ -131,7 +131,7 @@ app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope
           url: ENV.API_SERVER + 'send-to-friend/',
           method: 'POST',
           data: $scope.formData
-        }).success(function (response)
+        }).success(function ()
             {
               $scope.formData.fromName = '';
               $scope.formData.fromEmail = '';
