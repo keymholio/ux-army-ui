@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('DashboardCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
+app.controller('ChangePassCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
     // change password function 
     $scope.submitPassChange = function () {
