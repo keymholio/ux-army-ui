@@ -48,6 +48,10 @@ app.config(function ($routeProvider, $httpProvider) {
       .when('/change-password', {
         templateUrl: 'views/change-password.html'
       })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
+      })
       .when('/dashboard/', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
