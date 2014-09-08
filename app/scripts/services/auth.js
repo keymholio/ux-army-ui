@@ -56,6 +56,9 @@ app.factory('AuthService', ['$http', '$window', '$q', 'ENV', function ($http, $w
       //end of logout function
 
     return {
+        register: function (username, password) {
+            return authenticate(username, password, 'register/');
+          },
         login: function (username, password) {
             return authenticate(username, password, 'login/');
           },
