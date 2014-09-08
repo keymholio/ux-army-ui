@@ -75,8 +75,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
     $scope.completedCheck = {};
 
     $scope.filterParams = {};
-    $scope.getCheckedKeys = function(filterDict)
-    {
+    $scope.getCheckedKeys = function(filterDict) {
       var key;
       var fieldValues = [];
       for (key in filterDict)
