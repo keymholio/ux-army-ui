@@ -101,6 +101,30 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
         }
     );
 
+    $scope.disable = true;
+    // number of fields on the form
+    $scope.formlength = 11;
+    $scope.formEmpty = function () {
+
+        var breakLoop = false;
+        angular.forEach($scope.formData, function(value) {
+          if (!breakLoop) {
+            // number of keys in the formData json
+            var count = Object.keys($scope.formData).length;
+            // if there is value on each form and number of fields
+            // equals to number of keys in formData json
+            if (value && count === $scope.formlength) {
+              $scope.disable = false;
+              breakLoop = false;
+            } else {
+              $scope.disable = true;
+              // breaks the loop if one of the value in field is empty
+              breakLoop = true;
+            }
+          }
+        });
+      };
+
     $scope.postSuccess = function () {
         window.location = '#complete';
       };
