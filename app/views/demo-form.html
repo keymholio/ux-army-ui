@@ -64,38 +64,10 @@
       </div>
 
       <div class="form-group">
-        <label>Employment</label>
-        <select class="form-control input-lg" ng-model="formData.employment" ng-change="formEmpty()">
-          <option ng-repeat="employment in employmentChoices">{{employment}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Household Income (Annual)</label>
-        <select class="form-control input-lg" ng-model="formData.income" ng-change="formEmpty()">
-          <option ng-repeat="income in incomeChoices">{{income}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
         <label>Experience With Computers</label>
         <p>If you know what "css padding for an html div" means then choose expert. Otherwise choose intermediate.</p>
         <select class="form-control input-lg" ng-model="formData.experience" ng-change="formEmpty()">
           <option ng-repeat="experience in experienceChoices">{{experience}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Hours Online Per Day</label>
-        <select class="form-control input-lg" ng-model="formData.hoursOnline" ng-change="formEmpty()">
-          <option ng-repeat="hours in hoursOnlineChoices">{{hours}}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Education Level Completed</label>
-        <select class="form-control input-lg" ng-model="formData.educationLevel" ng-change="formEmpty()">
-          <option ng-repeat="education in educationLevelChoices">{{education}}</option>
         </select>
       </div>
 

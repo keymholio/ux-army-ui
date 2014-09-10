@@ -48,11 +48,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
           $scope.completedChoices = data.completedChoices;
         }
@@ -95,11 +91,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
         'gender':$scope.getCheckedKeys($scope.genderCheck),
         'state':$scope.stateCheck === '' ? undefined: $scope.stateCheck,
         'job':$scope.jobRoleCheck === '' ? undefined: $scope.jobRoleCheck,
-        'employment':$scope.getCheckedKeys($scope.employmentCheck),
-        'income':$scope.getCheckedKeys($scope.incomeCheck),
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
-        'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
-        'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
         'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck),
         'completed_initial':$scope.getCheckedKeys($scope.completedCheck)
       };

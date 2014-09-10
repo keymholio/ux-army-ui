@@ -91,19 +91,15 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           $scope.genderChoices = data.genderChoices;
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
-          $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
+          $scope.jobChoices = data.jobChoices;         
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
         }
     );
 
     $scope.disable = true;
     // number of fields on the form
-    $scope.formlength = 11;
+    $scope.formlength = 7;
     $scope.formEmpty = function () {
 
         var breakLoop = false;

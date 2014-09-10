@@ -46,11 +46,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
         }
       );
