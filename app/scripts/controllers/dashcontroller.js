@@ -50,6 +50,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
           $scope.jobChoices = data.jobChoices;
           $scope.experienceChoices = data.experienceChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
+          $scope.participateDayChoices = data.participateDayChoices;
           $scope.completedChoices = data.completedChoices;
         }
     );
@@ -64,6 +65,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
     $scope.genderCheck = {};
     $scope.experienceCheck = {};
     $scope.participateTimeCheck = {};
+    $scope.participateDayCheck = {};
     $scope.completedCheck = {};
 
     $scope.filterParams = {};
@@ -89,6 +91,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
         'job':$scope.jobRoleCheck === '' ? undefined: $scope.jobRoleCheck,
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
         'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck),
+        'participateDay':$scope.getCheckedKeys($scope.participateDayCheck),
         'completed_initial':$scope.getCheckedKeys($scope.completedCheck)
       };
       angular.extend($scope.filterParams,newFilter);

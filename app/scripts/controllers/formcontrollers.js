@@ -94,6 +94,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           $scope.jobChoices = data.jobChoices;         
           $scope.experienceChoices = data.experienceChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
+          $scope.participateDayChoices = data.participateDayChoices;
         }
     );
 

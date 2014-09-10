@@ -105,8 +105,23 @@
                 </div>
                 <div id="collapse10" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <label class="checkbox" ng-repeat="participate in participateTimeChoices">
-                      <input type="checkbox" ng-model="$parent.participateTimeCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
+                    <label class="checkbox" ng-repeat="time in participateTimeChoices">
+                      <input type="checkbox" ng-model="$parent.participateTimeCheck[time]" ng-change="checkFilter()" name="time" value="{{time}}" required>{{time}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#filterOptionAccordion" data-target="#collapse9">
+                  <div class="panel-title">
+                    <span>Participation Day</span>
+                  </div>
+                </div>
+                <div id="collapse9" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <label class="checkbox" ng-repeat="participate in participateDayChoices">
+                      <input type="checkbox" ng-model="$parent.participateDayCheck[participate]" ng-change="checkFilter()" name="participate" value="{{participate}}" required>{{participate}}
                     </label>
                   </div>
                 </div>
@@ -134,7 +149,7 @@
     </div>
 
     <br />
-    <p>Displaying {{total}} results</p>
+    <p><small>Displaying {{total}} results</small></p>
     
     <br />
   </div>
