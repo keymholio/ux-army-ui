@@ -62,11 +62,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$window', '$location', 'ENV
     $scope.users = [];
     
     $scope.genderCheck = {};
-    $scope.employmentCheck = {};
-    $scope.incomeCheck = {};
     $scope.experienceCheck = {};
-    $scope.hoursOnlineCheck = {};
-    $scope.educationCheck = {};
     $scope.participateTimeCheck = {};
     $scope.completedCheck = {};
 
