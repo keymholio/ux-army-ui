@@ -36,7 +36,7 @@
           <img src="./images/default-user.svg" class="img-profile img-responsive"><br />
 
           <!-- launch edit participant data modal -->
-          <a href="" data-toggle="modal" data-target="#editModal">Edit Information</a><br />
+          <a href="" data-toggle="modal" data-target="#editModal" ng-click="getParticipantData()">Edit Information</a><br />
 
           <!-- launch delete user modal -->
           <a href="" data-toggle="modal" data-target="#deleteModal">Delete User</a>
@@ -48,7 +48,7 @@
             <br />
           </div>
           <div class="col-md-12 col-xs-8 rm-pad-left-right" id="user-profile-name">
-            <h2 class="rm-margin">{{formData.name}}</h2><br />
+            <h2 class="rm-margin">{{formData.nameGet}}</h2><br />
             <div id="user-profile-mobile-options">
               <!-- launch edit participant data modal -->
               <a href="" data-toggle="modal" data-target="#editModal">Edit Information</a><br />
@@ -66,35 +66,35 @@
               </tr>
               <tr>
                 <td><h4>Gender:</h4></td>
-                <td>{{formData.gender}}</td>
+                <td>{{formData.genderGet}}</td>
               </tr>
               <tr class="separator">
                 <td><h4>State:</h4></td>
-                <td>{{formData.state}}</td>
+                <td>{{formData.stateGet}}</td>
               </tr>
               <tr>
                 <td><h4>Phone:</h4></td>
-                <td><a href="tel:{{formData.phone}}">{{formData.phone}}</a></td>
+                <td><a href="tel:{{formData.phone}}">{{formData.phoneGet}}</a></td>
               </tr>
               <tr class="separator">
                 <td><h4>Email:</h4></td>
-                <td><a href="mailto:{{formData.email}}">{{formData.email}}</a></td>
+                <td><a href="mailto:{{formData.email}}">{{formData.emailGet}}</a></td>
               </tr>
               <tr>
                 <td><h4>Job Role:</h4></td>
-                <td>{{formData.job}}</td>
+                <td>{{formData.jobGet}}</td>
               </tr>
               <tr>
                 <td><h4>Computer Experience:</h4></td>
-                <td>{{formData.experience}}</td>
+                <td>{{formData.experienceGet}}</td>
               </tr>
               <tr>
                 <td><h4>Good Time for Test:</h4></td>
-                <td>{{formData.participateTime}}</td>
+                <td>{{formData.participateTimeGet}}</td>
               </tr>
               <!-- <tr>
                 <td><h4>Good Day for Test:</h4></td>
-                <td>{{formData.participateDay}}</td>
+                <td>{{formData.participateDayGet}}</td>
               </tr> -->
             </tbody>
           </table>
