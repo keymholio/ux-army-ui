@@ -44,7 +44,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
             $scope.formData.participateDayGet = $scope.formData.participateDay;
 
           }).error(function() {
-            window.alert('User does not exist!');
+            alert('User does not exist!');
             $location.path('/dashboard');
           });
       };
