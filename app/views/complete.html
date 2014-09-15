@@ -7,31 +7,28 @@
     <br />
     <h4>You have now completed the sign up process.<br /> Your contribution will make Dealertrack's solutions even better.</h4>
 
-    <div id="send-friend-form">
+    <div id="send-friend-form" ng-hide="sendToFriendPost">
       <h3>Refer a friend!</h3>
       
       <p>Do you know someone who would be interested in participating in a test? Invite them to join Dealertrack's UX Lab!</p>
 
       <br />
     	<form ng-submit="sendToFriend()">
-    		<div class="form-group">
-          <input type="name" class="form-control input-lg" ng-model="formData.fromName" placeholder="your name" maxlength="25" required>
+        <div class="form-group">
+          <input type="name" class="form-control input-lg" ng-model="toName" placeholder="friend's name" maxlength="25" required>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control input-lg" ng-model="formData.fromEmail" placeholder="your email" maxlength="45" required>
-        </div>
-        <div class="form-group">
-          <input type="name" class="form-control input-lg" ng-model="formData.toName" placeholder="friend's name" maxlength="25" required>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control input-lg" ng-model="formData.toEmail" placeholder="friend's email" maxlength="45" required>
+          <input type="email" class="form-control input-lg" ng-model="toEmail" placeholder="friend's email" maxlength="45" required>
         </div>
         <div class="centered">
           <input type="submit" class="btn btn-primary btn-lg" value="Send to Friend">
         </div>
         <br />
-        <p><em>{{sendToFriendPost}}</em></p>
       </form>
     </div>
+    <p ng-show="sendToFriendPost">
+      <br /><br />
+      <em>{{sendToFriendPost}}</em>
+    </p>
   </div>
 </div>

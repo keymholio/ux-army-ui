@@ -75,6 +75,8 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
               $scope.checkedName = data.name;
               $scope.checkedEmail = data.email;
               $scope.checkedId = data.id;
+              localStorage['demo.name'] = data.name;
+              localStorage['demo.email'] = data.email;
             }
           ).
           error(function () {
@@ -91,7 +93,7 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           $scope.genderChoices = data.genderChoices;
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
-          $scope.jobChoices = data.jobChoices;         
+          $scope.jobChoices = data.jobChoices;
           $scope.experienceChoices = data.experienceChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
           $scope.participateDayChoices = data.participateDayChoices;
@@ -145,19 +147,25 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
 
 app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
+    $scope.fromName = localStorage['demo.name'];
+    $scope.fromEmail = localStorage['demo.email'];
+
     // send to friend form function
     $scope.sendToFriend = function () {
         
         $http({
           url: ENV.API_SERVER + 'send-to-friend/',
           method: 'POST',
-          data: $scope.formData
+          data: {
+            fromName: $scope.fromName,
+            fromEmail: $scope.fromEmail,
+            toName: $scope.toName,
+            toEmail: $scope.toEmail
+          }
         }).success(function ()
             {
-              $scope.formData.fromName = '';
-              $scope.formData.fromEmail = '';
-              $scope.formData.toName = '';
-              $scope.formData.toEmail = '';
+              localStorage.removeItem('demo.name');
+              localStorage.removeItem('demo.email');
               $scope.sendToFriendPost = 'Thank you for sharing!';
             }
           );
