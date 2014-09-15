@@ -43,13 +43,13 @@ app.factory('AuthService', ['$http', '$q', 'ENV', function ($http, $q, ENV){
             localStorage.removeItem('token');
             localStorage.removeItem('user.name');
             deferred.resolve();
-          },
-          function (error) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user.name');
-            deferred.resolve();
+          }//,
+          // function (error) {
+            // localStorage.removeItem('token');
+            // localStorage.removeItem('user.name');
+            // deferred.resolve();
             // deferred.reject(error.data.error);
-          }
+          // }
         );
         return deferred.promise;
       };

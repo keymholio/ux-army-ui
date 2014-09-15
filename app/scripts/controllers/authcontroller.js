@@ -37,7 +37,7 @@ app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($sco
                 function () {
                     $location.path('/dashboard');
                   },
-                function (error) {
+                function () {
                     $scope.loginError = 'Incorrect username or password';
                     $scope.loginPassword = null;
                   }

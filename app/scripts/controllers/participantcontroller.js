@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $location, $routeParams, AuthService, ENV){
+app.controller('ParticipantCtrl', ['$scope', '$http', '$window', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $window, $location, $routeParams, AuthService, ENV){
 
     // if user is not signed in, redirect to sign in
     if (!localStorage.token) {
@@ -44,7 +44,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
             $scope.formData.participateDayGet = $scope.formData.participateDay;
 
           }).error(function() {
-            alert('User does not exist!');
+            $window.alert('User does not exist!');
             $location.path('/dashboard');
           });
       };
