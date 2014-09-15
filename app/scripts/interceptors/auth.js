@@ -2,7 +2,7 @@
 
 /* global app */
 
-app.factory('AuthInterceptor', ['$rootScope', '$q', '$location', function ($rootScope, $q, $window, $location){
+app.factory('AuthInterceptor', ['$rootScope', '$q', '$location', function ($rootScope, $q, $location){
   return {
     request: function (config) {
       config.headers = config.headers || {};
