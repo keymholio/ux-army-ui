@@ -4,18 +4,19 @@
 
 app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
+    // auto capitalize first name
     $scope.$watch('firstName', function() {
         if (!angular.isUndefined($scope.firstName)){
           $scope.firstName = $scope.firstName.substring(0,1).toUpperCase()+$scope.firstName.substring(1);
         }
       });
 
+    // auto capitalize text name
     $scope.$watch('lastName', function() {
         if (!angular.isUndefined($scope.lastName)){
           $scope.lastName = $scope.lastName.substring(0,1).toUpperCase()+$scope.lastName.substring(1);
         }
       });
-
 
     $scope.postSuccess = function () {
           window.location = '#thank-you';
@@ -30,12 +31,16 @@ app.controller('SignupFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $h
             url: ENV.API_SERVER + 'api/',
             method: 'POST',
             data: $scope.formData
-          }).success(function (response)
-                {
-                  $scope.formResponse = response;
-                  $scope.postSuccess();
-                }
-            );
+          }).
+          success(function (response) {
+              $scope.formResponse = response;
+              $scope.postSuccess();
+            }
+          ).
+          error(function () {
+              $scope.existingEmail = 'Email address already registered';
+            }
+          );
         };
         //end of submitSignUpForm function
   }]);
@@ -70,6 +75,8 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
               $scope.checkedName = data.name;
               $scope.checkedEmail = data.email;
               $scope.checkedId = data.id;
+              localStorage['demo.name'] = data.name;
+              localStorage['demo.email'] = data.email;
             }
           ).
           error(function () {
@@ -87,14 +94,35 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
+          $scope.participateDayChoices = data.participateDayChoices;
         }
     );
+
+    $scope.disable = true;
+    // number of fields on the form
+    $scope.formlength = 7;
+    $scope.formEmpty = function () {
+
+        var breakLoop = false;
+        angular.forEach($scope.formData, function(value) {
+          if (!breakLoop) {
+            // number of keys in the formData json
+            var count = Object.keys($scope.formData).length;
+            // if there is value on each form and number of fields
+            // equals to number of keys in formData json
+            if (value && count === $scope.formlength) {
+              $scope.disable = false;
+              breakLoop = false;
+            } else {
+              $scope.disable = true;
+              // breaks the loop if one of the value in field is empty
+              breakLoop = true;
+            }
+          }
+        });
+      };
 
     $scope.postSuccess = function () {
         window.location = '#complete';
@@ -115,4 +143,32 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
         );
       };
       //end of submitDemoForm function
+  }]);
+
+app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
+
+    $scope.fromName = localStorage['demo.name'];
+    $scope.fromEmail = localStorage['demo.email'];
+
+    // send to friend form function
+    $scope.sendToFriend = function () {
+        
+        $http({
+          url: ENV.API_SERVER + 'send-to-friend/',
+          method: 'POST',
+          data: {
+            fromName: $scope.fromName,
+            fromEmail: $scope.fromEmail,
+            toName: $scope.toName,
+            toEmail: $scope.toEmail
+          }
+        }).success(function ()
+            {
+              localStorage.removeItem('demo.name');
+              localStorage.removeItem('demo.email');
+              $scope.sendToFriendPost = 'Thank you for sharing!';
+            }
+          );
+      };
+      //end of sendToFriend function
   }]);

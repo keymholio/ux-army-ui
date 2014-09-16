@@ -2,7 +2,7 @@
 
 /*global $, app */
 
-app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $location, $routeParams, AuthService, ENV){
+app.controller('ParticipantCtrl', ['$scope', '$http', '$window', '$location', '$routeParams', 'AuthService', 'ENV', function ($scope, $http, $window, $location, $routeParams, AuthService, ENV){
 
     // if user is not signed in, redirect to sign in
     if (!localStorage.token) {
@@ -31,8 +31,20 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
               return $scope.age;
             }
 
+            // set form data options to different variables to prevent scope change 
+            $scope.formData.nameGet = $scope.formData.name;
+            $scope.formData.emailGet = $scope.formData.email;
+            $scope.formData.genderGet = $scope.formData.gender;
+            $scope.formData.stateGet = $scope.formData.state;
+            $scope.formData.phoneGet = $scope.formData.phone;
+            $scope.formData.emailGet = $scope.formData.email;
+            $scope.formData.jobGet = $scope.formData.job;
+            $scope.formData.experienceGet = $scope.formData.experience;
+            $scope.formData.participateTimeGet = $scope.formData.participateTime;
+            $scope.formData.participateDayGet = $scope.formData.participateDay;
+
           }).error(function() {
-            window.alert('User does not exist!');
+            $window.alert('User does not exist!');
             $location.path('/dashboard');
           });
       };
@@ -46,11 +58,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
         }
       );
@@ -80,6 +88,30 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$location', '$routeParams
         $location.path('/dashboard');
       });
     };
+
+    // change password function 
+    $scope.submitPassChange = function () {
+        
+        if ($scope.passChange.newPassword === $scope.passChange.confirm){
+          $http({
+              url: ENV.API_SERVER + 'update-pass/',
+              method: 'PUT',
+              data : $scope.passChange
+            }).
+            success(function () {
+                $('#passwordModal').modal('hide');
+                $('.modal-backdrop').remove();
+              }
+            ).
+            error(function () {
+                $scope.changePassIncorrectError = 'The password entered is incorrect';
+              }
+            );
+        } else {
+          $scope.changePassMatchError = 'Passwords do not match';
+        }
+
+      };
 
     $scope.logout = function () {
         AuthService.logout().then(

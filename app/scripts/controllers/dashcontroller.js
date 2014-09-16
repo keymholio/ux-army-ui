@@ -48,12 +48,10 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.birthYearChoices = data.birthYearChoices;
           $scope.stateChoices = data.stateChoices;
           $scope.jobChoices = data.jobChoices;
-          $scope.employmentChoices = data.employmentChoices;
-          $scope.incomeChoices = data.incomeChoices;
           $scope.experienceChoices = data.experienceChoices;
-          $scope.hoursOnlineChoices = data.hoursOnlineChoices;
-          $scope.educationLevelChoices = data.educationLevelChoices;
           $scope.participateTimeChoices = data.participateTimeChoices;
+          $scope.participateDayChoices = data.participateDayChoices;
+          $scope.completedChoices = data.completedChoices;
         }
     );
     
@@ -65,16 +63,13 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.users = [];
     
     $scope.genderCheck = {};
-    $scope.employmentCheck = {};
-    $scope.incomeCheck = {};
     $scope.experienceCheck = {};
-    $scope.hoursOnlineCheck = {};
-    $scope.educationCheck = {};
     $scope.participateTimeCheck = {};
+    $scope.participateDayCheck = {};
+    $scope.completedCheck = {};
 
     $scope.filterParams = {};
-    $scope.getCheckedKeys = function(filterDict)
-    {
+    $scope.getCheckedKeys = function(filterDict) {
       var key;
       var fieldValues = [];
       for (key in filterDict)
@@ -92,15 +87,12 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.page = 1;
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
-        'state':$scope.stateCheck,
-        'job':$scope.jobRoleCheck == "" ? undefined: $scope.jobRoleCheck,
-        'employment':$scope.getCheckedKeys($scope.employmentCheck),
-        'income':$scope.getCheckedKeys($scope.incomeCheck),
+        'state':$scope.stateCheck === '' ? undefined: $scope.stateCheck,
+        'job':$scope.jobRoleCheck === '' ? undefined: $scope.jobRoleCheck,
         'experience':$scope.getCheckedKeys($scope.experienceCheck),
-        'hoursOnline':$scope.getCheckedKeys($scope.hoursOnlineCheck),
-        'educationLevel':$scope.getCheckedKeys($scope.educationCheck),
-        'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck)
-
+        'participateTime':$scope.getCheckedKeys($scope.participateTimeCheck),
+        'participateDay':$scope.getCheckedKeys($scope.participateDayCheck),
+        'completed_initial':$scope.getCheckedKeys($scope.completedCheck)
       };
       angular.extend($scope.filterParams,newFilter);
       $scope.users = [];
@@ -120,6 +112,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.users = $scope.users.concat(data.results);
           $scope.populating = false;
           $scope.noResults = null;
+          $scope.total = data.count;
 
           // evaluate age by using birthYear
           var currentTime = new Date();
@@ -210,6 +203,30 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     };
 
     $scope.populate($scope.page);
+
+    // change password function 
+    $scope.submitPassChange = function () {
+        
+        if ($scope.passChange.newPassword === $scope.passChange.confirm){
+          $http({
+              url: ENV.API_SERVER + 'update-pass/',
+              method: 'PUT',
+              data : $scope.passChange
+            }).
+            success(function () {
+                $('#passwordModal').modal('hide');
+                $('.modal-backdrop').remove();
+              }
+            ).
+            error(function () {
+                $scope.changePassIncorrectError = 'The password entered is incorrect';
+              }
+            );
+        } else {
+          $scope.changePassMatchError = 'Passwords do not match';
+        }
+
+      };
 
     $scope.logout = function () {
         AuthService.logout().then(
