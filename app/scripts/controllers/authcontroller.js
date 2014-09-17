@@ -10,6 +10,24 @@ app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($sco
       return;
     }
 
+    $scope.register = function () {
+        var username = $scope.registerUsername;
+        var password = $scope.registerPassword;
+
+        if (username && password) {
+          AuthService.register(username, password).then(
+            function () {
+              $location.path('/dashboard');
+            },
+            function (error) {
+              $scope.registerError = error;
+            }
+          );
+        } else {
+          $scope.registerError = 'Username and password required';
+        }
+      };
+
     $scope.login = function () {
         var username = $scope.loginUsername;
         var password = $scope.loginPassword;
@@ -19,7 +37,7 @@ app.controller('AuthCtrl', ['$scope', '$location', 'AuthService', function ($sco
                 function () {
                     $location.path('/dashboard');
                   },
-                function (error) {
+                function () {
                     $scope.loginError = 'Incorrect username or password';
                     $scope.loginPassword = null;
                   }

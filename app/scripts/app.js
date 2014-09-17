@@ -30,6 +30,7 @@ app.config(function ($routeProvider, $httpProvider) {
       })
       .when('/complete', {
         templateUrl: 'views/complete.html',
+        controller: 'SendFriendFormCtrl'
       })
       .when('/error-page', {
         templateUrl: 'views/error-page.html'
@@ -40,6 +41,16 @@ app.config(function ($routeProvider, $httpProvider) {
       .when('/sign-in', {
         templateUrl: 'views/sign-in.html',
         controller: 'AuthCtrl'
+      })
+      .when('/forgot-password', {
+        templateUrl: 'views/forgot-password.html'
+      })
+      .when('/change-password', {
+        templateUrl: 'views/change-password.html'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       })
       .when('/dashboard/', {
         templateUrl: 'views/dashboard.html',

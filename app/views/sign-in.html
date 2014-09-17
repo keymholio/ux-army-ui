@@ -1,10 +1,11 @@
 <header-default></header-default>
 
 <div class="container">
-  <div id="section-signin">
-    <div id="signin-form">
-      <h1 align="center" id="signin-title">Sign In</h1>
+  <div class="section-default">
+    <div class="mini-form box-form">
+      <h3 align="center" class="rm-margin-top">Sign In</h3>
 
+      <br />
       <form ng-submit="login()">
         <div class="form-group">
           <input type="text" class="form-control input-lg" ng-model="loginUsername" placeholder="username" maxlength="45" required>
@@ -16,7 +17,6 @@
         <div class="centered">
           <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
         </div>
-        <br />
       </form>
     </div>
   </div>
