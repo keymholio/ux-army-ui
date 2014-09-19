@@ -15,13 +15,10 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // opens filter group on dekstop and closes on mobile
     $(window).ready(function(){
-      if( $(this).width() < 751 )
-      {
+      if( $(this).width() < 751 ) {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
-      }
-      else
-      {
+      } else {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
       }
@@ -29,13 +26,10 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // when window is resized, filter group is opened on desktop and closed on mobile
     $(window).bind('resize load',function(){
-      if( $(this).width() < 751 )
-      {
+      if( $(this).width() < 751 ) {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
-      }
-      else
-      {
+      } else {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
         $('#collapse0').removeAttr('style');
@@ -69,7 +63,9 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.completedCheck = {};
 
     $scope.filterParams = {};
+
     $scope.getCheckedKeys = function(filterDict) {
+
       var key;
       var fieldValues = [];
       for (key in filterDict)
@@ -80,10 +76,12 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         }
       }
       return fieldValues;
+
     };
 
     // check if filter is checked, then calls repopulate function
     $scope.checkFilter = function() {
+
       $scope.page = 1;
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
@@ -98,6 +96,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.users = [];
       $scope.rePopulate($scope.page);
       $scope.filtering = true;
+
     };
 
     // repopulates data based on filter options
@@ -170,14 +169,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
             var year = currentTime.getFullYear();
 
             for (var u = 0; u < $scope.users.length; u++) {
-              if ($scope.users[u].birthYear === null){
+              if ($scope.users[u].birthYear === null) {
                 $scope.users[u].age = 'n/a';
               } else {
                 $scope.users[u].age = year - $scope.users[u].birthYear;
               }
 
               // additionally checking if state d.n.e. so result can display "n/a"
-              if ($scope.users[u].state === ''){
+              if ($scope.users[u].state === '') {
                 $scope.users[u].state = 'n/a';
               }
             }
@@ -185,6 +184,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     };
 
     $scope.nextPage = function () {
+
       if (!$scope.populating && $scope.more) {
         $scope.page = $scope.page + 1;
 
@@ -198,12 +198,13 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     };
 
     $scope.isShownMoreThanTotal = function () {
-      // shows and hides "show more" button
+      
       if ($scope.totalShown >= $scope.total) {
         $scope.more = false;
       } else {
         $scope.more = true;
       }
+
     };
 
     $scope.populate($scope.page);
@@ -233,6 +234,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       };
 
     $scope.logout = function () {
+        
         AuthService.logout().then(
           function () {
             $location.path('/sign-in');
@@ -241,5 +243,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
             $scope.error = error;
           }
         );
+
       };
+
   }]);
