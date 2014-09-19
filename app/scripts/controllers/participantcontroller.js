@@ -11,7 +11,7 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$window', '$location', '$
     }
 
     $scope.token = localStorage.token;
-    $scope.username = localStorage['user.name'];
+    $scope.username = localStorage.username;
 
     var config = { 'headers': {'Authorization': 'Token ' + $scope.token}};
 

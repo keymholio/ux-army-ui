@@ -11,7 +11,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     }
 
     $scope.token = localStorage.token;
-    $scope.username = localStorage['user.name'];
+    $scope.username = localStorage.username;
 
     // opens filter group on dekstop and closes on mobile
     $(window).ready(function(){
