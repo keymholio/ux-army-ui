@@ -113,6 +113,9 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.populating = false;
           $scope.noResults = null;
           $scope.total = data.count;
+          $scope.itemsPerPage = data.results.length;
+          $scope.totalShown = $scope.page * 24;
+          $scope.isShownMoreThanTotal();
 
           // evaluate age by using birthYear
           var currentTime = new Date();
@@ -184,6 +187,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.nextPage = function () {
       if (!$scope.populating && $scope.more) {
         $scope.page = $scope.page + 1;
+
         if ($scope.filtering === true) {
           $scope.rePopulate($scope.page);
         } else {
