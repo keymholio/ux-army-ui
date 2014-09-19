@@ -184,7 +184,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     };
 
     $scope.nextPage = function () {
-
       if (!$scope.populating && $scope.more) {
         $scope.page = $scope.page + 1;
 
@@ -193,18 +192,15 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         } else {
           $scope.populate($scope.page);
         }
-        
       }
     };
 
     $scope.isShownMoreThanTotal = function () {
-      
       if ($scope.totalShown >= $scope.total) {
         $scope.more = false;
       } else {
         $scope.more = true;
       }
-
     };
 
     $scope.populate($scope.page);
@@ -234,7 +230,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       };
 
     $scope.logout = function () {
-        
         AuthService.logout().then(
           function () {
             $location.path('/sign-in');
@@ -243,7 +238,6 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
             $scope.error = error;
           }
         );
-
       };
 
   }]);

@@ -75,8 +75,8 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
               $scope.checkedName = data.name;
               $scope.checkedEmail = data.email;
               $scope.checkedId = data.id;
-              localStorage.prefill_demoName = data.name;
-              localStorage.prefill_demoEmail = data.email;
+              localStorage.prefillDemoName = data.name;
+              localStorage.prefillDemoEmail = data.email;
             }
           ).
           error(function () {
@@ -148,8 +148,8 @@ app.controller('DemoFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $htt
 app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope, $http, ENV){
 
     // define fromName and fromEmail from demo form data
-    $scope.fromName = localStorage.prefill_demoName;
-    $scope.fromEmail = localStorage.prefill_demoEmail;
+    $scope.fromName = localStorage.prefillDemoName;
+    $scope.fromEmail = localStorage.prefillDemoEmail;
 
     // send to friend check error function
     $scope.sendFriendCheckError = function () {
@@ -158,7 +158,7 @@ app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope
 
     // send to friend check function
     $scope.sendFriendCheck = function () {
-         if (localStorage.prefill_demoName === undefined) {
+        if (localStorage.prefillDemoName === undefined) {
           $scope.sendFriendCheckError();
         }
       };
@@ -179,8 +179,8 @@ app.controller('SendFriendFormCtrl', ['$scope', '$http', 'ENV', function ($scope
           }
         }).success(function ()
             {
-              localStorage.removeItem('prefill_demoName');
-              localStorage.removeItem('prefill_demoEmail');
+              localStorage.removeItem('prefillDemoName');
+              localStorage.removeItem('prefillDemoEmail');
               $scope.sendToFriendPost = 'Thank you for sharing!';
             }
           );
