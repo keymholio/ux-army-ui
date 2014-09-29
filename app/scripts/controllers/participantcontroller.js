@@ -30,20 +30,21 @@ app.controller('ParticipantCtrl', ['$scope', '$http', '$window', '$location', '$
               $scope.age = null;
               return $scope.age;
             }
-
-            // set form data options to different variables to prevent scope change 
-            $scope.formData.nameGet = $scope.formData.name;
-            $scope.formData.emailGet = $scope.formData.email;
-            $scope.formData.genderGet = $scope.formData.gender;
-            $scope.formData.stateGet = $scope.formData.state;
-            $scope.formData.phoneGet = $scope.formData.phone;
-            $scope.formData.emailGet = $scope.formData.email;
-            $scope.formData.jobGet = $scope.formData.job;
-            $scope.formData.experienceGet = $scope.formData.experience;
-            $scope.formData.participateTimeGet = $scope.formData.participateTime;
-            $scope.formData.participateDayGet = $scope.formData.participateDay;
-
-          }).error(function() {
+          }).
+          success(function () {
+              // set form data options to different variables to prevent scope change 
+              $scope.formData.nameGet = $scope.formData.name;
+              $scope.formData.emailGet = $scope.formData.email;
+              $scope.formData.genderGet = $scope.formData.gender;
+              $scope.formData.stateGet = $scope.formData.state;
+              $scope.formData.phoneGet = $scope.formData.phone;
+              $scope.formData.emailGet = $scope.formData.email;
+              $scope.formData.jobGet = $scope.formData.job;
+              $scope.formData.experienceGet = $scope.formData.experience;
+              $scope.formData.participateTimeGet = $scope.formData.participateTime;
+              $scope.formData.participateDayGet = $scope.formData.participateDay;
+            }).
+          error(function() {
             $window.alert('User does not exist!');
             $location.path('/dashboard');
           });
