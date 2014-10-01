@@ -11,17 +11,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     }
 
     $scope.token = localStorage.token;
-    $scope.username = localStorage['user.name'];
+    $scope.username = localStorage.username;
 
     // opens filter group on dekstop and closes on mobile
     $(window).ready(function(){
-      if( $(this).width() < 751 )
-      {
+      if( $(this).width() < 751 ) {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
-      }
-      else
-      {
+      } else {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
       }
@@ -29,13 +26,10 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
 
     // when window is resized, filter group is opened on desktop and closed on mobile
     $(window).bind('resize load',function(){
-      if( $(this).width() < 751 )
-      {
+      if( $(this).width() < 751 ) {
         $('#collapse0').removeClass('in');
         $('#collapse0').addClass('out');
-      }
-      else
-      {
+      } else {
         $('#collapse0').removeClass('out');
         $('#collapse0').addClass('in');
         $('#collapse0').removeAttr('style');
@@ -69,7 +63,9 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.completedCheck = {};
 
     $scope.filterParams = {};
+
     $scope.getCheckedKeys = function(filterDict) {
+
       var key;
       var fieldValues = [];
       for (key in filterDict)
@@ -80,10 +76,12 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
         }
       }
       return fieldValues;
+
     };
 
     // check if filter is checked, then calls repopulate function
     $scope.checkFilter = function() {
+
       $scope.page = 1;
       var newFilter = {
         'gender':$scope.getCheckedKeys($scope.genderCheck),
@@ -98,6 +96,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
       $scope.users = [];
       $scope.rePopulate($scope.page);
       $scope.filtering = true;
+
     };
 
     // repopulates data based on filter options
@@ -113,6 +112,9 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           $scope.populating = false;
           $scope.noResults = null;
           $scope.total = data.count;
+          $scope.itemsPerPage = data.results.length;
+          $scope.totalShown = $scope.page * 24;
+          $scope.isShownMoreThanTotal();
 
           // evaluate age by using birthYear
           var currentTime = new Date();
@@ -167,14 +169,14 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
             var year = currentTime.getFullYear();
 
             for (var u = 0; u < $scope.users.length; u++) {
-              if ($scope.users[u].birthYear === null){
+              if ($scope.users[u].birthYear === null) {
                 $scope.users[u].age = 'n/a';
               } else {
                 $scope.users[u].age = year - $scope.users[u].birthYear;
               }
 
               // additionally checking if state d.n.e. so result can display "n/a"
-              if ($scope.users[u].state === ''){
+              if ($scope.users[u].state === '') {
                 $scope.users[u].state = 'n/a';
               }
             }
@@ -184,17 +186,16 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
     $scope.nextPage = function () {
       if (!$scope.populating && $scope.more) {
         $scope.page = $scope.page + 1;
+
         if ($scope.filtering === true) {
           $scope.rePopulate($scope.page);
         } else {
           $scope.populate($scope.page);
         }
-        
       }
     };
 
     $scope.isShownMoreThanTotal = function () {
-      // shows and hides "show more" button
       if ($scope.totalShown >= $scope.total) {
         $scope.more = false;
       } else {
@@ -238,4 +239,5 @@ app.controller('DashboardCtrl', ['$scope', '$http', '$location', 'ENV', 'AuthSer
           }
         );
       };
+
   }]);

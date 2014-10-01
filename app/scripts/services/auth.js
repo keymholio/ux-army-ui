@@ -20,7 +20,7 @@ app.factory('AuthService', ['$http', '$q', 'ENV', function ($http, $q, ENV){
 
                 if (token && username) {
                   localStorage.token = token;
-                  localStorage['user.name'] = username;
+                  localStorage.username = username;
                   deferred.resolve(true);
                 } else {
                   deferred.reject('Invalid data from server');
@@ -41,12 +41,12 @@ app.factory('AuthService', ['$http', '$q', 'ENV', function ($http, $q, ENV){
         $http.post(url).then(
           function () {
             localStorage.removeItem('token');
-            localStorage.removeItem('user.name');
+            localStorage.removeItem('username');
             deferred.resolve();
           }//,
           // function (error) {
             // localStorage.removeItem('token');
-            // localStorage.removeItem('user.name');
+            // localStorage.removeItem('username');
             // deferred.resolve();
             // deferred.reject(error.data.error);
           // }
